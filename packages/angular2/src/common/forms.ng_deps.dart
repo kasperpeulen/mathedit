@@ -1,0 +1,73 @@
+library angular2.src.common.forms.ng_deps.dart;
+
+import 'forms.dart';
+import 'package:angular2/src/core/reflection/reflection.dart' as _ngRef;
+import 'forms/model.ng_deps.dart' as i0;
+import 'forms/directives/abstract_control_directive.ng_deps.dart' as i1;
+import 'forms/directives/form_interface.ng_deps.dart' as i2;
+import 'forms/directives/control_container.ng_deps.dart' as i3;
+import 'forms/directives/ng_control_name.ng_deps.dart' as i4;
+import 'forms/directives/ng_form_control.ng_deps.dart' as i5;
+import 'forms/directives/ng_model.ng_deps.dart' as i6;
+import 'forms/directives/ng_control.ng_deps.dart' as i7;
+import 'forms/directives/ng_control_group.ng_deps.dart' as i8;
+import 'forms/directives/ng_form_model.ng_deps.dart' as i9;
+import 'forms/directives/ng_form.ng_deps.dart' as i10;
+import 'forms/directives/control_value_accessor.ng_deps.dart' as i11;
+import 'forms/directives/default_value_accessor.ng_deps.dart' as i12;
+import 'forms/directives/ng_control_status.ng_deps.dart' as i13;
+import 'forms/directives/checkbox_value_accessor.ng_deps.dart' as i14;
+import 'forms/directives/select_control_value_accessor.ng_deps.dart' as i15;
+import 'forms/directives.ng_deps.dart' as i16;
+import 'forms/validators.ng_deps.dart' as i17;
+import 'forms/directives/validators.ng_deps.dart' as i18;
+import 'forms/form_builder.ng_deps.dart' as i19;
+export 'forms.dart';
+export 'forms/model.dart' show AbstractControl, Control, ControlGroup, ControlArray;
+export 'forms/directives/abstract_control_directive.dart' show AbstractControlDirective;
+export 'forms/directives/form_interface.dart' show Form;
+export 'forms/directives/control_container.dart' show ControlContainer;
+export 'forms/directives/ng_control_name.dart' show NgControlName;
+export 'forms/directives/ng_form_control.dart' show NgFormControl;
+export 'forms/directives/ng_model.dart' show NgModel;
+export 'forms/directives/ng_control.dart' show NgControl;
+export 'forms/directives/ng_control_group.dart' show NgControlGroup;
+export 'forms/directives/ng_form_model.dart' show NgFormModel;
+export 'forms/directives/ng_form.dart' show NgForm;
+export 'forms/directives/control_value_accessor.dart' show ControlValueAccessor, NG_VALUE_ACCESSOR;
+export 'forms/directives/default_value_accessor.dart' show DefaultValueAccessor;
+export 'forms/directives/ng_control_status.dart' show NgControlStatus;
+export 'forms/directives/checkbox_value_accessor.dart' show CheckboxControlValueAccessor;
+export 'forms/directives/select_control_value_accessor.dart' show NgSelectOption, SelectControlValueAccessor;
+export 'forms/directives.dart' show FORM_DIRECTIVES;
+export 'forms/validators.dart' show NG_VALIDATORS, NG_ASYNC_VALIDATORS, Validators;
+export 'forms/directives/validators.dart' show RequiredValidator, MinLengthValidator, MaxLengthValidator, Validator;
+export 'forms/form_builder.dart' show FormBuilder, FORM_PROVIDERS, FORM_BINDINGS;
+var _visited = false;
+void initReflector() {
+if (_visited) return; _visited = true;
+_ngRef.reflector
+..registerGetters({'update': (o) => o.update, 'ngSubmit': (o) => o.ngSubmit})
+..registerSetters({'name': (o, v) => o.name = v, 'model': (o, v) => o.model = v, 'form': (o, v) => o.form = v})
+;
+i0.initReflector();
+i1.initReflector();
+i2.initReflector();
+i3.initReflector();
+i4.initReflector();
+i5.initReflector();
+i6.initReflector();
+i7.initReflector();
+i8.initReflector();
+i9.initReflector();
+i10.initReflector();
+i11.initReflector();
+i12.initReflector();
+i13.initReflector();
+i14.initReflector();
+i15.initReflector();
+i16.initReflector();
+i17.initReflector();
+i18.initReflector();
+i19.initReflector();
+}
