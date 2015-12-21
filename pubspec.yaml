@@ -9,9 +9,9 @@ dependencies:
   md_proc: '^0.7.3'
   js: '^0.6.0'
 transformers:
-- dart_to_js_script_rewriter
 - angular2:
      entry_points: web/main.dart
+- dart_to_js_script_rewriter
 #
 #dependency_overrides:
 #  mathjax:
