@@ -109,7 +109,7 @@
       "lifecycleHooks": [],
       "template": {
         "encapsulation": 2,
-        "template": "<html><head></head><body><editor (value)=\"onTextareaChange($event)\" style=\"flex: 2;\"></editor>\n\n<preview [value]=\"previewValue\" style=\"flex: 2;\"></preview>\n</body></html>",
+        "template": "<editor (value)=\"onTextareaChange($event)\" style=\"flex: 2;\"></editor>\n\n<preview [value]=\"previewValue\" style=\"flex: 2;\"></preview>\n",
         "templateUrl": "asset:mathedit/lib/app.html",
         "styles": [],
         "styleUrls": [
