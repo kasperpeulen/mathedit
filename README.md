@@ -14,7 +14,3 @@ features to organise your math snippets.
 * Should support commonmark (markdown).
 * Should not flicker while writing.
 * Saves work to local storage.
-
-### TODO
-
-* Make sure zsh saves ~/.pub-cache/bin to path.
