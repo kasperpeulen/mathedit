@@ -1,6 +1,6 @@
 ## Vision
 
-Mathedit should become the online mathematical editor for writing math notes,
+Mathedit should become a solid online mathematical editor for writing math notes,
 homework, and other math snippets you want to save. For example, it could be
 used for preparing stackexchange posts.
 
