@@ -27,7 +27,7 @@ class AppComponent {
   }
 
   onTextareaChange(String textareaValue) {
-    var doc = CommonMarkParser.defaults.parse(textareaValue);
+    var doc = CommonMarkParser.commonmark.parse(textareaValue);
     String res = HtmlWriter.defaults.write(doc);
     mathjaxPreview.update(res);
   }
