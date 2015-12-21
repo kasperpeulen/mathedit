@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    height: 100vh;
+}
+
+app {
+    margin: 0;
+    height: 100vh;
+}
+
+
+@font-face {
+    font-family: "LMMath-bbfix";
+    src: url("fonts/LMMath-bbfix.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Latin-Modern";
+    src: url("fonts/lmroman10-regular.otf");
+}
+@font-face {
+    font-family: "Latin-Modern";
+    src: url("fonts/lmroman10-bold.otf");
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Latin-Modern";
+    src: url("fonts/lmroman10-italic.otf");
+    font-style: italic;
+}
+@font-face {
+    font-family: "Latin-Modern";
+    src: url("fonts/lmroman10-bolditalic.otf");
+    font-weight: bold;
+    font-style: italic;
+}
+
