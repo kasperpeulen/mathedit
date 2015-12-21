@@ -15981,7 +15981,7 @@
   }], ["asset_mathedit_lib_app.template.dart", "package:mathedit/app.template.dart",, M, {
     "^": "",
     AppComponentTemplateGetter: [function() {
-      return C.CompiledComponentTemplate_IX5;
+      return C.CompiledComponentTemplate_omH;
     }, "call$0", "dart__AppComponentTemplateGetter$closure", 0, 0, 1],
     _AppComponent_0: {
       "^": "AbstractChangeDetector;previewValue0,directive_0_0,directive_1_0,id,dispatcher,numberOfPropertyProtoRecords,bindingTargets,directiveIndices,strategy,contentChildren,viewChildren,parent,ref,state,context,locals,mode,pipes,propertyBindingIndex,subscriptions,streams",
@@ -36440,25 +36440,9 @@
   C.ChangeDetectorState_0 = new A.ChangeDetectorState(0);
   C.ChangeDetectorState_1 = new A.ChangeDetectorState(1);
   C.ChangeDetectorState_2 = new A.ChangeDetectorState(2);
-  C.List_A2Y = Isolate.makeConstantList(["style", "flex: 2;"]);
-  C.List_null_value = Isolate.makeConstantList([null, "value"]);
-  C.List_empty = Isolate.makeConstantList([]);
-  C.Type_EditorComponent_1lN = H.createRuntimeType("EditorComponent");
-  C.List_Type_EditorComponent_1lN = Isolate.makeConstantList([C.Type_EditorComponent_1lN]);
-  C.ViewEncapsulation_2 = new K.ViewEncapsulation(2);
-  C.BeginComponentCmd_zjx = new Z.BeginComponentCmd("editor", C.List_A2Y, C.List_null_value, C.List_empty, C.List_Type_EditorComponent_1lN, C.ViewEncapsulation_2, null, A.dart0__EditorComponentTemplateGetter$closure(), true);
-  C.C_EndComponentCmd = new Z.EndComponentCmd();
-  C.TextCmd_E7E = new Z.TextCmd("\n\n", false, null);
-  C.Type_PreviewComponent_0Qe = H.createRuntimeType("PreviewComponent");
-  C.List_Type_PreviewComponent_0Qe = Isolate.makeConstantList([C.Type_PreviewComponent_0Qe]);
-  C.BeginComponentCmd_a4a = new Z.BeginComponentCmd("preview", C.List_A2Y, C.List_empty, C.List_empty, C.List_Type_PreviewComponent_0Qe, C.ViewEncapsulation_2, null, R.dart1__PreviewComponentTemplateGetter$closure(), true);
-  C.TextCmd_TXT = new Z.TextCmd("\n", false, null);
-  C.List_uQn = Isolate.makeConstantList([C.BeginComponentCmd_zjx, C.C_EndComponentCmd, C.TextCmd_E7E, C.BeginComponentCmd_a4a, C.C_EndComponentCmd, C.TextCmd_TXT]);
-  C.List_pQW = Isolate.makeConstantList(["editor, preview {\n    margin: 20px;\n    font-family: LMMath-bbfix;\n    font-size: 16px;\n}\n\neditor textarea {\n    box-sizing: border-box;\n    resize: none;\n    width: 100%;\n    height: 100%;\n    border: none;\n    outline: none;\n    font-family: LMMath-bbfix;\n    font-size: 16px;\n}"]);
-  C.List_G5k = Isolate.makeConstantList([C.List_pQW]);
-  C.CompiledComponentTemplate_IX5 = new Z.CompiledComponentTemplate("asset:mathedit/lib/app.dart|AppComponent", M.dart__AppComponent_0_newChangeDetector$closure(), C.List_uQn, C.List_G5k);
   C.List_vzE = Isolate.makeConstantList(["placeholder", "Type some LaTeX or markdown here.", "spellcheck", "false"]);
   C.List_null_input = Isolate.makeConstantList([null, "input"]);
+  C.List_empty = Isolate.makeConstantList([]);
   C.BeginElementCmd_PQP = new Z.BeginElementCmd("textarea", C.List_vzE, C.List_null_input, C.List_empty, C.List_empty, true, null);
   C.C_EndElementCmd = new Z.EndElementCmd();
   C.List_QGa = Isolate.makeConstantList([C.BeginElementCmd_PQP, C.C_EndElementCmd]);
@@ -36467,12 +36451,28 @@
   C.CompiledComponentTemplate_a5W = new Z.CompiledComponentTemplate("asset:mathedit/lib/components/editor_component/editor_component.dart|EditorComponent", A.dart0__EditorComponent_0_newChangeDetector$closure(), C.List_QGa, C.List_01);
   C.List_class_preview_id_preview = Isolate.makeConstantList(["class", "preview", "id", "preview"]);
   C.BeginElementCmd_GVQ = new Z.BeginElementCmd("div", C.List_class_preview_id_preview, C.List_empty, C.List_empty, C.List_empty, false, null);
+  C.TextCmd_E7E = new Z.TextCmd("\n\n", false, null);
   C.List_EKW = Isolate.makeConstantList(["class", "preview", "id", "buffer", "style", "visibility: hidden; position: absolute"]);
   C.BeginElementCmd_zPP = new Z.BeginElementCmd("div", C.List_EKW, C.List_empty, C.List_empty, C.List_empty, false, null);
   C.List_sE6 = Isolate.makeConstantList([C.BeginElementCmd_GVQ, C.C_EndElementCmd, C.TextCmd_E7E, C.BeginElementCmd_zPP, C.C_EndElementCmd]);
   C.List_ZQB = Isolate.makeConstantList([".hidden {\n    visibility: hidden;\n    position: absolute;\n    top: 0;\n    left: 0;\n}"]);
   C.List_erd = Isolate.makeConstantList([C.List_ZQB]);
   C.CompiledComponentTemplate_kjq = new Z.CompiledComponentTemplate("asset:mathedit/lib/components/preview_component/preview_component.dart|PreviewComponent", R.dart1__PreviewComponent_0_newChangeDetector$closure(), C.List_sE6, C.List_erd);
+  C.List_A2Y = Isolate.makeConstantList(["style", "flex: 2;"]);
+  C.List_null_value = Isolate.makeConstantList([null, "value"]);
+  C.Type_EditorComponent_1lN = H.createRuntimeType("EditorComponent");
+  C.List_Type_EditorComponent_1lN = Isolate.makeConstantList([C.Type_EditorComponent_1lN]);
+  C.ViewEncapsulation_2 = new K.ViewEncapsulation(2);
+  C.BeginComponentCmd_zjx = new Z.BeginComponentCmd("editor", C.List_A2Y, C.List_null_value, C.List_empty, C.List_Type_EditorComponent_1lN, C.ViewEncapsulation_2, null, A.dart0__EditorComponentTemplateGetter$closure(), true);
+  C.C_EndComponentCmd = new Z.EndComponentCmd();
+  C.Type_PreviewComponent_0Qe = H.createRuntimeType("PreviewComponent");
+  C.List_Type_PreviewComponent_0Qe = Isolate.makeConstantList([C.Type_PreviewComponent_0Qe]);
+  C.BeginComponentCmd_a4a = new Z.BeginComponentCmd("preview", C.List_A2Y, C.List_empty, C.List_empty, C.List_Type_PreviewComponent_0Qe, C.ViewEncapsulation_2, null, R.dart1__PreviewComponentTemplateGetter$closure(), true);
+  C.TextCmd_TXT = new Z.TextCmd("\n", false, null);
+  C.List_uQn = Isolate.makeConstantList([C.BeginComponentCmd_zjx, C.C_EndComponentCmd, C.TextCmd_E7E, C.BeginComponentCmd_a4a, C.C_EndComponentCmd, C.TextCmd_TXT]);
+  C.List_cg9 = Isolate.makeConstantList(["editor, preview {\n    margin: 20px;\n    font-family: LMMath-bbfix;\n    font-size: 16px;\n}\n\neditor textarea {\n    box-sizing: border-box;\n    resize: none;\n    width: 100%;\n    height: 100vh;\n    border: none;\n    outline: none;\n    font-family: LMMath-bbfix;\n    font-size: 16px;\n}"]);
+  C.List_jqP = Isolate.makeConstantList([C.List_cg9]);
+  C.CompiledComponentTemplate_omH = new Z.CompiledComponentTemplate("asset:mathedit/lib/app.dart|AppComponent", M.dart__AppComponent_0_newChangeDetector$closure(), C.List_uQn, C.List_jqP);
   C.Duration_0 = new P.Duration(0);
   C.FenceType_0_backtick = new T.FenceType(0, "backtick");
   C.FenceType_1_tilde = new T.FenceType(1, "tilde");
