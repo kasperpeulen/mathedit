@@ -80,7 +80,7 @@
       "lifecycleHooks": [],
       "template": {
         "encapsulation": 2,
-        "template": "<textarea\n    (input)=\"onInput($event.target.value)\"\n    spellcheck=false\n    placeholder=\"Type some LaTeX or markdown here.\"></textarea>",
+        "template": "<html><head></head><body><textarea (input)=\"onInput($event.target.value)\" spellcheck=\"false\" placeholder=\"Type some LaTeX or markdown here.\"></textarea></body></html>",
         "templateUrl": "asset:mathedit/lib/components/editor_component/editor_component.html",
         "styles": [],
         "styleUrls": [
