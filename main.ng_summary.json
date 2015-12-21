@@ -17,10 +17,6 @@
       {
         "1": "package:mathjax/config.dart",
         "5": false
-      },
-      {
-        "1": "package:js/js.dart",
-        "5": false
       }
     ],
     "6": "main.dart"

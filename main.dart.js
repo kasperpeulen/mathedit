@@ -14831,7 +14831,7 @@ z.toString
 z.oA(G.Bh($.dY||!1),C.ec).pX(C.a7)
 z=J.fc(self.MathJax)
 y={displayMath:[["$$","$$"],["\\[","\\]"]],inlineMath:[["$","$"],["\\(","\\)"]],processClass:"preview"}
-J.v2(z,{TeX:{extensions:["noError.js","noUndefined.js"]},extensions:["tex2jax.js"],jax:["input/TeX","output/HTML-CSS"],messageStyle:"none",showProcessingMessages:!1,skipStartupTypeset:!0,tex2jax:y})
+J.v2(z,{TeX:{extensions:["noErrors.js","noUndefined.js"]},extensions:["tex2jax.js"],jax:["input/TeX","output/HTML-CSS"],messageStyle:"none",showProcessingMessages:!1,skipStartupTypeset:!0,tex2jax:y})
 J.v3(J.fc(self.MathJax))},"$0","uH",0,0,1],
 Ty:{
 "^":"a:1;",
