@@ -3,8 +3,6 @@ import 'package:mathedit/app.dart';
 import 'package:mathjax/mathjax.dart';
 import 'package:mathjax/config.dart';
 
-import 'package:js/js.dart';
-
 main() {
   bootstrap(AppComponent);
 
@@ -21,7 +19,7 @@ main() {
         [r'$$', r'$$'],
         [r'\[', r'\]']
       ], processClass: "preview"),
-      TeX: new TeX(extensions: ['noError.js', 'noUndefined.js'])));
+      TeX: new TeX(extensions: ['noErrors.js', 'noUndefined.js'])));
   MathJax.Hub.Configured();
 }
 
