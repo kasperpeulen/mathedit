@@ -14,7 +14,7 @@ editor textarea {
   box-sizing: border-box;
   resize: none;
   width: 100%;
-  min-height: 100%;
+  min-height: 95vh;
   border: none;
   outline: none;
   font-family: LMMath-bbfix;
