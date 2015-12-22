@@ -23,7 +23,11 @@
         "5": false
       },
       {
-        "1": "package:js/js.dart",
+        "1": "dart:async",
+        "5": false
+      },
+      {
+        "1": "package:mathedit/helpers/jsinterop.dart",
         "5": false
       }
     ],
