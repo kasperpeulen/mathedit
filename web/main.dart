@@ -3,26 +3,26 @@ import 'package:angular2/angular2.dart';
 import 'package:mathedit/app.dart';
 import 'package:mathjax/mathjax.dart';
 import 'package:mathjax/config.dart';
-import 'package:js/js.dart';
+import 'dart:async';
+import 'package:mathedit/helpers/jsinterop.dart';
 
 main() {
 //  enableProdMode();
   bootstrap(AppComponent);
-  MathJax.Hub.Config(new ConfigOptions(
-      showProcessingMessages: false,
+  var configOptions = new ConfigOptions(showProcessingMessages: false,
       messageStyle: "none",
       skipStartupTypeset: true,
       extensions: ["tex2jax.js"],
       jax: ["input/TeX", "output/HTML-CSS"],
-      tex2jax: new TeX2Jax(inlineMath: [
-        [r"$", r"$"],
-        [r"\(", r"\)"]
-      ], displayMath: [
-        [r'$$', r'$$'],
-        [r'\[', r'\]']
-      ], processClass: "preview"),
-      TeX: new TeX(extensions: ['noErrors.js', 'noUndefined.js'])));
-  //    ..['HTML-CSS'] = new HtmlCss(preferredFont: 'TeX', availableFonts: ['TeX'])
-  MathJax.Hub.Configured();
+      tex2jax: new TeX2Jax(inlineMath: [ [r"$", r"$"], [r"\(", r"\)"]],
+          displayMath: [ [r'$$', r'$$'], [r'\[', r'\]']],
+          processClass: "preview"),
+      TeX: new TeX(extensions: ['noErrors.js', 'noUndefined.js']));
+  setValue(configOptions, 'HTML-CSS', new HtmlCss(preferredFont: 'TeX', availableFonts: ['TeX']));
+
+  new Future.delayed(new Duration(seconds: 1), () {
+    MathJax.Hub.Config(configOptions);
+    MathJax.Hub.Configured();
+  });
 }
 
