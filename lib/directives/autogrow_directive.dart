@@ -10,7 +10,7 @@ class AutogrowDirective {
     textArea.style.height = 'auto';
 
     // set the height to scrollHeight plus some correction
-    var correction = textArea.offsetHeight - textArea.clientHeight;
+    final correction = textArea.offsetHeight - textArea.clientHeight;
     textArea.style.height = '${textArea.scrollHeight - correction}px';
   }
 }

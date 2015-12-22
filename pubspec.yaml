@@ -19,7 +19,7 @@ transformers:
 - dart_to_js_script_rewriter
 
 dependency_overrides:
-#  md_proc:
-#    path: ../../packages/md_proc
+  md_proc:
+    path: ../../packages/md_proc
 #  mathjax:
 #    path: ../../packages/mathjax.dart
