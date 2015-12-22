@@ -22,4 +22,3 @@ main() {
       TeX: new TeX(extensions: ['noErrors.js', 'noUndefined.js'])));
   MathJax.Hub.Configured();
 }
-

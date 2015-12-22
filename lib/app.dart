@@ -7,12 +7,12 @@ import 'dart:html';
 import 'dart:js';
 import 'package:md_proc/md_proc.dart';
 
-@Component(selector: 'app',
+@Component(
+    selector: 'app',
     templateUrl: 'app.html',
-    directives: const[EditorComponent, PreviewComponent],
+    directives: const [EditorComponent, PreviewComponent],
     encapsulation: ViewEncapsulation.None,
-    styleUrls: const ['app.css']
-    )
+    styleUrls: const ['app.css'])
 class AppComponent {
   String previewValue;
 
@@ -23,7 +23,8 @@ class AppComponent {
   AppComponent(ElementRef ref) : el = ref.nativeElement {
     DivElement preview = el.querySelector('#preview');
     DivElement buffer = el.querySelector('#buffer');
-    mathjaxPreview = new MathJaxPreview(mathPreview: preview, bufferDiv: buffer, delay: 200);
+    mathjaxPreview =
+        new MathJaxPreview(mathPreview: preview, bufferDiv: buffer, delay: 200);
   }
 
   onTextareaChange(String textareaValue) {
@@ -32,8 +33,6 @@ class AppComponent {
     mathjaxPreview.update(res);
   }
 }
-
-
 
 class MathJaxPreview {
   /// The div element where the mathjax will be shown.
@@ -67,7 +66,8 @@ class MathJaxPreview {
   /// The callback function is set up below, after the Preview object is set up.
   void update(String value) {
     _timer?.cancel();
-    _timer = new Timer(new Duration(milliseconds: delay), () => createPreview(value));
+    _timer = new Timer(
+        new Duration(milliseconds: delay), () => createPreview(value));
   }
 
   /// Creates the preview and runs MathJax on it.
