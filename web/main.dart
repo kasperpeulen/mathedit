@@ -26,8 +26,3 @@ main() {
   MathJax.Hub.Configured();
 }
 
-@anonymous
-@JS()
-class HtmlCss {
-  external factory HtmlCss({preferredFont, availableFonts});
-}

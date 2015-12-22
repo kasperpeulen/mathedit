@@ -14,8 +14,6 @@ import 'package:md_proc/md_proc.dart';
     encapsulation: ViewEncapsulation.None,
     styleUrls: const ['app.css'])
 class AppComponent {
-  String previewValue;
-
   final Element el;
 
   MathJaxPreview mathjaxPreview;
@@ -39,14 +37,14 @@ class MathJaxPreview {
   /// The div element where the mathjax will be shown.
   DivElement mathPreview;
 
+  /// The buffer mirror.
+  DivElement bufferDiv;
+
   /// The textarea element where the user can input latex.
   TextAreaElement mathInput;
 
   /// delay after keystroke before updating
   final int delay;
-
-  /// The buffer mirror.
-  DivElement bufferDiv;
 
   /// true when MathJax is processing
   bool _mjRunning = false;
