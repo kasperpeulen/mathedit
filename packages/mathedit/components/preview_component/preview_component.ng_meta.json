@@ -86,7 +86,7 @@
       "lifecycleHooks": [],
       "template": {
         "encapsulation": 2,
-        "template": "<div id=\"preview\" class=\"preview\"></div>\n\n<div id=\"buffer\" class=\"preview\" style=\"visibility: hidden; position: absolute\"></div>",
+        "template": "<div id=\"preview\" class=\"preview\"></div>\n<div id=\"buffer\" class=\"preview\" style=\"visibility: hidden; position: absolute\"></div>\n",
         "templateUrl": "asset:mathedit/lib/components/preview_component/preview_component.html",
         "styles": [],
         "styleUrls": [
