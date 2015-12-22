@@ -5,6 +5,14 @@
       {
         "1": "package:angular2/angular2.dart",
         "5": false
+      },
+      {
+        "1": "package:mathedit/directives/autogrow_directive.dart",
+        "5": false
+      },
+      {
+        "1": "dart:html",
+        "5": false
       }
     ],
     "5": [
@@ -17,6 +25,10 @@
               {
                 "1": "selector",
                 "2": "'editor'"
+              },
+              {
+                "1": "directives",
+                "2": "const [AutogrowDirective]"
               },
               {
                 "1": "encapsulation",
@@ -52,6 +64,11 @@
               }
             ]
           }
+        ],
+        "8": [
+          {
+            "2": "AutogrowDirective"
+          }
         ]
       }
     ],
@@ -60,6 +77,10 @@
       {
         "1": "package:angular2/angular2.ng_deps.dart",
         "4": "i0"
+      },
+      {
+        "1": "package:mathedit/directives/autogrow_directive.ng_deps.dart",
+        "4": "i1"
       }
     ]
   },
@@ -86,7 +107,7 @@
       "lifecycleHooks": [],
       "template": {
         "encapsulation": 2,
-        "template": "<textarea\n    (input)=\"onInput($event.target.value)\"\n    spellcheck=false\n    placeholder=\"Type some LaTeX or markdown here.\"></textarea>",
+        "template": "<textarea\n    [value]=\"textareaValue\"\n    [autogrow]\n    (input)=\"onInput($event.target.value)\"\n    spellcheck=false\n    placeholder=\"Type some LaTeX or markdown here.\"></textarea>",
         "templateUrl": "asset:mathedit/lib/components/editor_component/editor_component.html",
         "styles": [],
         "styleUrls": [
