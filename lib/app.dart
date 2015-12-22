@@ -28,6 +28,7 @@ class AppComponent {
   }
 
   onTextareaChange(String textareaValue) {
+    textareaValue = textareaValue.replaceAll(r'\\', r'\\\\');
     var doc = CommonMarkParser.commonmark.parse(textareaValue);
     String res = HtmlWriter.defaults.write(doc);
     mathjaxPreview.update(res);
