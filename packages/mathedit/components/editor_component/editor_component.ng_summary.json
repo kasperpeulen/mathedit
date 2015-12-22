@@ -50,6 +50,9 @@
             "8": false
           }
         ],
+        "6": [
+          "OnInit"
+        ],
         "7": [
           {
             "1": "value",
@@ -94,7 +97,9 @@
       "hostListeners": {},
       "hostProperties": {},
       "hostAttributes": {},
-      "lifecycleHooks": [],
+      "lifecycleHooks": [
+        0
+      ],
       "template": {
         "encapsulation": 2,
         "template": "<textarea\n    [value]=\"textareaValue\"\n    [autogrow]\n    (input)=\"onInput($event.target.value)\"\n    spellcheck=false\n    placeholder=\"Type some LaTeX or markdown here.\"></textarea>",
