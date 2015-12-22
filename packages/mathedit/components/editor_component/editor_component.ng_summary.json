@@ -13,6 +13,10 @@
       {
         "1": "dart:html",
         "5": false
+      },
+      {
+        "1": "package:mathedit/helpers/local_storage.dart",
+        "5": false
       }
     ],
     "5": [

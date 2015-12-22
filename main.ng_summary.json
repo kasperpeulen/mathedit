@@ -7,10 +7,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/angular2.dart",
-        "5": false
-      },
-      {
         "1": "package:mathedit/app.dart",
         "5": false
       },
@@ -20,10 +16,6 @@
       },
       {
         "1": "package:mathjax/config.dart",
-        "5": false
-      },
-      {
-        "1": "dart:async",
         "5": false
       },
       {

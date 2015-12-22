@@ -7,10 +7,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/angular2.dart",
-        "5": false
-      },
-      {
         "1": "package:mathedit/app.dart",
         "5": false
       },
@@ -20,10 +16,6 @@
       },
       {
         "1": "package:mathjax/config.dart",
-        "5": false
-      },
-      {
-        "1": "dart:async",
         "5": false
       },
       {
@@ -38,16 +30,12 @@
         "4": "i0"
       },
       {
-        "1": "package:angular2/angular2.ng_deps.dart",
+        "1": "package:mathedit/app.ng_deps.dart",
         "4": "i1"
       },
       {
-        "1": "package:mathedit/app.ng_deps.dart",
-        "4": "i2"
-      },
-      {
         "1": "package:mathedit/helpers/jsinterop.ng_deps.dart",
-        "4": "i3"
+        "4": "i2"
       }
     ]
   }
