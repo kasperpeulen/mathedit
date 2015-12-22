@@ -20,9 +20,7 @@ main() {
       TeX: new TeX(extensions: ['noErrors.js', 'noUndefined.js']));
   setValue(configOptions, 'HTML-CSS', new HtmlCss(preferredFont: 'TeX', availableFonts: ['TeX']));
 
-  new Future.delayed(new Duration(seconds: 1), () {
-    MathJax.Hub.Config(configOptions);
-    MathJax.Hub.Configured();
-  });
+  MathJax.Hub.Config(configOptions);
+  MathJax.Hub.Configured();
 }
 
