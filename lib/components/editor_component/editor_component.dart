@@ -7,13 +7,29 @@ import 'dart:html';
     directives: const [AutogrowDirective],
     encapsulation: ViewEncapsulation.None,
     templateUrl: 'editor_component.html',
-    styleUrls: const ['editor_component.css'])
+    styleUrls: const ['editor_component.css'],
+    host: const {
+      '(click)': 'hostClick()'
+    }
+    )
 class EditorComponent implements OnInit {
   Storage get store => window.localStorage;
 
   String textareaValue;
 
+  Element el;
+
+  EditorComponent(ElementRef ref) {
+    el = ref.nativeElement;
+  }
+
+  hostClick() {
+    el.querySelector('textarea').focus();
+  }
+
   ngOnInit() {
+    el.querySelector('textarea').focus();
+
     if (store['mathedit.textarea'] != null) {
       textareaValue = store['mathedit.textarea'];
       value.add(textareaValue);

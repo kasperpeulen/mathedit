@@ -7,7 +7,9 @@ editor, preview {
 preview :first-child {
   margin-top: 0;
 }
-
+editor {
+  border-right: 1px solid #eee;
+}
 editor textarea {
   box-sizing: border-box;
   resize: none;
