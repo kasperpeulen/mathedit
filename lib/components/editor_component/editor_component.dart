@@ -8,7 +8,7 @@ import 'dart:html';
     encapsulation: ViewEncapsulation.None,
     templateUrl: 'editor_component.html',
     styleUrls: const ['editor_component.css'])
-class EditorComponent implements OnInit{
+class EditorComponent implements OnInit {
   Storage get store => window.localStorage;
 
   String textareaValue;
@@ -26,5 +26,4 @@ class EditorComponent implements OnInit{
     store['mathedit.textarea'] = textareaValue;
     value.add(textareaValue);
   }
-
 }

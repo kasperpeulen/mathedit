@@ -21,9 +21,8 @@ main() {
         [r'$$', r'$$'],
         [r'\[', r'\]']
       ], processClass: "preview"),
-      TeX: new TeX(extensions: ['noErrors.js', 'noUndefined.js']))
-    ..['HTML-CSS'] =
-        new HtmlCss(preferredFont: 'TeX', availableFonts: ['TeX']));
+      TeX: new TeX(extensions: ['noErrors.js', 'noUndefined.js'])));
+  //    ..['HTML-CSS'] = new HtmlCss(preferredFont: 'TeX', availableFonts: ['TeX'])
   MathJax.Hub.Configured();
 }
 
