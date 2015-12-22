@@ -8,13 +8,16 @@ import 'dart:html';
     encapsulation: ViewEncapsulation.None,
     templateUrl: 'editor_component.html',
     styleUrls: const ['editor_component.css'])
-class EditorComponent {
+class EditorComponent implements OnInit{
   Storage get store => window.localStorage;
 
   String textareaValue;
 
-  EditorComponent() {
-    textareaValue ??= store['mathedit.textarea'];
+  ngOnInit() {
+    if (store['mathedit.textarea'] != null) {
+      textareaValue = store['mathedit.textarea'];
+      value.add(textareaValue);
+    }
   }
 
   @Output() EventEmitter<String> value = new EventEmitter();
@@ -23,4 +26,5 @@ class EditorComponent {
     store['mathedit.textarea'] = textareaValue;
     value.add(textareaValue);
   }
+
 }
