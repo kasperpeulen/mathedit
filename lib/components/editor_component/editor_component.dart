@@ -1,6 +1,7 @@
 import 'package:angular2/angular2.dart';
 import 'package:mathedit/directives/autogrow_directive.dart';
 import 'dart:html';
+import 'package:mathedit/helpers/local_storage.dart';
 
 @Component(
     selector: 'editor',
@@ -13,22 +14,21 @@ import 'dart:html';
     }
     )
 class EditorComponent implements OnInit {
-  Storage get store => window.localStorage;
+
+  @Output() final EventEmitter<String> value = new EventEmitter();
 
   String textareaValue;
 
-  Element el;
+  final Element hostElement;
 
-  EditorComponent(ElementRef ref) {
-    el = ref.nativeElement;
-  }
+  EditorComponent(ElementRef ref) : hostElement = ref.nativeElement;
 
   hostClick() {
-    el.querySelector('textarea').focus();
+    hostElement.querySelector('textarea').focus();
   }
 
   ngOnInit() {
-    el.querySelector('textarea').focus();
+    hostElement.querySelector('textarea').focus();
 
     if (store['mathedit.textarea'] != null) {
       textareaValue = store['mathedit.textarea'];
@@ -36,7 +36,6 @@ class EditorComponent implements OnInit {
     }
   }
 
-  @Output() EventEmitter<String> value = new EventEmitter();
 
   onInput(String textareaValue) {
     store['mathedit.textarea'] = textareaValue;

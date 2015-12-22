@@ -1,15 +1,18 @@
 import 'package:angular2/bootstrap.dart';
-import 'package:angular2/angular2.dart';
 import 'package:mathedit/app.dart';
 import 'package:mathjax/mathjax.dart';
 import 'package:mathjax/config.dart';
-import 'dart:async';
 import 'package:mathedit/helpers/jsinterop.dart';
 
-main() {
+void main() {
 //  enableProdMode();
   bootstrap(AppComponent);
-  var configOptions = new ConfigOptions(
+
+  bootstrapMathjax();
+}
+
+void bootstrapMathjax() {
+  final configOptions = new ConfigOptions(
       showProcessingMessages: false,
       messageStyle: "none",
       skipStartupTypeset: true,
