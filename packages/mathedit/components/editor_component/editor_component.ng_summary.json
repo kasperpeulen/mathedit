@@ -41,6 +41,10 @@
               {
                 "1": "styleUrls",
                 "2": "const ['editor_component.css']"
+              },
+              {
+                "1": "host",
+                "2": "const {'(click)' : 'hostClick()'}"
               }
             ],
             "4": false,
@@ -48,6 +52,12 @@
             "6": true,
             "7": true,
             "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "ElementRef",
+            "4": "ref"
           }
         ],
         "6": [
@@ -94,7 +104,9 @@
       "outputs": {
         "value": "value"
       },
-      "hostListeners": {},
+      "hostListeners": {
+        "click": "hostClick()"
+      },
       "hostProperties": {},
       "hostAttributes": {},
       "lifecycleHooks": [
