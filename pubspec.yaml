@@ -8,6 +8,7 @@ dependencies:
   mathjax: '^0.0.5'
   md_proc: '^0.7.3'
   js: '^0.6.0'
+  bootstrap: '^3.3.4'
 dev_dependencies:
   coverage: ^0.7.2
   dart_dev: ^1.0.5
@@ -18,6 +19,7 @@ transformers:
      entry_points: web/main.dart
 - dart_to_js_script_rewriter
 - mathjax
+- bootstrap
 dependency_overrides:
   mathjax:
     path: ../../packages/mathjax.dart
