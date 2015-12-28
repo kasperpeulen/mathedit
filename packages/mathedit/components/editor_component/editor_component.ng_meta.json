@@ -45,10 +45,6 @@
               {
                 "1": "styleUrls",
                 "2": "const ['editor_component.css']"
-              },
-              {
-                "1": "host",
-                "2": "const {'(click)' : 'hostClick()'}"
               }
             ],
             "4": false,
@@ -119,7 +115,7 @@
         "value": "value"
       },
       "hostListeners": {
-        "click": "hostClick()"
+        "click": "onClick($event.currentTarget)"
       },
       "hostProperties": {},
       "hostAttributes": {},
@@ -128,7 +124,7 @@
       ],
       "template": {
         "encapsulation": 2,
-        "template": "<textarea\n    [value]=\"textareaValue\"\n    [autogrow]\n    (input)=\"onInput($event.target.value)\"\n    spellcheck=false\n    placeholder=\"Type some LaTeX or markdown here.\"></textarea>",
+        "template": "<textarea #textarea\n    [value]=\"textareaValue\"\n    [autogrow]\n    (input)=\"onInput($event.target.value)\"\n    spellcheck=false\n    placeholder=\"Type some LaTeX or markdown here.\"></textarea>",
         "templateUrl": "asset:mathedit/lib/components/editor_component/editor_component.html",
         "styles": [],
         "styleUrls": [

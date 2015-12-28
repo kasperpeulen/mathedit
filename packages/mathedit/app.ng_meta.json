@@ -15,10 +15,6 @@
         "5": false
       },
       {
-        "1": "dart:html",
-        "5": false
-      },
-      {
         "1": "package:md_proc/md_proc.dart",
         "5": false
       },
@@ -66,6 +62,14 @@
           {
             "1": "ElementRef",
             "4": "ref"
+          },
+          {
+            "1": "CommonMarkParser",
+            "4": "parser"
+          },
+          {
+            "1": "HtmlWriter",
+            "4": "htmlWriter"
           }
         ],
         "8": [
