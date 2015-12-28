@@ -14,4 +14,3 @@ external void defineProperty(o, String prop, Description description);
 
 setValue(o, String key, value) =>
     defineProperty(o, key, new Description(value: value, enumerable: true));
-

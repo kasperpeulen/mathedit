@@ -18,8 +18,7 @@ class AppComponent {
 
   AppComponent(ElementRef ref, this.parser, this.htmlWriter) {
     final hostElement = ref.nativeElement;
-    mathjaxPreview = new MathJaxPreview(
-        hostElement.querySelector('#preview'),
+    mathjaxPreview = new MathJaxPreview(hostElement.querySelector('#preview'),
         hostElement.querySelector('#buffer'));
   }
 

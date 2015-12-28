@@ -6,7 +6,7 @@ void main(List<String> args) {
 }
 
 @DefaultTask()
-@Depends(analyze, format, coverage)
+@Depends(analyze, format, peanut)
 void prepush() {}
 
 @Task()
@@ -17,6 +17,11 @@ void travis() {}
 void analyze() {
   Analyzer
       .analyze(findDartSourceFiles(['web', 'lib', 'test', 'tool']).toList());
+}
+
+@Task()
+void peanut() {
+  Pub.global.run('peanut');
 }
 
 @Task()

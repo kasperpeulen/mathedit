@@ -6,7 +6,6 @@ import 'package:md_proc/md_proc.dart';
 import 'package:mathedit/helpers/jsinterop.dart';
 
 void main() {
-
   // commonmark options
   final options =
       new Options(texMathDollars: true, texMathSingleBackslash: true);
