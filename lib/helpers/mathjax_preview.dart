@@ -44,7 +44,8 @@ class MathJaxPreview {
   void createPreview(String newText) {
     if (newText == _oldText || _mjRunning) return;
     _mjRunning = true;
-    bufferDiv.innerHtml = _oldText = newText;
+    _oldText = newText;
+    bufferDiv.setInnerHtml(newText, treeSanitizer: NodeTreeSanitizer.trusted);
     MathJax.Hub.Queue(allowInterop(() => MathJax.Hub.Typeset(bufferDiv)),
         allowInterop(_previewDone));
   }
