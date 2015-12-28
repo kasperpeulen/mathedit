@@ -14,7 +14,7 @@ features to organise your math snippets.
 * Should support commonmark (markdown). :white_check_mark:
 * Should not flicker while writing. :white_check_mark:
 * Saves work to local storage. :white_check_mark:
-* Markdown not to conflict with LaTeX math code.
+* Markdown not to conflict with LaTeX math code. :white_check_mark:
 
 ### 0.2.0
 * Saving multiple math notes/snippets
