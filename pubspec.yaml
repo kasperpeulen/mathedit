@@ -14,12 +14,11 @@ dev_dependencies:
   grinder: ^0.8.0+1
   test: ^0.12.6+1
 transformers:
-- angular2:
-     entry_points: web/main.dart
-- dart_to_js_script_rewriter
-
+#- dart_to_js_script_rewriter
+#- angular2:
+#     entry_points: web/main.dart
 dependency_overrides:
-  md_proc:
-    path: ../../packages/md_proc
-#  mathjax:
-#    path: ../../packages/mathjax.dart
+  mathjax:
+    path: ../../packages/mathjax.dart
+  dart_to_js_script_rewriter:
+    path: ../../AngularProjects/dart_to_js_script_rewriter

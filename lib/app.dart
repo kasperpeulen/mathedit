@@ -1,7 +1,6 @@
 import 'package:angular2/angular2.dart';
 import 'package:mathedit/components/editor_component/editor_component.dart';
 import 'package:mathedit/components/preview_component/preview_component.dart';
-import 'dart:html';
 import 'package:md_proc/md_proc.dart';
 import 'package:mathedit/helpers/mathjax_preview.dart';
 
@@ -12,28 +11,21 @@ import 'package:mathedit/helpers/mathjax_preview.dart';
     encapsulation: ViewEncapsulation.None,
     styleUrls: const ['app.css'])
 class AppComponent {
-  final Element el;
+  MathJaxPreview mathjaxPreview;
 
-  final MathJaxPreview mathjaxPreview;
+  final CommonMarkParser parser;
+  final HtmlWriter htmlWriter;
 
-  factory AppComponent(ElementRef ref) {
-    final el = ref.nativeElement;
-    final DivElement preview = el.querySelector('#preview');
-    final DivElement buffer = el.querySelector('#buffer');
-    final mathjaxPreview =
-        new MathJaxPreview(mathPreview: preview, bufferDiv: buffer, delay: 200);
-    return new AppComponent._(el, mathjaxPreview);
+  AppComponent(ElementRef ref, this.parser, this.htmlWriter) {
+    final hostElement = ref.nativeElement;
+    mathjaxPreview = new MathJaxPreview(
+        hostElement.querySelector('#preview'),
+        hostElement.querySelector('#buffer'));
   }
-
-  AppComponent._(this.el, this.mathjaxPreview);
 
   onTextareaChange(String textareaValue) {
-    // TODO remove this when https://github.com/dikmax/md_proc/issues/12 is fixed
-    textareaValue = textareaValue.replaceAll(r'\\', r'\\\\');
-
-    final doc = CommonMarkParser.commonmark.parse(textareaValue);
-    final res = HtmlWriter.defaults.write(doc);
-    mathjaxPreview.update(res);
+    final ast = parser.parse(textareaValue);
+    final html = htmlWriter.write(ast);
+    mathjaxPreview.update(html);
   }
 }
-

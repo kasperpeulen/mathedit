@@ -8,34 +8,30 @@ import 'package:mathedit/helpers/local_storage.dart';
     directives: const [AutogrowDirective],
     encapsulation: ViewEncapsulation.None,
     templateUrl: 'editor_component.html',
-    styleUrls: const ['editor_component.css'],
-    host: const {
-      '(click)': 'hostClick()'
-    }
-    )
+    styleUrls: const ['editor_component.css'])
 class EditorComponent implements OnInit {
-
+  /// Emits textarea value
   @Output() final EventEmitter<String> value = new EventEmitter();
 
   String textareaValue;
 
-  final Element hostElement;
+  final Element _hostElement;
 
-  EditorComponent(ElementRef ref) : hostElement = ref.nativeElement;
+  EditorComponent(ElementRef ref) : _hostElement = ref.nativeElement;
 
-  hostClick() {
-    hostElement.querySelector('textarea').focus();
+  @HostListener('click', const [r'$event.currentTarget'])
+  onClick(Element target) {
+    target.querySelector('textarea').focus();
   }
 
   ngOnInit() {
-    hostElement.querySelector('textarea').focus();
+    _hostElement.querySelector('textarea').focus();
 
     if (store['mathedit.textarea'] != null) {
       textareaValue = store['mathedit.textarea'];
       value.add(textareaValue);
     }
   }
-
 
   onInput(String textareaValue) {
     store['mathedit.textarea'] = textareaValue;

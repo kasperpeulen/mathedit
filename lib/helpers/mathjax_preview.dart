@@ -11,7 +11,7 @@ class MathJaxPreview {
   DivElement bufferDiv;
 
   /// delay after keystroke before updating
-  final int delay;
+  final Duration delay;
 
   /// true when MathJax is processing
   bool _mjRunning = false;
@@ -22,7 +22,8 @@ class MathJaxPreview {
   /// keep track of the timer
   Timer _timer;
 
-  MathJaxPreview({this.mathPreview, this.bufferDiv, this.delay});
+  MathJaxPreview(this.mathPreview, this.bufferDiv,
+      {this.delay: const Duration(milliseconds: 200)});
 
   /// This gets called when a key is pressed in the textarea.
   /// We check if there is already a pending update and clear it if so.
@@ -30,10 +31,9 @@ class MathJaxPreview {
   /// are pressed, the update won't occur until after there has been
   /// a pause in the typing).
   /// The callback function is set up below, after the Preview object is set up.
-  void update(String value) {
+  void update(final String newValue) {
     _timer?.cancel();
-    _timer = new Timer(
-        new Duration(milliseconds: delay), () => createPreview(value));
+    _timer = new Timer(delay, () => createPreview(newValue));
   }
 
   /// Creates the preview and runs MathJax on it.

@@ -15,3 +15,22 @@ features to organise your math snippets.
 * Should not flicker while writing. :heavy_check_mark:
 * Saves work to local storage. :heavy_check_mark:
 * Markdown not to conflict with LaTeX math code.
+
+
+
+### 0.1.0
+* A simple math editor with latex on the left, and live output on the right. :heavy_check_mark:
+* Should support commonmark (markdown). :heavy_check_mark:
+* Should not flicker while writing. :heavy_check_mark:
+* Saves work to local storage. :heavy_check_mark:
+* Markdown not to conflict with LaTeX math code.
+
+
+
+
+
+
+
+
+
+
