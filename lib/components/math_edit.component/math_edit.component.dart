@@ -32,7 +32,7 @@ class MathEditComponent implements OnInit {
   ngOnInit() async {
     var gistId = params.get('gistid');
     if (gistId != null) {
-      var gist = await gistService.getGist(gistId);
+      final gist = await gistService.getGist(gistId);
       gistValue = gist.files.first.content;
       document.title = 'MathEdit - ${gist.description}';
       onTextareaChange(gistValue);
