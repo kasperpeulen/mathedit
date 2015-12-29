@@ -9,17 +9,18 @@ dependencies:
   md_proc: '^0.7.3'
   js: '^0.6.0'
   bootstrap: '^3.3.4'
+  github: '^2.3.1'
 dev_dependencies:
   coverage: ^0.7.2
   dart_dev: ^1.0.5
   grinder: ^0.8.0+1
   test: ^0.12.6+1
 transformers:
-- angular2:
-     entry_points: web/main.dart
-- dart_to_js_script_rewriter
-- mathjax
-- bootstrap
+#- angular2:
+#     entry_points: web/main.dart
+#- dart_to_js_script_rewriter
+#- mathjax
+#- bootstrap
 dependency_overrides:
   mathjax:
     path: ../../packages/mathjax.dart

@@ -1,10 +1,11 @@
 import 'package:angular2/angular2.dart';
+import 'package:angular2/router.dart';
 import 'package:angular2/bootstrap.dart';
 import 'package:mathedit/app.dart';
 import 'package:mathjax/mathjax.dart';
 import 'package:md_proc/md_proc.dart';
 import 'package:mathedit/helpers/jsinterop.dart';
-
+import 'package:github/browser.dart';
 void main() {
   // commonmark options
   final options =
@@ -12,7 +13,11 @@ void main() {
   final parser = new CommonMarkParser(options);
   var htmlWriter = new HtmlWriter(options);
 
-  bootstrap(AppComponent, [
+  bootstrap(AppComponent,
+  [
+    ROUTER_PROVIDERS,
+    provide(GistsService, useValue: createGitHubClient().gists),
+    provide(LocationStrategy, useClass: HashLocationStrategy),
     provide(CommonMarkParser, useValue: parser),
     provide(HtmlWriter, useValue: htmlWriter)
   ]);
