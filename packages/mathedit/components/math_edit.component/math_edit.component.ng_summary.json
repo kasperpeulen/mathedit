@@ -11,11 +11,11 @@
         "5": false
       },
       {
-        "1": "package:mathedit/components/editor_component/editor_component.dart",
+        "1": "package:mathedit/components/editor.component/editor.component.dart",
         "5": false
       },
       {
-        "1": "package:mathedit/components/preview_component/preview_component.dart",
+        "1": "package:mathedit/components/preview.component/preview.component.dart",
         "5": false
       },
       {

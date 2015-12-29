@@ -7,10 +7,6 @@
         "5": false
       },
       {
-        "1": "package:github/browser.dart",
-        "5": false
-      },
-      {
         "1": "package:angular2/angular2.dart",
         "5": false
       },
@@ -48,11 +44,11 @@
               },
               {
                 "1": "templateUrl",
-                "2": "'editor_component.html'"
+                "2": "'editor.component.html'"
               },
               {
                 "1": "styleUrls",
-                "2": "const ['editor_component.css']"
+                "2": "const ['editor.component.css']"
               }
             ],
             "4": false,
@@ -110,21 +106,7 @@
         ]
       }
     ],
-    "6": "editor_component.dart",
-    "10": [
-      {
-        "1": "package:angular2/router.ng_deps.dart",
-        "4": "i0"
-      },
-      {
-        "1": "package:angular2/angular2.ng_deps.dart",
-        "4": "i1"
-      },
-      {
-        "1": "package:mathedit/directives/autogrow_directive.ng_deps.dart",
-        "4": "i2"
-      }
-    ]
+    "6": "editor.component.dart"
   },
   "EditorComponent": {
     "kind": "type",
@@ -135,7 +117,7 @@
       "exportAs": null,
       "type": {
         "name": "EditorComponent",
-        "moduleUrl": "asset:mathedit/lib/components/editor_component/editor_component.dart",
+        "moduleUrl": "asset:mathedit/lib/components/editor.component/editor.component.dart",
         "isHost": false
       },
       "changeDetection": 5,
@@ -156,10 +138,10 @@
       "template": {
         "encapsulation": 2,
         "template": "<textarea #textarea\n    [value]=\"textareaValue\"\n    [autogrow]\n    (input)=\"onInput($event.target.value)\"\n    spellcheck=false\n    placeholder=\"Type some LaTeX or markdown here.\"></textarea>",
-        "templateUrl": "asset:mathedit/lib/components/editor_component/editor_component.html",
+        "templateUrl": "asset:mathedit/lib/components/editor.component/editor.component.html",
         "styles": [],
         "styleUrls": [
-          "asset:mathedit/lib/components/editor_component/editor_component.css"
+          "asset:mathedit/lib/components/editor.component/editor.component.css"
         ],
         "ngContentSelectors": []
       }

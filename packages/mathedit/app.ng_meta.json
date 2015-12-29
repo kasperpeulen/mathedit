@@ -13,6 +13,18 @@
       {
         "1": "package:mathedit/components/math_edit.component/math_edit.component.dart",
         "5": false
+      },
+      {
+        "1": "package:github/browser.dart",
+        "5": false
+      },
+      {
+        "1": "package:usage/usage_html.dart",
+        "5": false
+      },
+      {
+        "1": "dart:html",
+        "5": false
       }
     ],
     "5": [
@@ -59,6 +71,12 @@
             "6": false,
             "7": false,
             "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "Analytics",
+            "4": "ga"
           }
         ],
         "8": [

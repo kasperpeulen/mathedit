@@ -11,11 +11,11 @@
         "5": false
       },
       {
-        "1": "package:mathedit/components/editor_component/editor_component.dart",
+        "1": "package:mathedit/components/editor.component/editor.component.dart",
         "5": false
       },
       {
-        "1": "package:mathedit/components/preview_component/preview_component.dart",
+        "1": "package:mathedit/components/preview.component/preview.component.dart",
         "5": false
       },
       {
@@ -116,11 +116,11 @@
         "4": "i1"
       },
       {
-        "1": "package:mathedit/components/editor_component/editor_component.ng_deps.dart",
+        "1": "package:mathedit/components/editor.component/editor.component.ng_deps.dart",
         "4": "i2"
       },
       {
-        "1": "package:mathedit/components/preview_component/preview_component.ng_deps.dart",
+        "1": "package:mathedit/components/preview.component/preview.component.ng_deps.dart",
         "4": "i3"
       },
       {

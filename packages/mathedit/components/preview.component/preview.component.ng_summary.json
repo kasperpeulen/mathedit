@@ -24,11 +24,11 @@
               },
               {
                 "1": "templateUrl",
-                "2": "'preview_component.html'"
+                "2": "'preview.component.html'"
               },
               {
                 "1": "styleUrls",
-                "2": "const ['preview_component.css']"
+                "2": "const ['preview.component.css']"
               }
             ],
             "4": false,
@@ -55,7 +55,7 @@
         ]
       }
     ],
-    "6": "preview_component.dart"
+    "6": "preview.component.dart"
   },
   "PreviewComponent": {
     "kind": "type",
@@ -66,7 +66,7 @@
       "exportAs": null,
       "type": {
         "name": "PreviewComponent",
-        "moduleUrl": "asset:mathedit/lib/components/preview_component/preview_component.dart",
+        "moduleUrl": "asset:mathedit/lib/components/preview.component/preview.component.dart",
         "isHost": false
       },
       "changeDetection": 5,
@@ -81,10 +81,10 @@
       "template": {
         "encapsulation": 2,
         "template": "<div id=\"preview\" class=\"preview\"></div>\n<div id=\"buffer\" class=\"preview\" style=\"visibility: hidden; position: absolute\"></div>\n",
-        "templateUrl": "asset:mathedit/lib/components/preview_component/preview_component.html",
+        "templateUrl": "asset:mathedit/lib/components/preview.component/preview.component.html",
         "styles": [],
         "styleUrls": [
-          "asset:mathedit/lib/components/preview_component/preview_component.css"
+          "asset:mathedit/lib/components/preview.component/preview.component.css"
         ],
         "ngContentSelectors": []
       }
