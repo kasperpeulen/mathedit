@@ -17,7 +17,11 @@ class Ga {
 class Analytics {
   Analytics(String trackingNumber) {
     ga.l = new DateTime.now().millisecondsSinceEpoch;
-    ga('create', trackingNumber, 'auto');
+    create(trackingNumber, cookieDomain:  'auto');
+  }
+
+  create(String trackingId, {String cookieDomain, String name}) {
+    ga('create', trackingId, cookieDomain, name);
   }
 
   send(String event) {

@@ -1,13 +1,7 @@
-body {
+body, app, math-edit {
     margin: 0;
     height: 100vh;
 }
-
-app {
-    margin: 0;
-    height: 100vh;
-}
-
 
 @font-face {
     font-family: "LMMath-bbfix";

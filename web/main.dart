@@ -9,27 +9,32 @@ import 'package:github/browser.dart';
 import 'package:mathedit/helpers/analytics.dart';
 
 void main() {
-  // commonmark options
-  final options =
-      new Options(texMathDollars: true, texMathSingleBackslash: true);
-  final parser = new CommonMarkParser(options);
-  var htmlWriter = new HtmlWriter(options);
-
-  initGitHub();
+  bootstrapMathjax();
 
   bootstrap(AppComponent, [
+    // router
     ROUTER_PROVIDERS,
-    provide(GitHub, useValue: new GitHub()),
+    provide(LocationStrategy, useClass: HashLocationStrategy),
+
+    // github
+    provide(GitHub, useValue: createGitHubClient()),
     provide(GistsService,
         useFactory: (GitHub gitHub) => new GistsService(gitHub),
         deps: [GitHub]),
-    provide(LocationStrategy, useClass: HashLocationStrategy),
-    provide(CommonMarkParser, useValue: parser),
-    provide(HtmlWriter, useValue: htmlWriter),
+
+    // common mark
+    provide(Options,
+        useValue:
+            new Options(texMathDollars: true, texMathSingleBackslash: true)),
+    provide(HtmlWriter,
+        useFactory: (options) => new HtmlWriter(options), deps: [Options]),
+    provide(CommonMarkParser,
+        useFactory: (options) => new CommonMarkParser(options),
+        deps: [Options]),
+
+    // analytics
     provide(Analytics, useValue: new Analytics('UA-40648110-5'))
   ]);
-
-  bootstrapMathjax();
 }
 
 void bootstrapMathjax() {
