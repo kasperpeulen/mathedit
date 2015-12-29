@@ -13,6 +13,10 @@
       {
         "1": "package:mathedit/components/math_edit.component/math_edit.component.dart",
         "5": false
+      },
+      {
+        "1": "package:mathedit/helpers/analytics.dart",
+        "5": false
       }
     ],
     "5": [
@@ -61,6 +65,12 @@
             "8": false
           }
         ],
+        "5": [
+          {
+            "1": "Analytics",
+            "4": "ga"
+          }
+        ],
         "8": [
           {
             "2": "ROUTER_DIRECTIVES"
@@ -81,6 +91,10 @@
       {
         "1": "package:mathedit/components/math_edit.component/math_edit.component.ng_deps.dart",
         "4": "i2"
+      },
+      {
+        "1": "package:mathedit/helpers/analytics.ng_deps.dart",
+        "4": "i3"
       }
     ]
   },

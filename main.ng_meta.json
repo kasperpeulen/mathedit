@@ -35,7 +35,7 @@
         "5": false
       },
       {
-        "1": "package:js/js.dart",
+        "1": "package:mathedit/helpers/analytics.dart",
         "5": false
       }
     ],
@@ -60,6 +60,10 @@
       {
         "1": "package:mathedit/helpers/jsinterop.ng_deps.dart",
         "4": "i4"
+      },
+      {
+        "1": "package:mathedit/helpers/analytics.ng_deps.dart",
+        "4": "i5"
       }
     ]
   }
