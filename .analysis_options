@@ -1,3 +1,6 @@
 analyzer:
   strong-mode:
     true
+analyzer:
+  exclude:
+    - lib/helpers/analytics.dart
