@@ -6,10 +6,10 @@ import 'package:mathjax/mathjax.dart';
 import 'package:md_proc/md_proc.dart';
 import 'package:mathedit/helpers/jsinterop.dart';
 import 'package:github/browser.dart';
-import 'package:usage/usage_html.dart';
-
+import 'package:js/js.dart';
 void main() {
   // commonmark options
+  ga('send', 'pageview');
   final options =
       new Options(texMathDollars: true, texMathSingleBackslash: true);
   final parser = new CommonMarkParser(options);
@@ -25,8 +25,6 @@ void main() {
         deps: [GitHub]),
     provide(LocationStrategy, useClass: HashLocationStrategy),
     provide(CommonMarkParser, useValue: parser),
-    provide(Analytics,
-        useValue: new AnalyticsHtml('UA-40648110-6', 'math_edit', '0.1.0')),
     provide(HtmlWriter, useValue: htmlWriter)
   ]);
 
@@ -55,4 +53,11 @@ void bootstrapMathjax() {
   MathJax.Hub.Configured();
 }
 
+@JS('ga')
+external Function get ga;
 
+@JS('ga')
+class Ga {
+  external int get l;
+  external set l(int l);
+}
