@@ -130,7 +130,7 @@
       ],
       "template": {
         "encapsulation": 2,
-        "template": "<editor [textareaValue]=\"gistValue\" (value)=\"onTextareaChange($event)\" style=\"flex: 1;\"></editor>\n\n<preview style=\"flex: 1;\"></preview>\n",
+        "template": "<editor [hidden]=\"!loaded\" [textareaValue]=\"gistValue\" (value)=\"onTextareaChange($event)\" style=\"flex: 1;\"></editor>\n\n<preview style=\"flex: 1;\"></preview>\n",
         "templateUrl": "asset:mathedit/lib/components/math_edit.component/math_edit.component.html",
         "styles": [],
         "styleUrls": [

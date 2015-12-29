@@ -1,4 +1,4 @@
-<html><head></head><body><editor [textareavalue]="gistValue" (value)="onTextareaChange($event)" style="flex: 1;"></editor>
+<html><head></head><body><editor [hidden]="!loaded" [textareavalue]="gistValue" (value)="onTextareaChange($event)" style="flex: 1;"></editor>
 
 <preview style="flex: 1;"></preview>
 </body></html>
