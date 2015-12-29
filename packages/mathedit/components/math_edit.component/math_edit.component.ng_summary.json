@@ -1,0 +1,143 @@
+{
+  "ngDeps": {
+    "1": "",
+    "3": [
+      {
+        "1": "package:angular2/router.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/angular2.dart",
+        "5": false
+      },
+      {
+        "1": "package:mathedit/components/editor_component/editor_component.dart",
+        "5": false
+      },
+      {
+        "1": "package:mathedit/components/preview_component/preview_component.dart",
+        "5": false
+      },
+      {
+        "1": "package:md_proc/md_proc.dart",
+        "5": false
+      },
+      {
+        "1": "package:mathedit/helpers/mathjax_preview.dart",
+        "5": false
+      },
+      {
+        "1": "package:github/browser.dart",
+        "5": false
+      },
+      {
+        "1": "dart:html",
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "MathEditComponent",
+        "4": [
+          {
+            "1": "Component",
+            "3": [
+              {
+                "1": "selector",
+                "2": "'math-edit'"
+              },
+              {
+                "1": "templateUrl",
+                "2": "'math_edit.component.html'"
+              },
+              {
+                "1": "directives",
+                "2": "const [EditorComponent, PreviewComponent]"
+              },
+              {
+                "1": "encapsulation",
+                "2": "ViewEncapsulation.None"
+              },
+              {
+                "1": "styleUrls",
+                "2": "const ['math_edit.component.css']"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": true,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "RouteParams",
+            "4": "params"
+          },
+          {
+            "1": "ElementRef",
+            "4": "ref"
+          },
+          {
+            "1": "CommonMarkParser",
+            "4": "cmParser"
+          },
+          {
+            "1": "HtmlWriter",
+            "4": "htmlWriter"
+          },
+          {
+            "1": "GistsService",
+            "4": "gistService"
+          }
+        ],
+        "6": [
+          "OnInit"
+        ],
+        "8": [
+          {
+            "2": "EditorComponent"
+          },
+          {
+            "2": "PreviewComponent"
+          }
+        ]
+      }
+    ],
+    "6": "math_edit.component.dart"
+  },
+  "MathEditComponent": {
+    "kind": "type",
+    "value": {
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "math-edit",
+      "exportAs": null,
+      "type": {
+        "name": "MathEditComponent",
+        "moduleUrl": "asset:mathedit/lib/components/math_edit.component/math_edit.component.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {},
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        0
+      ],
+      "template": {
+        "encapsulation": 2,
+        "template": "<editor [textareaValue]=\"gistValue\" (value)=\"onTextareaChange($event)\" style=\"flex: 1;\"></editor>\n\n<preview style=\"flex: 1;\"></preview>\n",
+        "templateUrl": "asset:mathedit/lib/components/math_edit.component/math_edit.component.html",
+        "styles": [],
+        "styleUrls": [
+          "asset:mathedit/lib/components/math_edit.component/math_edit.component.css"
+        ],
+        "ngContentSelectors": []
+      }
+    }
+  }
+}
