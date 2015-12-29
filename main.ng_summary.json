@@ -39,40 +39,6 @@
         "5": false
       }
     ],
-    "5": [
-      {
-        "1": "MyGitHub",
-        "4": [
-          {
-            "1": "Injectable",
-            "4": false,
-            "5": false,
-            "6": false,
-            "7": true,
-            "8": false
-          }
-        ]
-      },
-      {
-        "1": "MyGistsService",
-        "4": [
-          {
-            "1": "Injectable",
-            "4": false,
-            "5": false,
-            "6": false,
-            "7": true,
-            "8": false
-          }
-        ],
-        "5": [
-          {
-            "1": "GitHub",
-            "4": "github"
-          }
-        ]
-      }
-    ],
     "6": "main.dart"
   }
 }
