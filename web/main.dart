@@ -6,7 +6,7 @@ import 'package:mathjax/mathjax.dart';
 import 'package:md_proc/md_proc.dart';
 import 'package:mathedit/helpers/jsinterop.dart';
 import 'package:github/browser.dart';
-import 'dart:async';
+import 'package:usage/usage_html.dart';
 
 void main() {
   // commonmark options
@@ -15,12 +15,16 @@ void main() {
   final parser = new CommonMarkParser(options);
   var htmlWriter = new HtmlWriter(options);
 
+  initGitHub();
+
   bootstrap(AppComponent, [
     ROUTER_PROVIDERS,
-    provide(GitHub, useValue: createGitHubClient()),
-    provide(GistsService, useClass: GistsService),
+    provide(GitHub, useClass: MyGitHub),
+    provide(GistsService, useClass: MyGistsService),
     provide(LocationStrategy, useClass: HashLocationStrategy),
     provide(CommonMarkParser, useValue: parser),
+    provide(Analytics,
+        useValue: new AnalyticsHtml('UA-40648110-5', 'math_edit', '0.1.0')),
     provide(HtmlWriter, useValue: htmlWriter)
   ]);
 
@@ -49,7 +53,10 @@ void bootstrapMathjax() {
   MathJax.Hub.Configured();
 }
 
+@Injectable()
+class MyGitHub extends GitHub {}
 
-ga(i,s,o,g,r,a,m) {
-
+@Injectable()
+class MyGistsService extends GistsService {
+  MyGistsService(GitHub github) : super(github);
 }

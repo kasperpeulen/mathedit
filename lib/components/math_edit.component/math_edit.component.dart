@@ -1,7 +1,8 @@
 import 'package:angular2/router.dart';
 import 'package:angular2/angular2.dart';
-import 'package:mathedit/components/editor_component/editor_component.dart';
-import 'package:mathedit/components/preview_component/preview_component.dart';
+import 'package:mathedit/components/editor.component/editor.component.dart';
+import 'package:mathedit/components/preview.component/preview.component.dart';
+
 import 'package:md_proc/md_proc.dart';
 import 'package:mathedit/helpers/mathjax_preview.dart';
 import 'package:github/browser.dart';

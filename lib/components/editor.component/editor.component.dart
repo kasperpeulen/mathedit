@@ -1,5 +1,4 @@
 import 'package:angular2/router.dart';
-import 'package:github/browser.dart';
 import 'package:angular2/angular2.dart';
 import 'package:mathedit/directives/autogrow_directive.dart';
 import 'dart:html';
@@ -9,8 +8,8 @@ import 'package:mathedit/helpers/local_storage.dart';
     selector: 'editor',
     directives: const [AutogrowDirective],
     encapsulation: ViewEncapsulation.None,
-    templateUrl: 'editor_component.html',
-    styleUrls: const ['editor_component.css'])
+    templateUrl: 'editor.component.html',
+    styleUrls: const ['editor.component.css'])
 class EditorComponent implements OnInit {
   /// Emits textarea value
   @Output() final EventEmitter<String> value = new EventEmitter();
