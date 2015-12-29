@@ -19,12 +19,14 @@ void main() {
 
   bootstrap(AppComponent, [
     ROUTER_PROVIDERS,
-    provide(GitHub, useClass: MyGitHub),
-    provide(GistsService, useClass: MyGistsService),
+    provide(GitHub, useValue: new GitHub()),
+    provide(GistsService,
+        useFactory: (GitHub gitHub) => new GistsService(gitHub),
+        deps: [GitHub]),
     provide(LocationStrategy, useClass: HashLocationStrategy),
     provide(CommonMarkParser, useValue: parser),
     provide(Analytics,
-        useValue: new AnalyticsHtml('UA-40648110-5', 'math_edit', '0.1.0')),
+        useValue: new AnalyticsHtml('UA-40648110-6', 'math_edit', '0.1.0')),
     provide(HtmlWriter, useValue: htmlWriter)
   ]);
 
@@ -53,10 +55,4 @@ void bootstrapMathjax() {
   MathJax.Hub.Configured();
 }
 
-@Injectable()
-class MyGitHub extends GitHub {}
 
-@Injectable()
-class MyGistsService extends GistsService {
-  MyGistsService(GitHub github) : super(github);
-}
