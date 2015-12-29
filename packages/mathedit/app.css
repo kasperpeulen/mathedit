@@ -1,28 +1,4 @@
-editor, preview {
-  margin: 20px;
-  font-family: LMMath-bbfix;
-  font-size: 16px;
-}
-
-preview :first-child {
-  margin-top: 0;
-}
-
-editor {
-  margin-right: 0;
-}
-
-editor textarea {
-  box-sizing: border-box;
-  resize: none;
-  width: 100%;
-  min-height: 95vh;
-  border: none;
-  outline: none;
-  font-family: LMMath-bbfix;
-  font-size: 16px;
-  border-right: 1px solid #eee;
-  padding-right: 20px;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
+math-edit {
+  display: flex;
+  flex-direction: row;
 }

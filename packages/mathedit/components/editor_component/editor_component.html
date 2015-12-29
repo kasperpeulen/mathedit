@@ -1,1 +1,6 @@
-<html><head></head><body><textarea #textarea="" [value]="textareaValue" [autogrow]="" (input)="onInput($event.target.value)" spellcheck="false" placeholder="Type some LaTeX or markdown here."></textarea></body></html>
+<textarea #textarea
+    [value]="textareaValue"
+    [autogrow]
+    (input)="onInput($event.target.value)"
+    spellcheck=false
+    placeholder="Type some LaTeX or markdown here."></textarea>
