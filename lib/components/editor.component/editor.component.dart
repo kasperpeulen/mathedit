@@ -19,7 +19,8 @@ class EditorComponent implements OnInit {
   final Element _hostElement;
   final RouteParams params;
 
-  EditorComponent(this.params, ElementRef ref) : _hostElement = ref.nativeElement;
+  EditorComponent(this.params, ElementRef ref)
+      : _hostElement = ref.nativeElement;
 
   @HostListener('click', const [r'$event.currentTarget'])
   onClick(Element target) {

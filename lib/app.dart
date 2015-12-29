@@ -1,6 +1,7 @@
 import 'package:angular2/router.dart';
 import 'package:angular2/angular2.dart';
 import 'package:mathedit/components/math_edit.component/math_edit.component.dart';
+import 'package:mathedit/helpers/analytics.dart';
 
 @Component(
     selector: 'app',
@@ -8,8 +9,13 @@ import 'package:mathedit/components/math_edit.component/math_edit.component.dart
     directives: const [ROUTER_DIRECTIVES],
     encapsulation: ViewEncapsulation.None,
     styleUrls: const ['app.css'])
-@RouteConfig( const [
+@RouteConfig(const [
   const Route(path: '/gist/:gistid', component: MathEditComponent),
   const Route(path: '', component: MathEditComponent)
 ])
-class AppComponent {}
+class AppComponent {
+  Analytics ga;
+  AppComponent(this.ga) {
+    ga.send('pageview');
+  }
+}

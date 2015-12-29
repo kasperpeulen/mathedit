@@ -17,6 +17,8 @@ import 'dart:html';
 class MathEditComponent implements OnInit {
   String gistValue;
 
+  bool loaded = false;
+
   MathJaxPreview mathjaxPreview;
   final CommonMarkParser cmParser;
   final HtmlWriter htmlWriter;
@@ -37,6 +39,9 @@ class MathEditComponent implements OnInit {
       gistValue = gist.files.first.content;
       document.title = 'MathEdit - ${gist.description}';
       onTextareaChange(gistValue);
+      loaded = true;
+    } else {
+      loaded = true;
     }
   }
 
