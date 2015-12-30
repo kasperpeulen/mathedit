@@ -157,7 +157,7 @@
       "inputs": {},
       "outputs": {},
       "hostListeners": {
-        "keyup.control.k": "onSave()"
+        "keydown.control.k": "onSave($event)"
       },
       "hostProperties": {},
       "hostAttributes": {},

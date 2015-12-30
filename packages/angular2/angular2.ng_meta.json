@@ -649,6 +649,18 @@
       "FORM_DIRECTIVES"
     ]
   },
+  "CORE_DIRECTIVES": {
+    "kind": "alias",
+    "value": [
+      "NgClass",
+      "NgFor",
+      "NgIf",
+      "NgStyle",
+      "NgSwitch",
+      "NgSwitchWhen",
+      "NgSwitchDefault"
+    ]
+  },
   "COMMON_PIPES": {
     "kind": "alias",
     "value": [
@@ -661,18 +673,6 @@
       "PercentPipe",
       "CurrencyPipe",
       "DatePipe"
-    ]
-  },
-  "CORE_DIRECTIVES": {
-    "kind": "alias",
-    "value": [
-      "NgClass",
-      "NgFor",
-      "NgIf",
-      "NgStyle",
-      "NgSwitch",
-      "NgSwitchWhen",
-      "NgSwitchDefault"
     ]
   },
   "FORM_PROVIDERS": {
