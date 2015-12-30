@@ -29,14 +29,17 @@ class MathEditComponent implements OnInit {
   final Router router;
   String textareaValue;
 
-  @HostListener('keyup.control.s')
+  @HostListener('keyup.control.k')
   onSave() async {
     Gist gist = await gistService.createSimpleGist(textareaValue);
-    router.navigate(['Gist', {'gistid': gist.id}]);
+    router.navigate([
+      'Gist',
+      {'gistid': gist.id}
+    ]);
   }
 
-  MathEditComponent(this.router, this.params, ElementRef ref, this.cmParser, this.htmlWriter,
-      this.gistService) {
+  MathEditComponent(this.router, this.params, ElementRef ref, this.cmParser,
+      this.htmlWriter, this.gistService) {
     final hostElement = ref.nativeElement;
     mathjaxPreview = new MathJaxPreview(hostElement.querySelector('#preview'),
         hostElement.querySelector('#buffer'));

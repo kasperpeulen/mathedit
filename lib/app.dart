@@ -13,7 +13,8 @@ import 'package:github/browser.dart';
     encapsulation: ViewEncapsulation.None,
     styleUrls: const ['app.css'])
 @RouteConfig(const [
-  const Route(path: '/gist/:gistid', name: 'Gist', component: MathEditComponent),
+  const Route(
+      path: '/gist/:gistid', name: 'Gist', component: MathEditComponent),
   const Route(path: '', name: 'Home', component: MathEditComponent)
 ])
 class AppComponent {
@@ -22,6 +23,4 @@ class AppComponent {
   AppComponent(this.ga) {
     ga.sendScreenView(window.location.pathname);
   }
-
-
 }
