@@ -25,6 +25,7 @@ class MathEditComponent implements OnInit {
   final HtmlWriter htmlWriter;
   final RouteParams params;
   final MyGistsService gistService;
+  final Authentication auth;
 
   final Router router;
   String textareaValue;
@@ -32,14 +33,21 @@ class MathEditComponent implements OnInit {
   @HostListener('keydown.control.k', const ['\$event'])
   onSave(KeyboardEvent e) async {
     e.preventDefault();
-    Gist gist = await gistService.createSimpleGist(textareaValue);
-    router.navigate([
-      'Gist',
-      {'gistid': gist.id}
-    ]);
-  }
+    if (auth.isAnonymous) {
+      Gist gist = await gistService.createSimpleGist(textareaValue);
+      router.navigate([
+        'Gist',
+        {'gistid': gist.id}
+      ]);
+    } else {
+      var gistId = params.get('gistid');
+      if (gistId != null) {
+        await gistService.editGist(gistId, files: {'mathedit,md': textareaValue});
+      }
+    }
+   }
 
-  MathEditComponent(this.router, this.params, ElementRef ref, this.cmParser,
+  MathEditComponent(this.auth, this.router, this.params, ElementRef ref, this.cmParser,
       this.htmlWriter, this.gistService) {
     final hostElement = ref.nativeElement;
     mathjaxPreview = new MathJaxPreview(hostElement.querySelector('#preview'),
