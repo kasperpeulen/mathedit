@@ -40,15 +40,16 @@ class MathEditComponent implements OnInit {
         {'gistid': gist.id}
       ]);
     } else {
-      var gistId = params.get('gistid');
+      final gistId = params.get('gistid');
       if (gistId != null) {
-        await gistService.editGist(gistId, files: {'mathedit,md': textareaValue});
+        await gistService
+            .editGist(gistId, files: {'mathedit.md': textareaValue});
       }
     }
-   }
+  }
 
-  MathEditComponent(this.auth, this.router, this.params, ElementRef ref, this.cmParser,
-      this.htmlWriter, this.gistService) {
+  MathEditComponent(this.auth, this.router, this.params, ElementRef ref,
+      this.cmParser, this.htmlWriter, this.gistService) {
     final hostElement = ref.nativeElement;
     mathjaxPreview = new MathJaxPreview(hostElement.querySelector('#preview'),
         hostElement.querySelector('#buffer'));
