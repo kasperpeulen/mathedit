@@ -41,6 +41,10 @@
       {
         "1": "package:mathedit/service/gist.service.dart",
         "5": false
+      },
+      {
+        "1": "package:mathedit/helpers/local_storage.dart",
+        "5": false
       }
     ],
     "6": "main.dart"
