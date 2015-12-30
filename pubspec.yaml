@@ -22,6 +22,8 @@ transformers:
 - dart_to_js_script_rewriter
 - mathjax
 - bootstrap
+- $dart2js:
+    sourceMaps: true
 dependency_overrides:
   mathjax:
     path: ../../packages/mathjax.dart
