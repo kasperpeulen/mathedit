@@ -157,7 +157,7 @@
       "inputs": {},
       "outputs": {},
       "hostListeners": {
-        "keyup.control.s": "onSave()"
+        "keyup.control.k": "onSave()"
       },
       "hostProperties": {},
       "hostAttributes": {},
