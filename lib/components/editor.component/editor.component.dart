@@ -28,8 +28,11 @@ class EditorComponent implements OnInit {
   }
 
   ngOnInit() async {
+    // focus the textarea in initial load
     _hostElement.querySelector('textarea').focus();
-    var gistId = params.get('gistid');
+
+    // only if there is no gist route, the localstorage should be used
+    final gistId = params.get('gistid');
     if (gistId == null) {
       if (store['mathedit.textarea'] != null) {
         textareaValue = store['mathedit.textarea'];

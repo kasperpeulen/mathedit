@@ -1,7 +1,8 @@
 import 'package:angular2/router.dart';
 import 'package:angular2/angular2.dart';
 import 'package:mathedit/components/math_edit.component/math_edit.component.dart';
-import 'package:mathedit/helpers/analytics.dart';
+import 'package:usage/usage.dart';
+import 'dart:html';
 
 @Component(
     selector: 'app',
@@ -14,8 +15,9 @@ import 'package:mathedit/helpers/analytics.dart';
   const Route(path: '', component: MathEditComponent)
 ])
 class AppComponent {
-  Analytics ga;
+  final Analytics ga;
+
   AppComponent(this.ga) {
-    ga.send('pageview');
+    ga.sendScreenView(window.location.pathname);
   }
 }

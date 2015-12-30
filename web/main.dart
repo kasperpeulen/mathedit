@@ -6,7 +6,7 @@ import 'package:mathjax/mathjax.dart';
 import 'package:md_proc/md_proc.dart';
 import 'package:mathedit/helpers/jsinterop.dart';
 import 'package:github/browser.dart';
-import 'package:mathedit/helpers/analytics.dart';
+import 'package:usage/usage_html.dart';
 
 void main() {
   bootstrapMathjax();
@@ -33,7 +33,7 @@ void main() {
         deps: [Options]),
 
     // analytics
-    provide(Analytics, useValue: new Analytics('UA-40648110-5'))
+    provide(Analytics, useValue: new AnalyticsHtml('UA-40648110-6', 'MathEdit', '0.1.0'))
   ]);
 }
 
@@ -58,3 +58,4 @@ void bootstrapMathjax() {
   MathJax.Hub.Config(configOptions);
   MathJax.Hub.Configured();
 }
+
