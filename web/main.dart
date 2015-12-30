@@ -8,6 +8,7 @@ import 'package:mathedit/helpers/jsinterop.dart';
 import 'package:github/browser.dart';
 import 'package:usage/usage_html.dart';
 import 'package:mathedit/service/gist.service.dart';
+import 'package:mathedit/helpers/local_storage.dart';
 
 void main() {
   bootstrap(AppComponent, [
@@ -16,7 +17,7 @@ void main() {
     provide(LocationStrategy, useClass: HashLocationStrategy),
 
     // github
-    provide(Authentication, useValue: new Authentication.anonymous()),
+    provide(Authentication, useValue: getAuth()),
     provide(GitHub,
         useFactory: (Authentication auth) => createGitHubClient(auth: auth),
         deps: [Authentication]),
@@ -61,4 +62,14 @@ void bootstrapMathjax() {
 
   MathJax.Hub.Config(configOptions);
   MathJax.Hub.Configured();
+}
+
+Authentication getAuth() {
+  final username = store['username'];
+  final password = store['password'];
+  if (store['username'] != null) {
+    return new Authentication.basic(username, password);
+  } else {
+    return new Authentication.anonymous();
+  }
 }
