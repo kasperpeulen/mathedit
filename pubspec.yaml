@@ -22,7 +22,9 @@ transformers:
      entry_points: web/main.dart
 - dart_to_js_script_rewriter
 - mathjax
-- bootstrap
+- bootstrap:
+    url: //maxcdn.bootstrapcdn.com/bootstrap/{{version}}
+    version: 3.3.6
 - $dart2js:
     sourceMaps: true
 dependency_overrides:
