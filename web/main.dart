@@ -33,7 +33,8 @@ void main() {
         deps: [Options]),
 
     // analytics
-    provide(Analytics, useValue: new AnalyticsHtml('UA-40648110-6', 'MathEdit', '0.1.0'))
+    provide(Analytics,
+        useValue: new AnalyticsHtml('UA-40648110-6', 'MathEdit', '0.1.0'))
   ]);
 }
 
@@ -58,4 +59,3 @@ void bootstrapMathjax() {
   MathJax.Hub.Config(configOptions);
   MathJax.Hub.Configured();
 }
-
