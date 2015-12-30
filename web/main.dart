@@ -7,6 +7,7 @@ import 'package:md_proc/md_proc.dart';
 import 'package:mathedit/helpers/jsinterop.dart';
 import 'package:github/browser.dart';
 import 'package:usage/usage_html.dart';
+import 'package:mathedit/service/gist.service.dart';
 
 void main() {
   bootstrap(AppComponent, [
@@ -16,8 +17,8 @@ void main() {
 
     // github
     provide(GitHub, useValue: createGitHubClient()),
-    provide(GistsService,
-        useFactory: (GitHub gitHub) => new GistsService(gitHub),
+    provide(MyGistsService,
+        useFactory: (GitHub gitHub) => new MyGistsService(gitHub),
         deps: [GitHub]),
 
     // common mark

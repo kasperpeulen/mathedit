@@ -7,6 +7,7 @@ import 'package:md_proc/md_proc.dart';
 import 'package:mathedit/helpers/mathjax_preview.dart';
 import 'package:github/browser.dart';
 import 'dart:html';
+import 'package:mathedit/service/gist.service.dart';
 
 @Component(
     selector: 'math-edit',
@@ -23,9 +24,18 @@ class MathEditComponent implements OnInit {
   final CommonMarkParser cmParser;
   final HtmlWriter htmlWriter;
   final RouteParams params;
-  final GistsService gistService;
+  final MyGistsService gistService;
 
-  MathEditComponent(this.params, ElementRef ref, this.cmParser, this.htmlWriter,
+  final Router router;
+  String textareaValue;
+
+  @HostListener('keyup.control.s')
+  onSave() async {
+    Gist gist = await gistService.createSimpleGist(textareaValue);
+    router.navigate(['Gist', {'gistid': gist.id}]);
+  }
+
+  MathEditComponent(this.router, this.params, ElementRef ref, this.cmParser, this.htmlWriter,
       this.gistService) {
     final hostElement = ref.nativeElement;
     mathjaxPreview = new MathJaxPreview(hostElement.querySelector('#preview'),
@@ -46,6 +56,7 @@ class MathEditComponent implements OnInit {
   }
 
   onTextareaChange(String textareaValue) {
+    this.textareaValue = textareaValue;
     final ast = cmParser.parse(textareaValue);
     final html = htmlWriter.write(ast);
     mathjaxPreview.update(html);
