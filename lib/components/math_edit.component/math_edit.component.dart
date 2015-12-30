@@ -42,7 +42,16 @@ class MathEditComponent implements OnInit {
         {'gistid': gist.id}
       ]);
     } else {
-      await _gistService.editGist(gistId, files: {'mathedit.md': textareaValue});
+      try {
+        await _gistService.editGist(gistId, files: {'mathedit.md': textareaValue});
+      } catch(e) {
+        print(e);
+        Gist gist = await _gistService.createSimpleGist(textareaValue);
+        router.navigate([
+          'Gist',
+          {'gistid': gist.id}
+        ]);
+      }
     }
   }
 
@@ -64,10 +73,15 @@ class MathEditComponent implements OnInit {
   ngOnInit() async {
     var gistId = _params.get('gistid');
     if (gistId != null) {
-      final gist = await _gistService.getGist(gistId);
-      gistValue = gist.files.first.content;
-      document.title = 'MathEdit - ${gist.description}';
-      onTextareaChange(gistValue);
+      try {
+        final gist = await _gistService.getGist(gistId);
+        gistValue = gist.files.first.content;
+        document.title = 'MathEdit - ${gist.description}';
+        onTextareaChange(gistValue);
+      } catch(e) {
+        print(e);
+        router.navigate(['Home']);
+      }
       loaded = true;
     } else {
       loaded = true;
