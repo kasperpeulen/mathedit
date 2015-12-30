@@ -33,6 +33,10 @@
       {
         "1": "dart:html",
         "5": false
+      },
+      {
+        "1": "package:mathedit/service/gist.service.dart",
+        "5": false
       }
     ],
     "5": [
@@ -72,6 +76,10 @@
         ],
         "5": [
           {
+            "1": "Router",
+            "4": "router"
+          },
+          {
             "1": "RouteParams",
             "4": "params"
           },
@@ -88,7 +96,7 @@
             "4": "htmlWriter"
           },
           {
-            "1": "GistsService",
+            "1": "MyGistsService",
             "4": "gistService"
           }
         ],
@@ -122,7 +130,9 @@
       "changeDetection": 5,
       "inputs": {},
       "outputs": {},
-      "hostListeners": {},
+      "hostListeners": {
+        "keyup.control.s": "onSave()"
+      },
       "hostProperties": {},
       "hostAttributes": {},
       "lifecycleHooks": [

@@ -21,6 +21,14 @@
       {
         "1": "dart:html",
         "5": false
+      },
+      {
+        "1": "package:mathedit/service/gist.service.dart",
+        "5": false
+      },
+      {
+        "1": "package:github/browser.dart",
+        "5": false
       }
     ],
     "5": [
@@ -60,7 +68,7 @@
           {
             "1": "RouteConfig",
             "2": [
-              "const [const Route(path: '/gist/:gistid', component: MathEditComponent), const Route(path: '', component: MathEditComponent)]"
+              "const [const Route(path: '/gist/:gistid', name: 'Gist', component: MathEditComponent), const Route(path: '', name: 'Home', component: MathEditComponent)]"
             ],
             "4": false,
             "5": false,
