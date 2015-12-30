@@ -9,7 +9,6 @@ import 'package:github/browser.dart';
 import 'package:firebase/firebase.dart';
 import 'package:usage/usage_html.dart';
 import 'package:mathedit/service/gist.service.dart';
-import 'package:mathedit/helpers/local_storage.dart';
 import 'dart:async';
 
 main() async {
@@ -88,6 +87,7 @@ Future<Authentication> bootstrapAuth(firebase) {
       final auth = new Authentication.withToken(accessToken);
       completer.complete(auth);
     } else {
+      firebase.authWithOAuthRedirect('github', scope: 'gist');
       completer.complete(new Authentication.anonymous());
     }
   });
