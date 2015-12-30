@@ -76,6 +76,10 @@
         ],
         "5": [
           {
+            "1": "Authentication",
+            "4": "auth"
+          },
+          {
             "1": "Router",
             "4": "router"
           },
