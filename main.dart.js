@@ -17372,7 +17372,7 @@ z=K.a_L(C.i4)
 z.toString
 z.qx(G.Fy($.dc||!1),n).tb(C.ad)
 z={displayMath:[["$$","$$"],["\\[","\\]"]],inlineMath:[["$","$"],["\\(","\\)"]],processClass:"preview"}
-m={TeX:{extensions:["noErrors.js","noUndefined.js"]},extensions:["tex2jax.js"],jax:["input/TeX","output/HTML-CSS"],messageStyle:"none",showProcessingMessages:!1,skipStartupTypeset:!0,tex2jax:z}
+m={TeX:{extensions:["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]},extensions:["tex2jax.js"],jax:["input/TeX","output/HTML-CSS"],messageStyle:"none",showProcessingMessages:!1,skipStartupTypeset:!0,tex2jax:z}
 z={enumerable:!0,value:{availableFonts:["TeX"],preferredFont:"TeX"}}
 self.Object.defineProperty(m,"HTML-CSS",z)
 J.z9(J.fX(self.MathJax),m)
@@ -17420,25 +17420,26 @@ G.mB()}}],["","",,B,{
 "^":"",
 q8:{
 "^":"b;ou:a<,jn:b>,c,d,e,be:f<,r,x,y,hn:z@",
-eL:function(a){var z=0,y=new P.hE(),x=1,w,v=this,u,t,s,r
+eL:function(a){var z=0,y=new P.hE(),x=1,w,v=this,u,t,s,r,q,p,o
 var $async$eL=P.iX(function(b,c){if(b===1){w=c
 z=x}while(true)switch(z){case 0:J.ne(a)
-z=v.x.guz()?2:4
+u=v.f.R("gistid")
+t=v.x.guz()||u==null
+s=v.r
+r=v.z
+z=t?2:4
 break
-case 2:t=v.y
-s=P
-r=J
+case 2:q=v.y
+p=P
+o=J
 z=5
-return P.bh(v.r.tE(v.z),$async$eL,y)
-case 5:t.uT(["Gist",s.G(["gistid",r.bx(c)])])
+return P.bh(s.tE(r),$async$eL,y)
+case 5:q.uT(["Gist",p.G(["gistid",o.bx(c)])])
 z=3
 break
-case 4:u=v.f.R("gistid")
-z=u!=null?6:7
-break
-case 6:z=8
-return P.bh(v.r.u0(u,P.G(["mathedit.md",v.z])),$async$eL,y)
-case 8:case 7:case 3:return P.bh(null,0,y,null)
+case 4:z=6
+return P.bh(s.u0(u,P.G(["mathedit.md",r])),$async$eL,y)
+case 6:case 3:return P.bh(null,0,y,null)
 case 1:return P.bh(w,1,y)}})
 return P.bh(null,$async$eL,y,null)},
 bG:function(){var z=0,y=new P.hE(),x=1,w,v=this,u,t
