@@ -64,6 +64,8 @@ void bootstrapMathjax() {
   MathJax.Hub.Configured();
 }
 
+/// TODO: This is purely for development now. Should be replaced with login system
+/// in the future (probably firebase+github)
 Authentication getAuth() {
   final username = store['username'];
   final password = store['password'];
