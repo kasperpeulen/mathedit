@@ -29,8 +29,9 @@ class MathEditComponent implements OnInit {
   final Router router;
   String textareaValue;
 
-  @HostListener('keyup.control.k')
-  onSave() async {
+  @HostListener('keydown.control.k', const ['\$event'])
+  onSave(KeyboardEvent e) async {
+    e.preventDefault();
     Gist gist = await gistService.createSimpleGist(textareaValue);
     router.navigate([
       'Gist',

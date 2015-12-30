@@ -16,7 +16,10 @@ void main() {
     provide(LocationStrategy, useClass: HashLocationStrategy),
 
     // github
-    provide(GitHub, useValue: createGitHubClient()),
+    provide(Authentication, useValue: new Authentication.anonymous()),
+    provide(GitHub,
+        useFactory: (Authentication auth) => createGitHubClient(auth: auth),
+        deps: [Authentication]),
     provide(MyGistsService,
         useFactory: (GitHub gitHub) => new MyGistsService(gitHub),
         deps: [GitHub]),
