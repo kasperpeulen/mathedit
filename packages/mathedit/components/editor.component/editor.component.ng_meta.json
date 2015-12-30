@@ -21,6 +21,14 @@
       {
         "1": "package:mathedit/helpers/local_storage.dart",
         "5": false
+      },
+      {
+        "1": "package:mathedit/directives/focus_on_init.directive.dart",
+        "5": false
+      },
+      {
+        "1": "package:firebase/firebase.dart",
+        "5": false
       }
     ],
     "5": [
@@ -36,7 +44,7 @@
               },
               {
                 "1": "directives",
-                "2": "const [AutogrowDirective]"
+                "2": "const [AutogrowDirective, FocusOnInitDirective]"
               },
               {
                 "1": "encapsulation",
@@ -59,6 +67,10 @@
           }
         ],
         "5": [
+          {
+            "1": "Firebase",
+            "4": "firebase"
+          },
           {
             "1": "RouteParams",
             "4": "params"
@@ -102,6 +114,9 @@
         "8": [
           {
             "2": "AutogrowDirective"
+          },
+          {
+            "2": "FocusOnInitDirective"
           }
         ]
       }
@@ -119,6 +134,10 @@
       {
         "1": "package:mathedit/directives/autogrow_directive.ng_deps.dart",
         "4": "i2"
+      },
+      {
+        "1": "package:mathedit/directives/focus_on_init.directive.ng_deps.dart",
+        "4": "i3"
       }
     ]
   },
@@ -151,7 +170,7 @@
       ],
       "template": {
         "encapsulation": 2,
-        "template": "<textarea\n    [value]=\"textareaValue\"\n    [autogrow]\n    (input)=\"onInput($event.target.value)\"\n    spellcheck=false\n    placeholder=\"Type some LaTeX or markdown here.\"></textarea>",
+        "template": "<textarea #textarea\n          [focusOnInit]\n          [value]=\"textareaValue\"\n          [autogrow]\n          (input)=\"onInput($event.target.value)\"\n          spellcheck=false\n          placeholder=\"Type some LaTeX or markdown here.\"></textarea>",
         "templateUrl": "asset:mathedit/lib/components/editor.component/editor.component.html",
         "styles": [],
         "styleUrls": [

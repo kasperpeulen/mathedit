@@ -149,12 +149,18 @@ this.directive_1_0 = this.getDirectiveFor(directives, 1);  }
 
                 handleEventInternal(eventName, elIndex, locals) {
           var preventDefault = false;
-          var l_context = this.context,l_event0_0,l_onSave1_0;
+          var l_context = this.context,l_event0_0,l_onSave1_0,l_event0_1,l_onLogin1_1;
               if (eventName == "keydown.control.k" && elIndex == 0) {
     l_event0_0 = locals.get(r'$event');
 l_onSave1_0 = this.directive_0_0.onSave(l_event0_0);
 
 if (l_onSave1_0 == false) { preventDefault = true; }
+    }
+    if (eventName == "keydown.control.l" && elIndex == 0) {
+    l_event0_1 = locals.get(r'$event');
+l_onLogin1_1 = this.directive_0_0.onLogin(l_event0_1);
+
+if (l_onLogin1_1 == false) { preventDefault = true; }
     }
           return preventDefault;
         }
@@ -178,7 +184,7 @@ if (l_onSave1_0 == false) { preventDefault = true; }
         }
       }
     
-const MathEditComponentTemplate = const import2.CompiledComponentTemplate('asset:mathedit/lib/components/math_edit.component/math_edit.component.dart|MathEditComponent',_MathEditComponent_0.newChangeDetector,const [const import2.BeginComponentCmd('editor', const ['style','flex: 1;'], const [null,'value',null,'click'], const [], const [import3.EditorComponent], import2.ViewEncapsulation.None, null, import4.EditorComponentTemplateGetter),const import2.EndComponentCmd(),const import2.TextCmd('\n\n', false, null),const import2.BeginComponentCmd('preview', const ['style','flex: 1;'], const [], const [], const [import5.PreviewComponent], import2.ViewEncapsulation.None, null, import6.PreviewComponentTemplateGetter),const import2.EndComponentCmd(),const import2.TextCmd('\n', false, null)],const [import7.STYLES]);
+const MathEditComponentTemplate = const import2.CompiledComponentTemplate('asset:mathedit/lib/components/math_edit.component/math_edit.component.dart|MathEditComponent',_MathEditComponent_0.newChangeDetector,const [const import2.BeginComponentCmd('editor', const ['style','flex: 1;'], const [null,'value',null,'click'], const [], const [import3.EditorComponent], import2.ViewEncapsulation.None, null, import4.EditorComponentTemplateGetter),const import2.EndComponentCmd(),const import2.TextCmd('\n\n', false, null),const import2.BeginComponentCmd('preview', const ['style','flex: 1;'], const [], const [], const [import5.PreviewComponent], import2.ViewEncapsulation.None, null, import6.PreviewComponentTemplateGetter),const import2.EndComponentCmd(),const import2.TextCmd('\n\n', false, null),const import2.BeginElementCmd('div', const [], const [], const ['editor',null], const [], true, null),const import2.EndElementCmd()],const [import7.STYLES]);
 MathEditComponentTemplateGetter() => MathEditComponentTemplate;
-const HostMathEditComponentTemplate = const import2.CompiledHostTemplate(const import2.CompiledComponentTemplate('asset:mathedit/lib/components/math_edit.component/math_edit.component.dart|HostMathEditComponent',_HostMathEditComponent_0.newChangeDetector,const [const import2.BeginComponentCmd('math-edit', const [], const [null,'keydown.control.k'], const [], const [import1.MathEditComponent], import2.ViewEncapsulation.None, null, MathEditComponentTemplateGetter),const import2.EndComponentCmd()],const []));
+const HostMathEditComponentTemplate = const import2.CompiledHostTemplate(const import2.CompiledComponentTemplate('asset:mathedit/lib/components/math_edit.component/math_edit.component.dart|HostMathEditComponent',_HostMathEditComponent_0.newChangeDetector,const [const import2.BeginComponentCmd('math-edit', const [], const [null,'keydown.control.k',null,'keydown.control.l'], const [], const [import1.MathEditComponent], import2.ViewEncapsulation.None, null, MathEditComponentTemplateGetter),const import2.EndComponentCmd()],const []));
 HostMathEditComponentTemplateGetter() => HostMathEditComponentTemplate;

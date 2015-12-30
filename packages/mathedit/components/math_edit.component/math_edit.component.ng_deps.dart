@@ -9,6 +9,7 @@ import 'package:mathedit/helpers/mathjax_preview.dart';
 import 'package:github/browser.dart';
 import 'dart:html';
 import 'package:mathedit/service/gist.service.dart';
+import 'package:firebase/firebase.dart';
 import 'math_edit.component.template.dart' as _templates;
 import 'package:angular2/router.ng_deps.dart' as i0;
 import 'package:angular2/angular2.ng_deps.dart' as i1;
@@ -23,8 +24,8 @@ if (_visited) return; _visited = true;
 _ngRef.reflector
 ..registerType(MathEditComponent, new _ngRef.ReflectionInfo(
 const [const Component(directives: const [EditorComponent, PreviewComponent], encapsulation: ViewEncapsulation.None, selector: 'math-edit', styleUrls: const ['math_edit.component.css'], templateUrl: 'math_edit.component.html'), _templates.HostMathEditComponentTemplate],
-const [const [Authentication], const [Router], const [RouteParams], const [ElementRef], const [CommonMarkParser], const [HtmlWriter], const [MyGistsService]],
-(Authentication auth, Router router, RouteParams params, ElementRef ref, CommonMarkParser cmParser, HtmlWriter htmlWriter, MyGistsService gistService) => new MathEditComponent(auth, router, params, ref, cmParser, htmlWriter, gistService),
+const [const [Authentication], const [Router], const [RouteParams], const [ElementRef], const [CommonMarkParser], const [HtmlWriter], const [MyGistsService], const [Firebase]],
+(Authentication _auth, Router router, RouteParams _params, ElementRef ref, CommonMarkParser _cmParser, HtmlWriter _htmlWriter, MyGistsService _gistService, Firebase _firebase) => new MathEditComponent(_auth, router, _params, ref, _cmParser, _htmlWriter, _gistService, _firebase),
 const [OnInit])
 )
 ;

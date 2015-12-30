@@ -1,0 +1,76 @@
+{
+  "ngDeps": {
+    "1": "",
+    "3": [
+      {
+        "1": "package:angular2/angular2.dart",
+        "5": false
+      },
+      {
+        "1": "dart:async",
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "FocusOnInitDirective",
+        "4": [
+          {
+            "1": "Directive",
+            "3": [
+              {
+                "1": "selector",
+                "2": "'[focusOnInit]'"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "ElementRef",
+            "4": "ref"
+          }
+        ],
+        "6": [
+          "AfterViewInit"
+        ]
+      }
+    ],
+    "6": "focus_on_init.directive.dart",
+    "10": [
+      {
+        "1": "package:angular2/angular2.ng_deps.dart",
+        "4": "i0"
+      }
+    ]
+  },
+  "FocusOnInitDirective": {
+    "kind": "type",
+    "value": {
+      "isComponent": false,
+      "dynamicLoadable": true,
+      "selector": "[focusOnInit]",
+      "exportAs": null,
+      "type": {
+        "name": "FocusOnInitDirective",
+        "moduleUrl": "asset:mathedit/lib/directives/focus_on_init.directive.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {},
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        6
+      ],
+      "template": null
+    }
+  }
+}

@@ -4,11 +4,12 @@ import 'package:angular2/src/core/change_detection/pregen_proto_change_detector.
 import 'package:mathedit/components/editor.component/editor.component.dart' as import1;
 import 'package:angular2/src/core/linker/template_commands.dart' as import2;
 import 'package:mathedit/directives/autogrow_directive.dart' as import3;
-import 'package:mathedit/components/editor.component/editor.component.css.dart' as import4;
+import 'package:mathedit/directives/focus_on_init.directive.dart' as import4;
+import 'package:mathedit/components/editor.component/editor.component.css.dart' as import5;
 
 
       class _EditorComponent_0 extends import0.AbstractChangeDetector<import1.EditorComponent> {
-        var textareaValue0, directive_0_0;
+        var textareaValue0, directive_0_0, directive_0_1;
 
         _EditorComponent_0(dispatcher)
           : super("EditorComponent_0",
@@ -24,7 +25,7 @@ import 'package:mathedit/components/editor.component/editor.component.css.dart' 
           var isChanged = false;
           var changes = null;
 
-                this.propertyBindingIndex = 0;
+                this.propertyBindingIndex = 1;
             l_textareaValue0 = l_context.textareaValue;
           if (import0.ChangeDetectionUtil.looseNotIdentical(l_textareaValue0, this.textareaValue0)) {
         
@@ -68,15 +69,19 @@ if (l_onInput2_1 == false) { preventDefault = true; }
 
         
 
-        
+                void afterViewLifecycleCallbacksInternal() {
+          if(this.state == import0.ChangeDetectorState.NeverChecked) this.directive_0_1.ngAfterViewInit();
+        }
+      
 
-        void hydrateDirectives(directives) { this.directive_0_0 = this.getDirectiveFor(directives, 0);  }
+        void hydrateDirectives(directives) { this.directive_0_0 = this.getDirectiveFor(directives, 0);
+this.directive_0_1 = this.getDirectiveFor(directives, 1);  }
 
-        void dehydrateDirectives(destroyPipes) {  this.textareaValue0 = this.directive_0_0 = import0.ChangeDetectionUtil.uninitialized; }
+        void dehydrateDirectives(destroyPipes) {  this.textareaValue0 = this.directive_0_0 = this.directive_0_1 = import0.ChangeDetectionUtil.uninitialized; }
 
-        static final _gen_propertyBindingTargets = [import0.ChangeDetectionUtil.bindingTarget("elementProperty", 0, "value", null, "textareaValue in EditorComponent@1:4"), import0.ChangeDetectionUtil.bindingTarget("elementProperty", 0, "autogrow", null, " in EditorComponent@2:4")];
+        static final _gen_propertyBindingTargets = [import0.ChangeDetectionUtil.bindingTarget("elementProperty", 0, "focusOnInit", null, " in EditorComponent@1:10"), import0.ChangeDetectionUtil.bindingTarget("elementProperty", 0, "value", null, "textareaValue in EditorComponent@2:10"), import0.ChangeDetectionUtil.bindingTarget("elementProperty", 0, "autogrow", null, " in EditorComponent@3:10")];
 
-        static final _gen_directiveIndices = [import0.ChangeDetectionUtil.directiveIndex(0, 0)];
+        static final _gen_directiveIndices = [import0.ChangeDetectionUtil.directiveIndex(0, 0), import0.ChangeDetectionUtil.directiveIndex(0, 1)];
 
         static import0.ChangeDetector
             newChangeDetector(a) {
@@ -144,7 +149,7 @@ if (l_onClick2_0 == false) { preventDefault = true; }
         }
       }
     
-const EditorComponentTemplate = const import2.CompiledComponentTemplate('asset:mathedit/lib/components/editor.component/editor.component.dart|EditorComponent',_EditorComponent_0.newChangeDetector,const [const import2.BeginElementCmd('textarea', const ['placeholder','Type some LaTeX or markdown here.','spellcheck','false'], const [null,'input'], const [], const [import3.AutogrowDirective], true, null),const import2.EndElementCmd()],const [import4.STYLES]);
+const EditorComponentTemplate = const import2.CompiledComponentTemplate('asset:mathedit/lib/components/editor.component/editor.component.dart|EditorComponent',_EditorComponent_0.newChangeDetector,const [const import2.BeginElementCmd('textarea', const ['placeholder','Type some LaTeX or markdown here.','spellcheck','false'], const [null,'input'], const ['textarea',null], const [import3.AutogrowDirective,import4.FocusOnInitDirective], true, null),const import2.EndElementCmd()],const [import5.STYLES]);
 EditorComponentTemplateGetter() => EditorComponentTemplate;
 const HostEditorComponentTemplate = const import2.CompiledHostTemplate(const import2.CompiledComponentTemplate('asset:mathedit/lib/components/editor.component/editor.component.dart|HostEditorComponent',_HostEditorComponent_0.newChangeDetector,const [const import2.BeginComponentCmd('editor', const [], const [null,'click'], const [], const [import1.EditorComponent], import2.ViewEncapsulation.None, null, EditorComponentTemplateGetter),const import2.EndComponentCmd()],const []));
 HostEditorComponentTemplateGetter() => HostEditorComponentTemplate;

@@ -37,6 +37,10 @@
       {
         "1": "package:mathedit/service/gist.service.dart",
         "5": false
+      },
+      {
+        "1": "package:firebase/firebase.dart",
+        "5": false
       }
     ],
     "5": [
@@ -77,7 +81,7 @@
         "5": [
           {
             "1": "Authentication",
-            "4": "auth"
+            "4": "_auth"
           },
           {
             "1": "Router",
@@ -85,7 +89,7 @@
           },
           {
             "1": "RouteParams",
-            "4": "params"
+            "4": "_params"
           },
           {
             "1": "ElementRef",
@@ -93,15 +97,19 @@
           },
           {
             "1": "CommonMarkParser",
-            "4": "cmParser"
+            "4": "_cmParser"
           },
           {
             "1": "HtmlWriter",
-            "4": "htmlWriter"
+            "4": "_htmlWriter"
           },
           {
             "1": "MyGistsService",
-            "4": "gistService"
+            "4": "_gistService"
+          },
+          {
+            "1": "Firebase",
+            "4": "_firebase"
           }
         ],
         "6": [
@@ -161,7 +169,8 @@
       "inputs": {},
       "outputs": {},
       "hostListeners": {
-        "keydown.control.k": "onSave($event)"
+        "keydown.control.k": "onSave($event)",
+        "keydown.control.l": "onLogin($event)"
       },
       "hostProperties": {},
       "hostAttributes": {},
@@ -170,7 +179,7 @@
       ],
       "template": {
         "encapsulation": 2,
-        "template": "<editor [hidden]=\"!loaded\" [textareaValue]=\"gistValue\" (value)=\"onTextareaChange($event)\" style=\"flex: 1;\"></editor>\n\n<preview style=\"flex: 1;\"></preview>\n",
+        "template": "<editor [hidden]=\"!loaded\" [textareaValue]=\"gistValue\" (value)=\"onTextareaChange($event)\" style=\"flex: 1;\"></editor>\n\n<preview style=\"flex: 1;\"></preview>\n\n<div #editor></div>",
         "templateUrl": "asset:mathedit/lib/components/math_edit.component/math_edit.component.html",
         "styles": [],
         "styleUrls": [

@@ -35,6 +35,10 @@
         "5": false
       },
       {
+        "1": "package:firebase/firebase.dart",
+        "5": false
+      },
+      {
         "1": "package:usage/usage_html.dart",
         "5": false
       },
@@ -44,6 +48,10 @@
       },
       {
         "1": "package:mathedit/helpers/local_storage.dart",
+        "5": false
+      },
+      {
+        "1": "dart:async",
         "5": false
       }
     ],
