@@ -33,18 +33,15 @@ class MathEditComponent implements OnInit {
   @HostListener('keydown.control.k', const ['\$event'])
   onSave(KeyboardEvent e) async {
     e.preventDefault();
-    if (auth.isAnonymous) {
+    final gistId = params.get('gistid');
+    if (auth.isAnonymous || gistId == null) {
       Gist gist = await gistService.createSimpleGist(textareaValue);
       router.navigate([
         'Gist',
         {'gistid': gist.id}
       ]);
     } else {
-      final gistId = params.get('gistid');
-      if (gistId != null) {
-        await gistService
-            .editGist(gistId, files: {'mathedit.md': textareaValue});
-      }
+      await gistService.editGist(gistId, files: {'mathedit.md': textareaValue});
     }
   }
 

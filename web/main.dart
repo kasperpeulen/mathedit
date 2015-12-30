@@ -56,7 +56,12 @@ void bootstrapMathjax() {
         [r'$$', r'$$'],
         [r'\[', r'\]']
       ], processClass: "preview"),
-      TeX: new TeX(extensions: ['noErrors.js', 'noUndefined.js']));
+      TeX: new TeX(extensions: [
+        "AMSmath.js",
+        "AMSsymbols.js",
+        "noErrors.js",
+        "noUndefined.js"
+      ]));
   setValue(configOptions, 'HTML-CSS',
       new HtmlCss(preferredFont: 'TeX', availableFonts: ['TeX']));
 
