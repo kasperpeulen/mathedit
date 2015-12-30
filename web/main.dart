@@ -12,26 +12,24 @@ import 'package:mathedit/service/gist.service.dart';
 import 'dart:async';
 
 main() async {
-
   final firebase = new Firebase('http://mathedit.firebaseio.com/');
-  final auth = await bootstrapAuth(firebase);
 
   bootstrap(AppComponent, [
     // router
     ROUTER_PROVIDERS,
     provide(LocationStrategy, useClass: HashLocationStrategy),
 
+    // firebase
+    provide(Firebase, useValue: firebase),
+
     // github
-    provide(Authentication, useValue: auth),
+    provide(Authentication, useValue: await bootstrapAuth(firebase)),
     provide(GitHub,
         useFactory: (Authentication auth) => createGitHubClient(auth: auth),
         deps: [Authentication]),
     provide(MyGistsService,
         useFactory: (GitHub gitHub) => new MyGistsService(gitHub),
         deps: [GitHub]),
-
-    // firebase
-    provide(Firebase, useValue: firebase),
 
     // common mark
     provide(Options,
@@ -49,8 +47,6 @@ main() async {
   ]);
   bootstrapMathjax();
 }
-
-
 
 void bootstrapMathjax() {
   final configOptions = new ConfigOptions(
