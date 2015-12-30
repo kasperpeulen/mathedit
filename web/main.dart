@@ -9,8 +9,6 @@ import 'package:github/browser.dart';
 import 'package:usage/usage_html.dart';
 
 void main() {
-  bootstrapMathjax();
-
   bootstrap(AppComponent, [
     // router
     ROUTER_PROVIDERS,
@@ -36,6 +34,7 @@ void main() {
     provide(Analytics,
         useValue: new AnalyticsHtml('UA-40648110-6', 'MathEdit', '0.1.0'))
   ]);
+  bootstrapMathjax();
 }
 
 void bootstrapMathjax() {
