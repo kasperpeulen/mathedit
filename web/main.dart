@@ -6,24 +6,33 @@ import 'package:mathjax/mathjax.dart';
 import 'package:md_proc/md_proc.dart';
 import 'package:mathedit/helpers/jsinterop.dart';
 import 'package:github/browser.dart';
+import 'package:firebase/firebase.dart';
 import 'package:usage/usage_html.dart';
 import 'package:mathedit/service/gist.service.dart';
 import 'package:mathedit/helpers/local_storage.dart';
+import 'dart:async';
 
-void main() {
+main() async {
+
+  final firebase = new Firebase('http://mathedit.firebaseio.com/');
+  final auth = await bootstrapAuth(firebase);
+
   bootstrap(AppComponent, [
     // router
     ROUTER_PROVIDERS,
     provide(LocationStrategy, useClass: HashLocationStrategy),
 
     // github
-    provide(Authentication, useValue: getAuth()),
+    provide(Authentication, useValue: auth),
     provide(GitHub,
         useFactory: (Authentication auth) => createGitHubClient(auth: auth),
         deps: [Authentication]),
     provide(MyGistsService,
         useFactory: (GitHub gitHub) => new MyGistsService(gitHub),
         deps: [GitHub]),
+
+    // firebase
+    provide(Firebase, useValue: firebase),
 
     // common mark
     provide(Options,
@@ -41,6 +50,8 @@ void main() {
   ]);
   bootstrapMathjax();
 }
+
+
 
 void bootstrapMathjax() {
   final configOptions = new ConfigOptions(
@@ -69,14 +80,16 @@ void bootstrapMathjax() {
   MathJax.Hub.Configured();
 }
 
-/// TODO: This is purely for development now. Should be replaced with login system
-/// in the future (probably firebase+github)
-Authentication getAuth() {
-  final username = store['username'];
-  final password = store['password'];
-  if (store['username'] != null) {
-    return new Authentication.basic(username, password);
-  } else {
-    return new Authentication.anonymous();
-  }
+Future<Authentication> bootstrapAuth(firebase) {
+  Completer<Authentication> completer = new Completer();
+  firebase.onAuth().listen((authJson) async {
+    if (authJson != null && authJson['provider'] == 'github') {
+      final accessToken = authJson['github']['accessToken'];
+      final auth = new Authentication.withToken(accessToken);
+      completer.complete(auth);
+    } else {
+      completer.complete(new Authentication.anonymous());
+    }
+  });
+  return completer.future;
 }

@@ -3,10 +3,11 @@ import 'package:angular2/angular2.dart';
 import 'package:mathedit/directives/autogrow_directive.dart';
 import 'dart:html';
 import 'package:mathedit/helpers/local_storage.dart';
-
+import 'package:mathedit/directives/focus_on_init.directive.dart';
+import 'package:firebase/firebase.dart';
 @Component(
     selector: 'editor',
-    directives: const [AutogrowDirective],
+    directives: const [AutogrowDirective, FocusOnInitDirective],
     encapsulation: ViewEncapsulation.None,
     templateUrl: 'editor.component.html',
     styleUrls: const ['editor.component.css'])
@@ -16,10 +17,12 @@ class EditorComponent implements OnInit {
 
   @Input() String textareaValue;
 
+
   final Element _hostElement;
   final RouteParams params;
+  final Firebase firebase;
 
-  EditorComponent(this.params, ElementRef ref)
+  EditorComponent(this.firebase, this.params, ElementRef ref)
       : _hostElement = ref.nativeElement;
 
   @HostListener('click', const [r'$event.currentTarget'])
@@ -28,9 +31,6 @@ class EditorComponent implements OnInit {
   }
 
   ngOnInit() async {
-    // focus the textarea in initial load
-    _hostElement.querySelector('textarea').focus();
-
     // only if there is no gist route, the localstorage should be used
     final gistId = params.get('gistid');
     if (gistId == null) {
