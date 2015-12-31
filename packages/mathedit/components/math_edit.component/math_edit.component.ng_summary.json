@@ -49,6 +49,10 @@
       {
         "1": "package:usage/usage.dart",
         "5": false
+      },
+      {
+        "1": "dart:async",
+        "5": false
       }
     ],
     "5": [

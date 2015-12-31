@@ -29,10 +29,6 @@
       {
         "1": "dart:async",
         "5": false
-      },
-      {
-        "1": "dart:html",
-        "5": false
       }
     ],
     "5": [
@@ -84,24 +80,6 @@
             "4": "_editor"
           }
         ],
-        "7": [
-          {
-            "1": "dropdown",
-            "2": [
-              {
-                "1": "ViewChild",
-                "2": [
-                  "Dropdown"
-                ],
-                "4": false,
-                "5": false,
-                "6": false,
-                "7": false,
-                "8": false
-              }
-            ]
-          }
-        ],
         "8": [
           {
             "2": "CORE_DIRECTIVES"
@@ -116,9 +94,6 @@
       }
     ],
     "6": "login.component.dart",
-    "8": [
-      "dropdown"
-    ],
     "10": [
       {
         "1": "package:angular2/angular2.ng_deps.dart",
