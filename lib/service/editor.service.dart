@@ -13,7 +13,7 @@ class EditorService {
   final Router _router;
   final Analytics _analytics;
 
-  EditorService(
+  EditorService(this._analytics,
       this._gistsService, this._eventBus, this._storage, this._router);
 
   loadEditor() async {
