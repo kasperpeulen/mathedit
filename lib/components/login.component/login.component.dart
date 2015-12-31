@@ -27,8 +27,7 @@ class LoginComponent {
 
   bool secretGist;
 
-  Future login(e) async {
-    e.preventDefault();
+  Future login() async {
     await _userService.login();
   }
 
