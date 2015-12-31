@@ -1,9 +1,10 @@
-import 'package:angular2/router.dart';
-import 'package:angular2/angular2.dart';
-import 'package:firebase/firebase.dart';
-import 'dart:html';
-import 'package:usage/usage.dart';
 import 'dart:async';
+import 'dart:html';
+
+import 'package:angular2/angular2.dart';
+import 'package:angular2/router.dart';
+import 'package:firebase/firebase.dart';
+import 'package:usage/usage.dart';
 
 @Injectable()
 class UserService {

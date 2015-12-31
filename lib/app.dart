@@ -1,7 +1,7 @@
-import 'package:angular2/router.dart';
 import 'package:angular2/angular2.dart';
-import 'package:mathedit/components/math_edit.component/math_edit.component.dart';
+import 'package:angular2/router.dart';
 import 'package:mathedit/components/login.component/login.component.dart';
+import 'package:mathedit/components/math_edit.component/math_edit.component.dart';
 
 @Component(
     selector: 'app',

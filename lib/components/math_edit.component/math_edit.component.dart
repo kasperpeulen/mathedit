@@ -1,17 +1,17 @@
-import 'package:angular2/router.dart';
+import 'dart:async';
+import 'dart:html';
+
 import 'package:angular2/angular2.dart';
+import 'package:angular2/router.dart';
+import 'package:event_bus/event_bus.dart';
 import 'package:mathedit/components/editor.component/editor.component.dart';
 import 'package:mathedit/components/preview.component/preview.component.dart';
-
-import 'package:md_proc/md_proc.dart';
 import 'package:mathedit/helpers/mathjax_preview.dart';
-import 'dart:html';
-import 'package:mathedit/service/gist.service.dart';
 import 'package:mathedit/service/editor.service.dart';
-import 'package:event_bus/event_bus.dart';
+import 'package:mathedit/service/gist.service.dart';
 import 'package:mathedit/service/user.service.dart';
+import 'package:md_proc/md_proc.dart';
 import 'package:usage/usage.dart';
-import 'dart:async';
 
 @Component(
     selector: 'math-edit',
@@ -35,12 +35,11 @@ class MathEditComponent implements OnInit {
   final EventBus _eventBus;
   final UserService _userService;
   final Analytics _analytics;
-
-  final ElementRef ref;
+  final ElementRef _ref;
 
   MathEditComponent(
       this._params,
-      this.ref,
+      this._ref,
       this._cmParser,
       this._htmlWriter,
       this._gistService,
@@ -57,20 +56,8 @@ class MathEditComponent implements OnInit {
     });
   }
 
-  @HostListener('keydown.control.k', const ['\$event'])
-  void onSave(KeyboardEvent e) {
-    e.preventDefault();
-    _gistService.saveGist(_editor.value);
-  }
-
-  @HostListener('keydown.control.l', const ['\$event'])
-  Future<Null> onLogin(KeyboardEvent e) async {
-    e.preventDefault();
-    await _userService.login();
-  }
-
   Future<Null> ngOnInit() async {
-    final hostElement = ref.nativeElement;
+    final hostElement = _ref.nativeElement;
     _mathjaxPreview = new MathJaxPreview(hostElement.querySelector('#preview'),
         hostElement.querySelector('#buffer'));
 
@@ -80,6 +67,18 @@ class MathEditComponent implements OnInit {
       _analytics.sendException('Failed loading editor');
     }
     loaded = true;
+  }
+
+  @HostListener('keydown.control.l', const ['\$event'])
+  Future<Null> onLogin(KeyboardEvent e) async {
+    e.preventDefault();
+    await _userService.login();
+  }
+
+  @HostListener('keydown.control.k', const ['\$event'])
+  void onSave(KeyboardEvent e) {
+    e.preventDefault();
+    _gistService.saveGist(_editor.value);
   }
 
   void onTextareaChange(String textareaValue) {

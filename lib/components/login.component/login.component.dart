@@ -1,16 +1,18 @@
-import 'package:angular2/angular2.dart';
-import 'package:ng2_strap/index.dart';
-import 'package:github/browser.dart';
-import 'package:mathedit/service/gist.service.dart';
-import 'package:mathedit/service/editor.service.dart';
-import 'package:mathedit/service/user.service.dart';
 import 'dart:async';
+
+import 'package:angular2/angular2.dart';
+import 'package:github/browser.dart';
+import 'package:mathedit/service/editor.service.dart';
+import 'package:mathedit/service/gist.service.dart';
+import 'package:mathedit/service/user.service.dart';
+import 'package:ng2_strap/index.dart';
 
 @Component(
     selector: 'login',
     templateUrl: 'login.component.html',
     directives: const [CORE_DIRECTIVES, FORM_DIRECTIVES, DROPDOWN_DIRECTIVES],
-    styleUrls: const ['login.component.css'])
+    styleUrls: const ['login.component.css'],
+    encapsulation: ViewEncapsulation.None)
 class LoginComponent {
   final Authentication _auth;
   final MyGistsService _gistsService;
@@ -20,11 +22,7 @@ class LoginComponent {
   LoginComponent(
       this._userService, this._auth, this._gistsService, this._editor);
 
-  bool get loggedIn {
-    return _auth.isAnonymous ? false : true;
-  }
-
-  bool secretGist;
+  bool get loggedIn => _auth.isAnonymous ? false : true;
 
   Future login() async {
     await _userService.login();

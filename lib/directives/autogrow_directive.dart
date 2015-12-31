@@ -1,5 +1,6 @@
-import 'package:angular2/angular2.dart';
 import 'dart:html';
+
+import 'package:angular2/angular2.dart';
 
 @Directive(
     selector: 'textarea[autogrow]',

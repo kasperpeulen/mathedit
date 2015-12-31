@@ -1,6 +1,7 @@
-import 'dart:html';
 import 'dart:async';
+import 'dart:html';
 import 'dart:js';
+
 import 'package:mathjax/mathjax.dart';
 
 class MathJaxPreview {
@@ -25,17 +26,6 @@ class MathJaxPreview {
   MathJaxPreview(this.mathPreview, this.bufferDiv,
       {this.delay: const Duration(milliseconds: 200)});
 
-  /// This gets called when a key is pressed in the textarea.
-  /// We check if there is already a pending update and clear it if so.
-  /// Then set up an update to occur after a small delay (so if more keys
-  /// are pressed, the update won't occur until after there has been
-  /// a pause in the typing).
-  /// The callback function is set up below, after the Preview object is set up.
-  void update(final String newValue) {
-    _timer?.cancel();
-    _timer = new Timer(delay, () => createPreview(newValue));
-  }
-
   /// Creates the preview and runs MathJax on it.
   /// If MathJax is already trying to render the code, return
   /// If the text hasn't changed, return
@@ -48,6 +38,17 @@ class MathJaxPreview {
     bufferDiv.setInnerHtml(newText, treeSanitizer: NodeTreeSanitizer.trusted);
     MathJax.Hub.Queue(allowInterop(() => MathJax.Hub.Typeset()),
         allowInterop(_previewDone));
+  }
+
+  /// This gets called when a key is pressed in the textarea.
+  /// We check if there is already a pending update and clear it if so.
+  /// Then set up an update to occur after a small delay (so if more keys
+  /// are pressed, the update won't occur until after there has been
+  /// a pause in the typing).
+  /// The callback function is set up below, after the Preview object is set up.
+  void update(final String newValue) {
+    _timer?.cancel();
+    _timer = new Timer(delay, () => createPreview(newValue));
   }
 
   /// Indicate that MathJax is no longer running,
