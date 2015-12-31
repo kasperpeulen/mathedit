@@ -7,10 +7,10 @@ import 'package:md_proc/md_proc.dart';
 import 'package:mathedit/helpers/mathjax_preview.dart';
 import 'dart:html';
 import 'package:mathedit/service/gist.service.dart';
-import 'package:firebase/firebase.dart';
 import 'package:mathedit/service/editor.service.dart';
 import 'package:event_bus/event_bus.dart';
 import 'package:mathedit/service/user.service.dart';
+import 'package:usage/usage.dart';
 
 @Component(
     selector: 'math-edit',
@@ -33,6 +33,27 @@ class MathEditComponent implements OnInit {
   final EditorService _editor;
   final EventBus _eventBus;
   final UserService _userService;
+  final Analytics _analytics;
+
+  MathEditComponent(
+      this._params,
+      ElementRef ref,
+      this._cmParser,
+      this._htmlWriter,
+      this._gistService,
+      this._editor,
+      this._eventBus,
+      this._userService,
+      this._analytics) {
+    _gistService.gistId = _params.get('gistid');
+
+    _analytics.sendScreenView(_gistService.gistId ?? '/');
+
+    _eventBus.on(TextareaChangedEvent).listen((TextareaChangedEvent e) {
+      onTextareaChange(e.value);
+    });
+
+  }
 
   @HostListener('keydown.control.k', const ['\$event'])
   onSave(KeyboardEvent e) async {
@@ -47,27 +68,11 @@ class MathEditComponent implements OnInit {
     _userService.login();
   }
 
-  MathEditComponent(
-      this._params,
-      ElementRef ref,
-      this._cmParser,
-      this._htmlWriter,
-      this._gistService,
-      this._editor,
-      this._eventBus,
-      this._userService) {
-    _gistService.gistId = _params.get('gistid');
-
+  ngOnInit() async {
     final hostElement = ref.nativeElement;
     _mathjaxPreview = new MathJaxPreview(hostElement.querySelector('#preview'),
         hostElement.querySelector('#buffer'));
 
-    _eventBus.on(TextareaChangedEvent).listen((TextareaChangedEvent e) {
-      onTextareaChange(e.value);
-    });
-  }
-
-  ngOnInit() async {
     try {
       await _editor.loadEditor();
     } catch (e) {

@@ -4,6 +4,7 @@ import 'dart:html';
 import 'package:mathedit/directives/focus_on_init.directive.dart';
 import 'package:mathedit/service/editor.service.dart';
 import 'package:event_bus/event_bus.dart';
+
 @Component(
     selector: 'editor',
     directives: const [AutogrowDirective, FocusOnInitDirective],

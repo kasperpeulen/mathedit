@@ -4,6 +4,7 @@ import 'package:mathedit/components/math_edit.component/math_edit.component.dart
 import 'package:usage/usage.dart';
 import 'dart:html';
 import 'package:mathedit/components/login.component/login.component.dart';
+
 @Component(
     selector: 'app',
     templateUrl: 'app.html',
@@ -16,9 +17,5 @@ import 'package:mathedit/components/login.component/login.component.dart';
   const Route(path: '', name: 'Home', component: MathEditComponent)
 ])
 class AppComponent {
-  final Analytics ga;
-
-  AppComponent(this.ga) {
-    ga.sendScreenView(window.location.pathname);
-  }
+  AppComponent();
 }
