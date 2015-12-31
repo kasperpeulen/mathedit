@@ -76,7 +76,7 @@ void bootstrapMathjax() {
       ], displayMath: [
         [r'$$', r'$$'],
         [r'\[', r'\]']
-      ], processClass: "preview"),
+      ], processClass: 'math'),
       TeX: new TeX(extensions: [
         "AMSmath.js",
         "AMSsymbols.js",
@@ -90,9 +90,10 @@ void bootstrapMathjax() {
   MathJax.Hub.Configured();
 }
 
-Future<Authentication> bootstrapAuth(firebase) {
+Future<Authentication> bootstrapAuth(Firebase firebase) {
   Completer<Authentication> completer = new Completer();
-  firebase.onAuth().listen((authJson) async {
+  StreamSubscription subscription;
+  subscription = firebase.onAuth().listen((authJson) async {
     if (authJson != null && authJson['provider'] == 'github') {
       final accessToken = authJson['github']['accessToken'];
       final auth = new Authentication.withToken(accessToken);
@@ -100,6 +101,7 @@ Future<Authentication> bootstrapAuth(firebase) {
     } else {
       completer.complete(new Authentication.anonymous());
     }
+    subscription.cancel();
   });
   return completer.future;
 }

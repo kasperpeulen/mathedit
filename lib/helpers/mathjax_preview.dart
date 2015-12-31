@@ -46,7 +46,7 @@ class MathJaxPreview {
     _mjRunning = true;
     _oldText = newText;
     bufferDiv.setInnerHtml(newText, treeSanitizer: NodeTreeSanitizer.trusted);
-    MathJax.Hub.Queue(allowInterop(() => MathJax.Hub.Typeset(bufferDiv)),
+    MathJax.Hub.Queue(allowInterop(() => MathJax.Hub.Typeset()),
         allowInterop(_previewDone));
   }
 
