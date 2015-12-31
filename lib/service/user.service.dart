@@ -21,7 +21,7 @@ class UserService {
   Future<Null> logout() async {
     await _analytics.sendEvent('user', 'logout');
     _firebase.unauth();
-    _router.navigate(['Home']);
+    await _router.navigate(['Home']);
     window.location.reload();
   }
 }

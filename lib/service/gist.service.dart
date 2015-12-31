@@ -29,19 +29,20 @@ class MyGistsService extends GistsService {
 
   Future<Gist> saveGist(String content, {bool public: true}) async {
     _analytics.sendEvent('save', gistId);
-    var needsNewGist = await (() async {
+
+    final bool needsNewGist = await () async {
       if (_auth.isAnonymous) {
         return true;
       }
       if (gistId == null) {
         return true;
       }
-      Gist gist = await getGist(gistId);
+      final gist = await getGist(gistId);
       if (gist.public != public) {
         return true;
       }
       return false;
-    }());
+    }();
 
     if (needsNewGist) {
       return createSimpleGist(content, public: public);
