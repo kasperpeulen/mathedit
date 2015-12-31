@@ -1,0 +1,62 @@
+{
+  "ngDeps": {
+    "1": "",
+    "4": [
+      {
+        "1": "accordion/accordion.dart"
+      },
+      {
+        "1": "alert/alert.dart"
+      },
+      {
+        "1": "buttons/button-radio.dart"
+      },
+      {
+        "1": "buttons/button-checkbox.dart"
+      },
+      {
+        "1": "datepicker/index.dart"
+      },
+      {
+        "1": "dropdown/index.dart"
+      },
+      {
+        "1": "carousel/carousel.dart"
+      },
+      {
+        "1": "collapse/collapse.dart"
+      },
+      {
+        "1": "pagination/pagination.dart"
+      },
+      {
+        "1": "progressbar/progressbar.dart"
+      },
+      {
+        "1": "rating/rating.dart"
+      },
+      {
+        "1": "tabs/tabs.dart"
+      },
+      {
+        "1": "timepicker/timepicker.dart"
+      },
+      {
+        "1": "tooltip/tooltip.dart"
+      },
+      {
+        "1": "typeahead/typeahead.dart"
+      },
+      {
+        "1": "position.dart"
+      },
+      {
+        "1": "common.dart"
+      },
+      {
+        "1": "ng2-bootstrap-config.dart"
+      }
+    ],
+    "6": "index.dart"
+  }
+}

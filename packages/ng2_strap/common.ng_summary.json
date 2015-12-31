@@ -1,0 +1,70 @@
+{
+  "ngDeps": {
+    "1": "",
+    "3": [
+      {
+        "1": "package:angular2/angular2.dart",
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "NgTransclude",
+        "4": [
+          {
+            "1": "Directive",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"[ng-transclude]\""
+              },
+              {
+                "1": "inputs",
+                "2": "const [\"ngTransclude\"]"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "ViewContainerRef",
+            "3": [
+              "const Inject(ViewContainerRef)"
+            ],
+            "4": "viewRef"
+          }
+        ]
+      }
+    ],
+    "6": "common.dart"
+  },
+  "NgTransclude": {
+    "kind": "type",
+    "value": {
+      "isComponent": false,
+      "dynamicLoadable": true,
+      "selector": "[ng-transclude]",
+      "exportAs": null,
+      "type": {
+        "name": "NgTransclude",
+        "moduleUrl": "asset:ng2_strap/lib/common.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "ngTransclude": "ngTransclude"
+      },
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [],
+      "template": null
+    }
+  }
+}

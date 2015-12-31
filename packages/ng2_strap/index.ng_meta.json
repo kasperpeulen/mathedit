@@ -1,0 +1,1267 @@
+{
+  "ngDeps": {
+    "1": "",
+    "4": [
+      {
+        "1": "accordion/accordion.dart"
+      },
+      {
+        "1": "alert/alert.dart"
+      },
+      {
+        "1": "buttons/button-radio.dart"
+      },
+      {
+        "1": "buttons/button-checkbox.dart"
+      },
+      {
+        "1": "datepicker/index.dart"
+      },
+      {
+        "1": "dropdown/index.dart"
+      },
+      {
+        "1": "carousel/carousel.dart"
+      },
+      {
+        "1": "collapse/collapse.dart"
+      },
+      {
+        "1": "pagination/pagination.dart"
+      },
+      {
+        "1": "progressbar/progressbar.dart"
+      },
+      {
+        "1": "rating/rating.dart"
+      },
+      {
+        "1": "tabs/tabs.dart"
+      },
+      {
+        "1": "timepicker/timepicker.dart"
+      },
+      {
+        "1": "tooltip/tooltip.dart"
+      },
+      {
+        "1": "typeahead/typeahead.dart"
+      },
+      {
+        "1": "position.dart"
+      },
+      {
+        "1": "common.dart"
+      },
+      {
+        "1": "ng2-bootstrap-config.dart"
+      }
+    ],
+    "6": "index.dart",
+    "10": [
+      {
+        "1": "accordion/accordion.ng_deps.dart",
+        "4": "i0"
+      },
+      {
+        "1": "alert/alert.ng_deps.dart",
+        "4": "i1"
+      },
+      {
+        "1": "buttons/button-radio.ng_deps.dart",
+        "4": "i2"
+      },
+      {
+        "1": "buttons/button-checkbox.ng_deps.dart",
+        "4": "i3"
+      },
+      {
+        "1": "datepicker/index.ng_deps.dart",
+        "4": "i4"
+      },
+      {
+        "1": "dropdown/index.ng_deps.dart",
+        "4": "i5"
+      },
+      {
+        "1": "carousel/carousel.ng_deps.dart",
+        "4": "i6"
+      },
+      {
+        "1": "collapse/collapse.ng_deps.dart",
+        "4": "i7"
+      },
+      {
+        "1": "pagination/pagination.ng_deps.dart",
+        "4": "i8"
+      },
+      {
+        "1": "progressbar/progressbar.ng_deps.dart",
+        "4": "i9"
+      },
+      {
+        "1": "rating/rating.ng_deps.dart",
+        "4": "i10"
+      },
+      {
+        "1": "tabs/tabs.ng_deps.dart",
+        "4": "i11"
+      },
+      {
+        "1": "timepicker/timepicker.ng_deps.dart",
+        "4": "i12"
+      },
+      {
+        "1": "tooltip/tooltip.ng_deps.dart",
+        "4": "i13"
+      },
+      {
+        "1": "typeahead/typeahead.ng_deps.dart",
+        "4": "i14"
+      },
+      {
+        "1": "position.ng_deps.dart",
+        "4": "i15"
+      },
+      {
+        "1": "common.ng_deps.dart",
+        "4": "i16"
+      }
+    ]
+  },
+  "Accordion": {
+    "kind": "type",
+    "value": {
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "n2s-accordion",
+      "exportAs": null,
+      "type": {
+        "name": "Accordion",
+        "moduleUrl": "asset:ng2_strap/lib/accordion/accordion.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "templateUrl": "templateUrl",
+        "closeOthers": "closeOthers"
+      },
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {
+        "class.panel-group": "true"
+      },
+      "hostAttributes": {},
+      "lifecycleHooks": [],
+      "template": {
+        "encapsulation": 2,
+        "template": "<ng-content></ng-content>",
+        "templateUrl": "asset:ng2_strap/lib/accordion/accordion.dart",
+        "styles": [],
+        "styleUrls": [],
+        "ngContentSelectors": [
+          "*"
+        ]
+      }
+    }
+  },
+  "AccordionTransclude": {
+    "kind": "type",
+    "value": {
+      "isComponent": false,
+      "dynamicLoadable": true,
+      "selector": "accordion-transclude, [accordion-transclude]",
+      "exportAs": null,
+      "type": {
+        "name": "AccordionTransclude",
+        "moduleUrl": "asset:ng2_strap/lib/accordion/accordion.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "accordionTransclude": "accordionTransclude"
+      },
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        0
+      ],
+      "template": null
+    }
+  },
+  "AccordionPanel": {
+    "kind": "type",
+    "value": {
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "n2s-accordion-panel",
+      "exportAs": null,
+      "type": {
+        "name": "AccordionPanel",
+        "moduleUrl": "asset:ng2_strap/lib/accordion/accordion.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "heading": "heading",
+        "isOpen": "isOpen",
+        "isDisabled": "isDisabled",
+        "panelClass": "panelClass"
+      },
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {
+        "class.panel-open": "isOpen"
+      },
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        0,
+        1
+      ],
+      "template": {
+        "encapsulation": 2,
+        "template": "  <div class=\"panel\" [ngClass]=\"panelClass\">\n    <div class=\"panel-heading\" (click)=\"toggleOpen($event)\">\n      <h4 class=\"panel-title\">\n        <a href tabindex=\"0\" class=\"accordion-toggle\">\n          <span [ngClass]=\"{'text-muted': isDisabled}\">\n            {{heading}}\n            <ng-content select=\"n2s-accordion-heading\"></ng-content>\n          </span>\n        </a>\n      </h4>\n    </div>\n    <div class=\"panel-collapse collapse\" [collapse]=\"!isOpen\">\n      <div class=\"panel-body\">\n        <ng-content></ng-content>\n      </div>\n    </div>\n  </div>\n  ",
+        "templateUrl": "asset:ng2_strap/lib/accordion/accordion.dart",
+        "styles": [],
+        "styleUrls": [],
+        "ngContentSelectors": [
+          "n2s-accordion-heading",
+          "*"
+        ]
+      }
+    }
+  },
+  "Alert": {
+    "kind": "type",
+    "value": {
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "n2s-alert",
+      "exportAs": null,
+      "type": {
+        "name": "Alert",
+        "moduleUrl": "asset:ng2_strap/lib/alert/alert.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "type": "type",
+        "dismissible": "dismissible",
+        "dismissOnTimeout": "dismissOnTimeout"
+      },
+      "outputs": {
+        "close": "close"
+      },
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        0
+      ],
+      "template": {
+        "encapsulation": 2,
+        "template": "<div class=\"alert\" role=\"alert\" [ngClass]=\"classes\" *ngIf=\"!closed\">\n    <button *ngIf=\"closeable\" type=\"button\" class=\"close\" (click)=\"onClose()\">\n        <span aria-hidden=\"true\">&times;</span>\n        <span class=\"sr-only\">Close</span>\n    </button>\n    <ng-content></ng-content>\n</div>\n",
+        "templateUrl": "asset:ng2_strap/lib/alert/alert.dart",
+        "styles": [],
+        "styleUrls": [],
+        "ngContentSelectors": [
+          "*"
+        ]
+      }
+    }
+  },
+  "ButtonRadio": {
+    "kind": "type",
+    "value": {
+      "isComponent": false,
+      "dynamicLoadable": true,
+      "selector": "n2s-btn-radio",
+      "exportAs": null,
+      "type": {
+        "name": "ButtonRadio",
+        "moduleUrl": "asset:ng2_strap/lib/buttons/button-radio.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "option": "option",
+        "uncheckable": "uncheckable"
+      },
+      "outputs": {},
+      "hostListeners": {
+        "click": "onClick()"
+      },
+      "hostProperties": {
+        "class.active": "isActive"
+      },
+      "hostAttributes": {},
+      "lifecycleHooks": [],
+      "template": null
+    }
+  },
+  "ButtonCheckbox": {
+    "kind": "type",
+    "value": {
+      "isComponent": false,
+      "dynamicLoadable": true,
+      "selector": "n2s-btn-checkbox",
+      "exportAs": null,
+      "type": {
+        "name": "ButtonCheckbox",
+        "moduleUrl": "asset:ng2_strap/lib/buttons/button-checkbox.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "trueValue": "trueValue",
+        "falseValue": "falseValue"
+      },
+      "outputs": {},
+      "hostListeners": {
+        "click": "onClick()"
+      },
+      "hostProperties": {
+        "class.active": "state"
+      },
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        0
+      ],
+      "template": null
+    }
+  },
+  "Carousel": {
+    "kind": "type",
+    "value": {
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "n2s-carousel",
+      "exportAs": null,
+      "type": {
+        "name": "Carousel",
+        "moduleUrl": "asset:ng2_strap/lib/carousel/carousel.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "interval": "interval",
+        "noTransition": "noTransition",
+        "noPause": "noPause",
+        "noWrap": "noWrap"
+      },
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        1
+      ],
+      "template": {
+        "encapsulation": 2,
+        "template": "<div (mouseenter)=\"pause()\" (mouseleave)=\"play()\" class=\"carousel slide\">\n  <ol class=\"carousel-indicators\" [hidden]=\"slides.length <= 1\">\n     <li *ngFor=\"#slidez of slides\" [ngClass]=\"{active: slidez.active === true}\" (click)=\"select(slidez)\"></li>\n  </ol>\n  <div class=\"carousel-inner\"><ng-content></ng-content></div>\n</div>\n  ",
+        "templateUrl": "asset:ng2_strap/lib/carousel/carousel.dart",
+        "styles": [],
+        "styleUrls": [],
+        "ngContentSelectors": [
+          "*"
+        ]
+      }
+    }
+  },
+  "Slide": {
+    "kind": "type",
+    "value": {
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "n2s-slide",
+      "exportAs": null,
+      "type": {
+        "name": "Slide",
+        "moduleUrl": "asset:ng2_strap/lib/carousel/carousel.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "direction": "direction",
+        "active": "active",
+        "index": "index"
+      },
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {
+        "class.carousel-item": "true",
+        "class.active": "active",
+        "class.item": "true"
+      },
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        0,
+        1
+      ],
+      "template": {
+        "encapsulation": 2,
+        "template": "  <div [ngClass]=\"{active: active}\" class=\"item text-center\">\n    <ng-content></ng-content>\n  </div>\n  ",
+        "templateUrl": "asset:ng2_strap/lib/carousel/carousel.dart",
+        "styles": [],
+        "styleUrls": [],
+        "ngContentSelectors": [
+          "*"
+        ]
+      }
+    }
+  },
+  "Collapse": {
+    "kind": "type",
+    "value": {
+      "isComponent": false,
+      "dynamicLoadable": true,
+      "selector": "[collapse]",
+      "exportAs": null,
+      "type": {
+        "name": "Collapse",
+        "moduleUrl": "asset:ng2_strap/lib/collapse/collapse.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "collapse": "collapse"
+      },
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {
+        "attr.aria-expanded": "isExpanded",
+        "attr.aria-hidden": "isCollapsed",
+        "class.collapse": "isCollapse",
+        "style.height": "height",
+        "class.in": "isExpanded",
+        "class.collapsing": "isCollapsing"
+      },
+      "hostAttributes": {},
+      "lifecycleHooks": [],
+      "template": null
+    }
+  },
+  "Pagination": {
+    "kind": "type",
+    "value": {
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "n2s-pagination",
+      "exportAs": null,
+      "type": {
+        "name": "Pagination",
+        "moduleUrl": "asset:ng2_strap/lib/pagination/pagination.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "rotate": "rotate",
+        "disabled": "disabled",
+        "totalItems": "totalItems",
+        "itemsPerPage": "itemsPerPage",
+        "maxSize": "maxSize",
+        "boundaryLinks": "boundaryLinks",
+        "directionLinks": "directionLinks",
+        "firstText": "firstText",
+        "previousText": "previousText",
+        "nextText": "nextText",
+        "lastText": "lastText"
+      },
+      "outputs": {
+        "numPages": "numPages"
+      },
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        0
+      ],
+      "template": {
+        "encapsulation": 2,
+        "template": "  <ul class=\"pagination\" [ngClass]=\"classMap\">\n    <li class=\"pagination-first\"\n        [ngClass]=\"{disabled: noPrevious()||disabled, hidden: !boundaryLinks}\"\n        [hidden]=\"!boundaryLinks\">\n      <a href (click)=\"selectPage(1, $event)\">{{firstText}}</a>\n    </li>\n\n    <li class=\"pagination-prev\"\n        [ngClass]=\"{disabled: noPrevious()||disabled, hidden: !directionLinks}\"\n        [hidden]=\"!directionLinks\">\n      <a href (click)=\"selectPage(page - 1, $event)\">{{previousText}}</a>\n      </li>\n\n    <li *ngFor=\"#page of pages\" [ngClass]=\"{active: page['active'], disabled: disabled && !page['active']}\" class=\"pagination-page\">\n      <a href (click)=\"selectPage(page['number'], $event)\">{{page['text']}}</a>\n    </li>\n\n    <li class=\"pagination-next\"\n        [ngClass]=\"{disabled: noNext()||disabled, hidden: !directionLinks}\"\n        [hidden]=\"!directionLinks\">\n      <a href (click)=\"selectPage(page + 1, $event)\">{{nextText}}</a></li>\n\n    <li class=\"pagination-last\"\n        [ngClass]=\"{disabled: noNext()||disabled, hidden: !boundaryLinks}\"\n        [hidden]=\"!boundaryLinks\">\n      <a href (click)=\"selectPage(totalPages, $event)\">{{lastText}}</a></li>\n  </ul>\n  ",
+        "templateUrl": "asset:ng2_strap/lib/pagination/pagination.dart",
+        "styles": [],
+        "styleUrls": [],
+        "ngContentSelectors": []
+      }
+    }
+  },
+  "Pager": {
+    "kind": "type",
+    "value": {
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "pager[ngModel], [pager][ngModel]",
+      "exportAs": null,
+      "type": {
+        "name": "Pager",
+        "moduleUrl": "asset:ng2_strap/lib/pagination/pagination.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "align": "align",
+        "totalItems": "totalItems",
+        "itemsPerPage": "itemsPerPage",
+        "previousText": "previousText",
+        "nextText": "nextText"
+      },
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        0
+      ],
+      "template": {
+        "encapsulation": 2,
+        "template": "<ul class=\"pager\">\n  <li [ngClass]=\"{disabled: noPrevious(), previous: align, 'pull-left': align}\"><a href (click)=\"selectPage(page - 1, $event)\">{{previousText}}</a></li>\n  <li [ngClass]=\"{disabled: noNext(), next: align, 'pull-right': align}\"><a href (click)=\"selectPage(page + 1, $event)\">{{nextText}}</a></li>\n</ul>\n",
+        "templateUrl": "asset:ng2_strap/lib/pagination/pagination.dart",
+        "styles": [],
+        "styleUrls": [],
+        "ngContentSelectors": []
+      }
+    }
+  },
+  "Progress": {
+    "kind": "type",
+    "value": {
+      "isComponent": false,
+      "dynamicLoadable": true,
+      "selector": "[n2s-progress]",
+      "exportAs": null,
+      "type": {
+        "name": "Progress",
+        "moduleUrl": "asset:ng2_strap/lib/progressbar/progressbar.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "animate": "animate",
+        "max": "max"
+      },
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {
+        "attr.max": "max"
+      },
+      "hostAttributes": {
+        "class": "progress"
+      },
+      "lifecycleHooks": [
+        0
+      ],
+      "template": null
+    }
+  },
+  "Bar": {
+    "kind": "type",
+    "value": {
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "n2s-bar",
+      "exportAs": null,
+      "type": {
+        "name": "Bar",
+        "moduleUrl": "asset:ng2_strap/lib/progressbar/progressbar.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "type": "type",
+        "value": "value"
+      },
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        0,
+        1
+      ],
+      "template": {
+        "encapsulation": 2,
+        "template": "  <div class=\"progress-bar\"\n    style=\"min-width: 0;\"\n    role=\"progressbar\"\n    [ngClass]=\"type\"\n    [ngStyle]=\"{'width': (percent < 100 ? percent : 100).toString() + '%', transition: transition}\"\n    aria-valuemin=\"0\"\n    [attr.aria-valuenow]=\"value\"\n    [attr.aria-valuetext]=\"percent.toStringAsFixed(0) + '%'\"\n    [attr.aria-valuemax]=\"max\"\n    ><ng-content></ng-content></div>\n",
+        "templateUrl": "asset:ng2_strap/lib/progressbar/progressbar.dart",
+        "styles": [],
+        "styleUrls": [],
+        "ngContentSelectors": [
+          "*"
+        ]
+      }
+    }
+  },
+  "Progressbar": {
+    "kind": "type",
+    "value": {
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "n2s-progressbar",
+      "exportAs": null,
+      "type": {
+        "name": "Progressbar",
+        "moduleUrl": "asset:ng2_strap/lib/progressbar/progressbar.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "animate": "animate",
+        "max": "max",
+        "type": "type",
+        "value": "value"
+      },
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [],
+      "template": {
+        "encapsulation": 2,
+        "template": "    <div n2s-progress [animate]=\"animate\" [max]=\"max\">\n      <n2s-bar [type]=\"type\" [value]=\"value\">\n          <ng-content></ng-content>\n      </n2s-bar>\n    </div>\n  ",
+        "templateUrl": "asset:ng2_strap/lib/progressbar/progressbar.dart",
+        "styles": [],
+        "styleUrls": [],
+        "ngContentSelectors": [
+          "*"
+        ]
+      }
+    }
+  },
+  "Rating": {
+    "kind": "type",
+    "value": {
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "n2s-rating",
+      "exportAs": null,
+      "type": {
+        "name": "Rating",
+        "moduleUrl": "asset:ng2_strap/lib/rating/rating.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "max": "max",
+        "readonly": "readonly",
+        "titles": "titles",
+        "stateOn": "stateOn",
+        "stateOff": "stateOff",
+        "ratingStates": "ratingStates"
+      },
+      "outputs": {
+        "onHover": "onHover",
+        "onLeave": "onLeave"
+      },
+      "hostListeners": {
+        "keydown": "onKeydown($event)"
+      },
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        0
+      ],
+      "template": {
+        "encapsulation": 2,
+        "template": "    <span (mouseleave)=\"reset()\" (keydown)=\"onKeydown($event)\" tabindex=\"0\" role=\"slider\" aria-valuemin=\"0\" [attr.aria-valuemax]=\"range.length\" [attr.aria-valuenow]=\"value\">\n      <template ngFor #r [ngForOf]=\"range\" #index=\"index\">\n        <span class=\"sr-only\">({{ index < value ? '*' : ' ' }})</span>\n        <i (mouseenter)=\"enter(index + 1)\" (click)=\"rate(index + 1)\" class=\"glyphicon\" [ngClass]=\"index < value ? r['stateOn'] : r['stateOff']\" [title]=\"r['title']\" ></i>\n      </template>\n    </span>\n  ",
+        "templateUrl": "asset:ng2_strap/lib/rating/rating.dart",
+        "styles": [],
+        "styleUrls": [],
+        "ngContentSelectors": []
+      }
+    }
+  },
+  "Tabset": {
+    "kind": "type",
+    "value": {
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "n2s-tabset",
+      "exportAs": null,
+      "type": {
+        "name": "Tabset",
+        "moduleUrl": "asset:ng2_strap/lib/tabs/tabs.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "vertical": "vertical",
+        "justified": "justified",
+        "type": "type"
+      },
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        0
+      ],
+      "template": {
+        "encapsulation": 2,
+        "template": "    <ul class=\"nav\"\n        [ngClass]=\"{\n          'nav-stacked' : vertical,\n          'nav-justified' : justified,\n          'nav-tabs' : type == 'tabs',\n          'nav-pills' : type == 'pills'\n        }\"\n        (click)=\"$event.preventDefault()\">\n        <li *ngFor=\"#tabz of tabs\" class=\"nav-item\" [ngClass]=\"{active: tabz.active, disabled: tabz.disabled}\">\n          <a href class=\"nav-link\" [ngClass]=\"{active: tabz.active, disabled: tabz.disabled}\" (click)=\"tabz.active = true\">\n            <span ng-transclude [ngTransclude]=\"tabz.headingRef\">{{tabz.heading}}</span>\n          </a>\n        </li>\n    </ul>\n    <div class=\"tab-content\">\n      <ng-content></ng-content>\n    </div>\n  ",
+        "templateUrl": "asset:ng2_strap/lib/tabs/tabs.dart",
+        "styles": [],
+        "styleUrls": [],
+        "ngContentSelectors": [
+          "*"
+        ]
+      }
+    }
+  },
+  "Tab": {
+    "kind": "type",
+    "value": {
+      "isComponent": false,
+      "dynamicLoadable": true,
+      "selector": "n2s-tab",
+      "exportAs": null,
+      "type": {
+        "name": "Tab",
+        "moduleUrl": "asset:ng2_strap/lib/tabs/tabs.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "active": "active",
+        "disable": "disable",
+        "disabled": "disabled",
+        "heading": "heading"
+      },
+      "outputs": {
+        "select": "select",
+        "deselect": "deselect"
+      },
+      "hostListeners": {},
+      "hostProperties": {
+        "class.active": "active",
+        "class.tab-pane": "true"
+      },
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        0,
+        1,
+        2
+      ],
+      "template": null
+    }
+  },
+  "TabHeading": {
+    "kind": "type",
+    "value": {
+      "isComponent": false,
+      "dynamicLoadable": true,
+      "selector": "[n2s-tab-heading]",
+      "exportAs": null,
+      "type": {
+        "name": "TabHeading",
+        "moduleUrl": "asset:ng2_strap/lib/tabs/tabs.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {},
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [],
+      "template": null
+    }
+  },
+  "Timepicker": {
+    "kind": "type",
+    "value": {
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "timepicker[ngModel]",
+      "exportAs": null,
+      "type": {
+        "name": "Timepicker",
+        "moduleUrl": "asset:ng2_strap/lib/timepicker/timepicker.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "hourStep": "hourStep",
+        "minuteStep": "minuteStep",
+        "meridians": "meridians",
+        "showMeridian": "showMeridian",
+        "readonlyInput": "readonlyInput",
+        "mousewheel": "mousewheel",
+        "arrowkeys": "arrowkeys",
+        "showSpinners": "showSpinners",
+        "min": "min",
+        "max": "max"
+      },
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        0
+      ],
+      "template": {
+        "encapsulation": 2,
+        "template": "    <table>\n      <tbody>\n        <tr class=\"text-center\" [ngClass]=\"{hidden: !showSpinners}\">\n          <td><a (click)=\"incrementHours()\" [ngClass]=\"{disabled: noIncrementHours()}\" class=\"btn btn-link\"><span class=\"glyphicon glyphicon-chevron-up\"></span></a></td>\n          <td>&nbsp;</td>\n          <td><a (click)=\"incrementMinutes()\" [ngClass]=\"{disabled: noIncrementMinutes()}\" class=\"btn btn-link\"><span class=\"glyphicon glyphicon-chevron-up\"></span></a></td>\n          <td [ngClass]=\"{hidden: !showMeridian}\" [hidden]=\"!showMeridian\"></td>\n        </tr>\n        <tr>\n          <td class=\"form-group\" [ngClass]=\"{'has-error': invalidHours}\">\n            <input style=\"width:50px;\" type=\"text\" [(ngModel)]=\"hours\" (change)=\"updateHours()\" class=\"form-control text-center\" [readonly]=\"readonlyInput\" (blur)=\"hoursOnBlur($event)\" maxlength=\"2\">\n          </td>\n          <td>:</td>\n          <td class=\"form-group\" [ngClass]=\"{'has-error': invalidMinutes}\">\n            <input style=\"width:50px;\" type=\"text\" [(ngModel)]=\"minutes\" (change)=\"updateMinutes()\" class=\"form-control text-center\" [readonly]=\"readonlyInput\" (blur)=\"minutesOnBlur($event)\" maxlength=\"2\">\n          </td>\n          <td [ngClass]=\"{hidden: !showMeridian}\" [hidden]=\"!showMeridian\"><button type=\"button\" [ngClass]=\"{disabled: noToggleMeridian()}\" class=\"btn btn-default text-center\" (click)=\"toggleMeridian()\">{{meridian}}</button></td>\n        </tr>\n        <tr class=\"text-center\" [ngClass]=\"{hidden: !showSpinners}\">\n          <td><a (click)=\"decrementHours()\" [ngClass]=\"{disabled: noDecrementHours()}\" class=\"btn btn-link\"><span class=\"glyphicon glyphicon-chevron-down\"></span></a></td>\n          <td>&nbsp;</td>\n          <td><a (click)=\"decrementMinutes()\" [ngClass]=\"{disabled: noDecrementMinutes()}\" class=\"btn btn-link\"><span class=\"glyphicon glyphicon-chevron-down\"></span></a></td>\n          <td [ngClass]=\"{hidden: !showMeridian}\" [hidden]=\"!showMeridian\"></td>\n        </tr>\n      </tbody>\n    </table>\n  ",
+        "templateUrl": "asset:ng2_strap/lib/timepicker/timepicker.dart",
+        "styles": [],
+        "styleUrls": [],
+        "ngContentSelectors": []
+      }
+    }
+  },
+  "TooltipContainer": {
+    "kind": "type",
+    "value": {
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "n2s-tooltip-container",
+      "exportAs": null,
+      "type": {
+        "name": "TooltipContainer",
+        "moduleUrl": "asset:ng2_strap/lib/tooltip/tooltip.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {},
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [],
+      "template": {
+        "encapsulation": 2,
+        "template": "    <div class=\"tooltip\" role=\"tooltip\"\n     [ngStyle]=\"{top: top, left: left, display: display}\"\n     [ngClass]=\"classMap\" >\n      <div class=\"tooltip-arrow\"></div>\n      <div class=\"tooltip-inner\">\n        {{content}}\n      </div>\n    </div>",
+        "templateUrl": "asset:ng2_strap/lib/tooltip/tooltip.dart",
+        "styles": [],
+        "styleUrls": [],
+        "ngContentSelectors": []
+      }
+    }
+  },
+  "Tooltip": {
+    "kind": "type",
+    "value": {
+      "isComponent": false,
+      "dynamicLoadable": true,
+      "selector": "[tooltip]",
+      "exportAs": null,
+      "type": {
+        "name": "Tooltip",
+        "moduleUrl": "asset:ng2_strap/lib/tooltip/tooltip.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "content": "tooltip",
+        "placement": "tooltip-placement",
+        "appendToBody": "appendToBody",
+        "isOpen": "tooltip-is-open",
+        "enable": "tooltip-enable"
+      },
+      "outputs": {},
+      "hostListeners": {
+        "focusin": "show($event)",
+        "mouseenter": "show($event)",
+        "focusout": "hide($event)",
+        "mouseleave": "hide($event)"
+      },
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [],
+      "template": null
+    }
+  },
+  "TypeaheadContainer": {
+    "kind": "type",
+    "value": {
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "n2s-typeahead-dropdown",
+      "exportAs": null,
+      "type": {
+        "name": "TypeaheadContainer",
+        "moduleUrl": "asset:ng2_strap/lib/typeahead/typeahead.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {},
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [],
+      "template": {
+        "encapsulation": 2,
+        "template": "  <ul class=\"dropdown-menu\"\n      [ng-style]=\"{top: top, left: left, display: display}\"\n      style=\"display: block\">\n    <li *ngFor=\"#match of matches\"\n        [ngClass]=\"{active: isActive(match) }\"\n        (mouseenter)=\"selectActive(match)\">\n        <a href=\"#\" (click)=\"selectMatch(match, $event)\" tabindex=\"-1\" [innerHtml]=\"hightlight(match, query)\"></a>\n    </li>\n  </ul>\n  ",
+        "templateUrl": "asset:ng2_strap/lib/typeahead/typeahead.dart",
+        "styles": [
+          "n2s-typeahead-dropdown {\n  position: absolute;\n}\n"
+        ],
+        "styleUrls": [],
+        "ngContentSelectors": []
+      }
+    }
+  },
+  "Typeahead": {
+    "kind": "type",
+    "value": {
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "n2s-typeahead",
+      "exportAs": null,
+      "type": {
+        "name": "Typeahead",
+        "moduleUrl": "asset:ng2_strap/lib/typeahead/typeahead.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "context": "context",
+        "source": "source",
+        "appendToBody": "appendToBody",
+        "editable": "editable",
+        "focusFirst": "focusFirst",
+        "inputFormatter": "inputFormatter",
+        "minLength": "minLength",
+        "selectOnExact": "selectOnExact",
+        "templateUrl": "templateUrl",
+        "popupTemplateUrl": "popupTemplateUrl",
+        "waitMs": "waitMs",
+        "optionsLimit": "optionsLimit",
+        "selectOnBlur": "selectOnBlur",
+        "focusOnSelect": "focusOnSelect",
+        "optionField": "optionField",
+        "async": "async"
+      },
+      "outputs": {
+        "onLoading": "onLoading",
+        "onNoResults": "onNoResults",
+        "onSelect": "onSelect"
+      },
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        0
+      ],
+      "template": {
+        "encapsulation": 2,
+        "template": "<input type=\"text\"[(ngModel)]=\"cd.model\" (keyup)=\"onTypeaheadChange($event)\" class=\"form-control\">",
+        "templateUrl": "asset:ng2_strap/lib/typeahead/typeahead.dart",
+        "styles": [],
+        "styleUrls": [],
+        "ngContentSelectors": []
+      }
+    }
+  },
+  "NgTransclude": {
+    "kind": "type",
+    "value": {
+      "isComponent": false,
+      "dynamicLoadable": true,
+      "selector": "[ng-transclude]",
+      "exportAs": null,
+      "type": {
+        "name": "NgTransclude",
+        "moduleUrl": "asset:ng2_strap/lib/common.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "ngTransclude": "ngTransclude"
+      },
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [],
+      "template": null
+    }
+  },
+  "PopupContainer": {
+    "kind": "type",
+    "value": {
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "popup-container",
+      "exportAs": null,
+      "type": {
+        "name": "PopupContainer",
+        "moduleUrl": "asset:ng2_strap/lib/datepicker/index.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {},
+      "outputs": {
+        "update1": "update1"
+      },
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [],
+      "template": {
+        "encapsulation": 2,
+        "template": "    <ul class=\"dropdown-menu\"\n        style=\"display: block\"\n        [ng-style]=\"{top: top, left: left, display: display}\"\n        [ngClass]=\"classMap\">\n        <li>\n             <datepicker (cupdate)=\"onUpdate($event)\" *ngIf=\"popupComp\" [(ngModel)]=\"popupComp.cd.model\" [show-weeks]=\"true\"></datepicker>\n        </li>\n        <li *ngIf=\"showButtonBar\" style=\"padding:10px 9px 2px\">\n            <span class=\"btn-group pull-left\">\n                 <button type=\"button\" class=\"btn btn-sm btn-info\" (click)=\"select('today')\" ng-disabled=\"isDisabled('today')\">{{ currentText }}</button>\n                 <button type=\"button\" class=\"btn btn-sm btn-danger\" (click)=\"select(null)\">{{ clearText }}</button>\n            </span>\n            <button type=\"button\" class=\"btn btn-sm btn-success pull-right\" (click)=\"close()\">{{ closeText }}</button>\n        </li>\n    </ul>",
+        "templateUrl": "asset:ng2_strap/lib/datepicker/index.dart",
+        "styles": [],
+        "styleUrls": [],
+        "ngContentSelectors": []
+      }
+    }
+  },
+  "DatePickerPopup": {
+    "kind": "type",
+    "value": {
+      "isComponent": false,
+      "dynamicLoadable": true,
+      "selector": "[datepicker-popup][ngModel]",
+      "exportAs": null,
+      "type": {
+        "name": "DatePickerPopup",
+        "moduleUrl": "asset:ng2_strap/lib/datepicker/index.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "datepickerPopup": "datepickerPopup",
+        "isOpen": "isOpen"
+      },
+      "outputs": {},
+      "hostListeners": {
+        "cupdate": "onUpdate1($event)"
+      },
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        0
+      ],
+      "template": null
+    }
+  },
+  "DatePicker": {
+    "kind": "type",
+    "value": {
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "n2s-datepicker",
+      "exportAs": null,
+      "type": {
+        "name": "DatePicker",
+        "moduleUrl": "asset:ng2_strap/lib/datepicker/index.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "datepickerMode": "datepickerMode",
+        "minDate": "minDate",
+        "maxDate": "maxDate",
+        "dateDisabled": "dateDisabled",
+        "activeDate": "activeDate",
+        "showWeeks": "showWeeks",
+        "startingDay": "startingDay",
+        "initDate": "initDate",
+        "minMode": "minMode",
+        "maxMode": "maxMode",
+        "formatDay": "formatDay",
+        "formatMonth": "formatMonth",
+        "formatYear": "formatYear",
+        "formatDayHeader": "formatDayHeader",
+        "formatDayTitle": "formatDayTitle",
+        "formatMonthTitle": "formatMonthTitle",
+        "yearRange": "yearRange",
+        "shortcutPropagation": "shortcutPropagation"
+      },
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [],
+      "template": {
+        "encapsulation": 2,
+        "template": "    <n2s-datepicker-inner [activeDate]=\"activeDate\"\n                      (update)=\"onUpdate($event)\"\n                      [datepicker-mode]=\"datepickerMode\"\n                      [initDate]=\"initDate\"\n                      [minDate]=\"minDate\"\n                      [maxDate]=\"maxDate\"\n                      [minDode]=\"minMode\"\n                      [maxDode]=\"maxMode\"\n                      [showDeeks]=\"showWeeks\"\n                      [formatDay]=\"formatDay\"\n                      [formatMonth]=\"formatMonth\"\n                      [formatYear]=\"formatYear\"\n                      [formatDayHeader]=\"formatDayHeader\"\n                      [formatDayTitle]=\"formatDayTitle\"\n                      [formatMonthTitle]=\"formatMonthTitle\"\n                      [startingDay]=\"startingDay\"\n                      [yearRange]=\"yearRange\"\n                      [customClass]=\"customClass\"\n                      [dateDisabled]=\"dateDisabled\"\n                      [templateUrl]=\"templateUrl\"\n                      [shortcutPropagation]=\"shortcutPropagation\">\n      <n2s-daypicker tabindex=\"0\"></n2s-daypicker>\n      <n2s-monthpicker tabindex=\"0\"></n2s-monthpicker>\n      <n2s-yearpicker tabindex=\"0\"></n2s-yearpicker>\n    </n2s-datepicker-inner>\n    ",
+        "templateUrl": "asset:ng2_strap/lib/datepicker/index.dart",
+        "styles": [],
+        "styleUrls": [],
+        "ngContentSelectors": []
+      }
+    }
+  },
+  "Dropdown": {
+    "kind": "type",
+    "value": {
+      "isComponent": false,
+      "dynamicLoadable": true,
+      "selector": "[dropdown]",
+      "exportAs": null,
+      "type": {
+        "name": "Dropdown",
+        "moduleUrl": "asset:ng2_strap/lib/dropdown/index.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "isOpen": "isOpen",
+        "autoClose": "autoClose",
+        "keyboardNav": "keyboardNav",
+        "dropdownAppendToBody": "dropdownAppendToBody"
+      },
+      "outputs": {
+        "onToggle": "onToggle"
+      },
+      "hostListeners": {},
+      "hostProperties": {
+        "class.open": "isOpen",
+        "class.dropdown": "true"
+      },
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        0,
+        1
+      ],
+      "template": null
+    }
+  },
+  "DropdownMenu": {
+    "kind": "type",
+    "value": {
+      "isComponent": false,
+      "dynamicLoadable": true,
+      "selector": "[dropdown-menu], .dropdown-menu",
+      "exportAs": null,
+      "type": {
+        "name": "DropdownMenu",
+        "moduleUrl": "asset:ng2_strap/lib/dropdown/index.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "templateUrl": "templateUrl"
+      },
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        0
+      ],
+      "template": null
+    }
+  },
+  "DropdownToggle": {
+    "kind": "type",
+    "value": {
+      "isComponent": false,
+      "dynamicLoadable": true,
+      "selector": "[dropdown-toggle]",
+      "exportAs": null,
+      "type": {
+        "name": "DropdownToggle",
+        "moduleUrl": "asset:ng2_strap/lib/dropdown/index.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "disabled": "disabled"
+      },
+      "outputs": {},
+      "hostListeners": {
+        "click": "toggleDropdown($event)"
+      },
+      "hostProperties": {
+        "attr.aria-expanded": "isOpen",
+        "attr.aria-haspopup": "true",
+        "class.disabled": "disabled",
+        "class.dropdown-toggle": "true"
+      },
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        0
+      ],
+      "template": null
+    }
+  },
+  "KeyboardNav": {
+    "kind": "type",
+    "value": {
+      "isComponent": false,
+      "dynamicLoadable": true,
+      "selector": "[dropdown][keyboard-nav]",
+      "exportAs": null,
+      "type": {
+        "name": "KeyboardNav",
+        "moduleUrl": "asset:ng2_strap/lib/dropdown/index.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {},
+      "outputs": {},
+      "hostListeners": {
+        "keydown": "onKeydown($event)"
+      },
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [],
+      "template": null
+    }
+  },
+  "ACCORDION_DIRECTIVES": {
+    "kind": "alias",
+    "value": [
+      "Accordion",
+      "AccordionPanel"
+    ]
+  },
+  "CAROUSEL_DIRECTIVES": {
+    "kind": "alias",
+    "value": [
+      "Carousel",
+      "Slide"
+    ]
+  },
+  "PAGINATION_DIRECTIVES": {
+    "kind": "alias",
+    "value": [
+      "Pagination",
+      "Pager"
+    ]
+  },
+  "PROGRESSBAR_DIRECTIVES": {
+    "kind": "alias",
+    "value": [
+      "Progress",
+      "Bar",
+      "Progressbar"
+    ]
+  },
+  "TABS_DIRECTIVES": {
+    "kind": "alias",
+    "value": [
+      "Tab",
+      "TabHeading",
+      "Tabset"
+    ]
+  },
+  "TOOLTIP_DIRECTIVES": {
+    "kind": "alias",
+    "value": [
+      "Tooltip",
+      "TooltipContainer"
+    ]
+  },
+  "DATEPICKER_DIRECTIVES": {
+    "kind": "alias",
+    "value": [
+      "DatePicker",
+      "DatePickerPopup"
+    ]
+  },
+  "DROPDOWN_DIRECTIVES": {
+    "kind": "alias",
+    "value": [
+      "Dropdown",
+      "DropdownMenu",
+      "DropdownToggle"
+    ]
+  }
+}

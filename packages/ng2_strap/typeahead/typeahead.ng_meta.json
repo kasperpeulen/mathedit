@@ -1,0 +1,238 @@
+{
+  "ngDeps": {
+    "1": "",
+    "3": [
+      {
+        "1": "package:angular2/angular2.dart",
+        "5": false
+      },
+      {
+        "1": "../ng2-bootstrap-config.dart",
+        "5": false
+      },
+      {
+        "1": "../position.dart",
+        "5": false
+      },
+      {
+        "1": "dart:html",
+        "5": false
+      },
+      {
+        "1": "dart:async",
+        "5": false
+      },
+      {
+        "1": "package:node_shims/js.dart",
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "TypeaheadContainer",
+        "4": [
+          {
+            "1": "Component",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"n2s-typeahead-dropdown\""
+              },
+              {
+                "1": "template",
+                "2": "'''\n  <ul class=\"dropdown-menu\"\n      [ng-style]=\"{top: top, left: left, display: display}\"\n      style=\"display: block\">\n    <li *ngFor=\"#match of matches\"\n        [ngClass]=\"{active: isActive(match) }\"\n        (mouseenter)=\"selectActive(match)\">\n        <a href=\"#\" (click)=\"selectMatch(match, \\$event)\" tabindex=\"-1\" [innerHtml]=\"hightlight(match, query)\"></a>\n    </li>\n  </ul>\n  '''"
+              },
+              {
+                "1": "styles",
+                "2": "const ['''\nn2s-typeahead-dropdown {\n  position: absolute;\n}\n''']"
+              },
+              {
+                "1": "directives",
+                "2": "const [CORE_DIRECTIVES]"
+              },
+              {
+                "1": "encapsulation",
+                "2": "ViewEncapsulation.None"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": true,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "ElementRef",
+            "4": "element"
+          },
+          {
+            "1": "TypeaheadOptions",
+            "4": "typeaheadOptions"
+          }
+        ],
+        "8": [
+          {
+            "2": "CORE_DIRECTIVES"
+          }
+        ]
+      },
+      {
+        "1": "Typeahead",
+        "4": [
+          {
+            "1": "Component",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"n2s-typeahead\""
+              },
+              {
+                "1": "inputs",
+                "2": "const ['context', \"source\", \"appendToBody\", \"editable\", \"focusFirst\", \"inputFormatter\", \"minLength\", \"selectOnExact\", \"templateUrl\", \"popupTemplateUrl\", \"waitMs\", \"optionsLimit\", \"selectOnBlur\", \"focusOnSelect\", \"optionField\", \"async\"]"
+              },
+              {
+                "1": "outputs",
+                "2": "const [\"onLoading\", \"onNoResults\", \"onSelect\"]"
+              },
+              {
+                "1": "template",
+                "2": "'<input type=\"text\"[(ngModel)]=\"cd.model\" (keyup)=\"onTypeaheadChange(\\$event)\" class=\"form-control\">'"
+              },
+              {
+                "1": "directives",
+                "2": "const [FORM_DIRECTIVES]"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": true,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "NgModel",
+            "4": "cd"
+          },
+          {
+            "1": "Renderer",
+            "4": "renderer"
+          },
+          {
+            "1": "ElementRef",
+            "4": "elementRef"
+          },
+          {
+            "1": "DynamicComponentLoader",
+            "4": "loader"
+          }
+        ],
+        "6": [
+          "OnInit"
+        ],
+        "8": [
+          {
+            "2": "FORM_DIRECTIVES"
+          }
+        ]
+      }
+    ],
+    "6": "typeahead.dart",
+    "10": [
+      {
+        "1": "package:angular2/angular2.ng_deps.dart",
+        "4": "i0"
+      },
+      {
+        "1": "../position.ng_deps.dart",
+        "4": "i1"
+      }
+    ]
+  },
+  "TypeaheadContainer": {
+    "kind": "type",
+    "value": {
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "n2s-typeahead-dropdown",
+      "exportAs": null,
+      "type": {
+        "name": "TypeaheadContainer",
+        "moduleUrl": "asset:ng2_strap/lib/typeahead/typeahead.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {},
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [],
+      "template": {
+        "encapsulation": 2,
+        "template": "  <ul class=\"dropdown-menu\"\n      [ng-style]=\"{top: top, left: left, display: display}\"\n      style=\"display: block\">\n    <li *ngFor=\"#match of matches\"\n        [ngClass]=\"{active: isActive(match) }\"\n        (mouseenter)=\"selectActive(match)\">\n        <a href=\"#\" (click)=\"selectMatch(match, $event)\" tabindex=\"-1\" [innerHtml]=\"hightlight(match, query)\"></a>\n    </li>\n  </ul>\n  ",
+        "templateUrl": "asset:ng2_strap/lib/typeahead/typeahead.dart",
+        "styles": [
+          "n2s-typeahead-dropdown {\n  position: absolute;\n}\n"
+        ],
+        "styleUrls": [],
+        "ngContentSelectors": []
+      }
+    }
+  },
+  "Typeahead": {
+    "kind": "type",
+    "value": {
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "n2s-typeahead",
+      "exportAs": null,
+      "type": {
+        "name": "Typeahead",
+        "moduleUrl": "asset:ng2_strap/lib/typeahead/typeahead.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "context": "context",
+        "source": "source",
+        "appendToBody": "appendToBody",
+        "editable": "editable",
+        "focusFirst": "focusFirst",
+        "inputFormatter": "inputFormatter",
+        "minLength": "minLength",
+        "selectOnExact": "selectOnExact",
+        "templateUrl": "templateUrl",
+        "popupTemplateUrl": "popupTemplateUrl",
+        "waitMs": "waitMs",
+        "optionsLimit": "optionsLimit",
+        "selectOnBlur": "selectOnBlur",
+        "focusOnSelect": "focusOnSelect",
+        "optionField": "optionField",
+        "async": "async"
+      },
+      "outputs": {
+        "onLoading": "onLoading",
+        "onNoResults": "onNoResults",
+        "onSelect": "onSelect"
+      },
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        0
+      ],
+      "template": {
+        "encapsulation": 2,
+        "template": "<input type=\"text\"[(ngModel)]=\"cd.model\" (keyup)=\"onTypeaheadChange($event)\" class=\"form-control\">",
+        "templateUrl": "asset:ng2_strap/lib/typeahead/typeahead.dart",
+        "styles": [],
+        "styleUrls": [],
+        "ngContentSelectors": []
+      }
+    }
+  }
+}

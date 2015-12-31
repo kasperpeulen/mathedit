@@ -1,0 +1,205 @@
+{
+  "ngDeps": {
+    "1": "",
+    "3": [
+      {
+        "1": "package:angular2/angular2.dart",
+        "5": false
+      },
+      {
+        "1": "../ng2-bootstrap-config.dart",
+        "5": false
+      },
+      {
+        "1": "package:node_shims/js.dart",
+        "5": false
+      },
+      {
+        "1": "dart:async",
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "Carousel",
+        "4": [
+          {
+            "1": "Component",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"n2s-carousel\""
+              },
+              {
+                "1": "inputs",
+                "2": "const [\"interval\", \"noTransition\", \"noPause\", \"noWrap\"]"
+              },
+              {
+                "1": "template",
+                "2": "'''\n<div (mouseenter)=\"pause()\" (mouseleave)=\"play()\" class=\"carousel slide\">\n  <ol class=\"carousel-indicators\" [hidden]=\"slides.length <= 1\">\n     <li *ngFor=\"#slidez of slides\" [ngClass]=\"{active: slidez.active === true}\" (click)=\"select(slidez)\"></li>\n  </ol>\n  <div class=\"carousel-inner\"><ng-content></ng-content></div>\n</div>\n  '''"
+              },
+              {
+                "1": "directives",
+                "2": "const [CORE_DIRECTIVES, NgClass]"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": true,
+            "7": true,
+            "8": false
+          }
+        ],
+        "6": [
+          "OnDestroy"
+        ],
+        "8": [
+          {
+            "2": "CORE_DIRECTIVES"
+          },
+          {
+            "2": "NgClass"
+          }
+        ]
+      },
+      {
+        "1": "Slide",
+        "4": [
+          {
+            "1": "Component",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"n2s-slide\""
+              },
+              {
+                "1": "inputs",
+                "2": "const [\"direction\", \"active\", \"index\"]"
+              },
+              {
+                "1": "host",
+                "2": "const {\"[class.active]\" : \"active\", \"[class.item]\" : \"true\", \"[class.carousel-item]\" : \"true\"}"
+              },
+              {
+                "1": "template",
+                "2": "'''\n  <div [ngClass]=\"{active: active}\" class=\"item text-center\">\n    <ng-content></ng-content>\n  </div>\n  '''"
+              },
+              {
+                "1": "directives",
+                "2": "const [NgClass]"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": true,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "Carousel",
+            "4": "carousel"
+          }
+        ],
+        "6": [
+          "OnInit",
+          "OnDestroy"
+        ],
+        "8": [
+          {
+            "2": "NgClass"
+          }
+        ]
+      }
+    ],
+    "6": "carousel.dart"
+  },
+  "Carousel": {
+    "kind": "type",
+    "value": {
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "n2s-carousel",
+      "exportAs": null,
+      "type": {
+        "name": "Carousel",
+        "moduleUrl": "asset:ng2_strap/lib/carousel/carousel.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "interval": "interval",
+        "noTransition": "noTransition",
+        "noPause": "noPause",
+        "noWrap": "noWrap"
+      },
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        1
+      ],
+      "template": {
+        "encapsulation": 2,
+        "template": "<div (mouseenter)=\"pause()\" (mouseleave)=\"play()\" class=\"carousel slide\">\n  <ol class=\"carousel-indicators\" [hidden]=\"slides.length <= 1\">\n     <li *ngFor=\"#slidez of slides\" [ngClass]=\"{active: slidez.active === true}\" (click)=\"select(slidez)\"></li>\n  </ol>\n  <div class=\"carousel-inner\"><ng-content></ng-content></div>\n</div>\n  ",
+        "templateUrl": "asset:ng2_strap/lib/carousel/carousel.dart",
+        "styles": [],
+        "styleUrls": [],
+        "ngContentSelectors": [
+          "*"
+        ]
+      }
+    }
+  },
+  "Slide": {
+    "kind": "type",
+    "value": {
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "n2s-slide",
+      "exportAs": null,
+      "type": {
+        "name": "Slide",
+        "moduleUrl": "asset:ng2_strap/lib/carousel/carousel.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "direction": "direction",
+        "active": "active",
+        "index": "index"
+      },
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {
+        "class.carousel-item": "true",
+        "class.active": "active",
+        "class.item": "true"
+      },
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        0,
+        1
+      ],
+      "template": {
+        "encapsulation": 2,
+        "template": "  <div [ngClass]=\"{active: active}\" class=\"item text-center\">\n    <ng-content></ng-content>\n  </div>\n  ",
+        "templateUrl": "asset:ng2_strap/lib/carousel/carousel.dart",
+        "styles": [],
+        "styleUrls": [],
+        "ngContentSelectors": [
+          "*"
+        ]
+      }
+    }
+  },
+  "CAROUSEL_DIRECTIVES": {
+    "kind": "alias",
+    "value": [
+      "Carousel",
+      "Slide"
+    ]
+  }
+}

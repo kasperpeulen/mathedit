@@ -29,6 +29,10 @@
       {
         "1": "package:firebase/firebase.dart",
         "5": false
+      },
+      {
+        "1": "package:mathedit/service/editor.service.dart",
+        "5": false
       }
     ],
     "5": [
@@ -78,6 +82,10 @@
           {
             "1": "ElementRef",
             "4": "ref"
+          },
+          {
+            "1": "EditorService",
+            "4": "editor"
           }
         ],
         "6": [

@@ -1,0 +1,84 @@
+{
+  "ngDeps": {
+    "1": "",
+    "3": [
+      {
+        "1": "package:angular2/angular2.dart",
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "ButtonRadio",
+        "4": [
+          {
+            "1": "Directive",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"n2s-btn-radio\""
+              },
+              {
+                "1": "inputs",
+                "2": "const [\"option\", \"uncheckable\"]"
+              },
+              {
+                "1": "host",
+                "2": "const {\"(click)\" : \"onClick()\", \"[class.active]\" : \"isActive\"}"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "NgModel",
+            "4": "ngModel"
+          },
+          {
+            "1": "Renderer",
+            "4": "renderer"
+          },
+          {
+            "1": "ElementRef",
+            "4": "elementRef"
+          }
+        ]
+      }
+    ],
+    "6": "button-radio.dart"
+  },
+  "ButtonRadio": {
+    "kind": "type",
+    "value": {
+      "isComponent": false,
+      "dynamicLoadable": true,
+      "selector": "n2s-btn-radio",
+      "exportAs": null,
+      "type": {
+        "name": "ButtonRadio",
+        "moduleUrl": "asset:ng2_strap/lib/buttons/button-radio.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "option": "option",
+        "uncheckable": "uncheckable"
+      },
+      "outputs": {},
+      "hostListeners": {
+        "click": "onClick()"
+      },
+      "hostProperties": {
+        "class.active": "isActive"
+      },
+      "hostAttributes": {},
+      "lifecycleHooks": [],
+      "template": null
+    }
+  }
+}

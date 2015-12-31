@@ -1,0 +1,177 @@
+{
+  "ngDeps": {
+    "1": "",
+    "3": [
+      {
+        "1": "package:angular2/angular2.dart",
+        "5": false
+      },
+      {
+        "1": "package:ng2_strap/position.dart",
+        "5": false
+      },
+      {
+        "1": "dart:async",
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "TooltipContainer",
+        "4": [
+          {
+            "1": "Component",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"n2s-tooltip-container\""
+              },
+              {
+                "1": "template",
+                "2": "'''\n    <div class=\"tooltip\" role=\"tooltip\"\n     [ngStyle]=\"{top: top, left: left, display: display}\"\n     [ngClass]=\"classMap\" >\n      <div class=\"tooltip-arrow\"></div>\n      <div class=\"tooltip-inner\">\n        {{content}}\n      </div>\n    </div>'''"
+              },
+              {
+                "1": "directives",
+                "2": "const [NgClass, NgStyle]"
+              },
+              {
+                "1": "encapsulation",
+                "2": "ViewEncapsulation.None"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": true,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "ElementRef",
+            "4": "element"
+          },
+          {
+            "1": "TooltipOptions",
+            "4": "options"
+          }
+        ],
+        "8": [
+          {
+            "2": "NgClass"
+          },
+          {
+            "2": "NgStyle"
+          }
+        ]
+      },
+      {
+        "1": "Tooltip",
+        "4": [
+          {
+            "1": "Directive",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"[tooltip]\""
+              },
+              {
+                "1": "inputs",
+                "2": "const [\"content:tooltip\", \"placement:tooltip-placement\", \"appendToBody\", \"isOpen: tooltip-is-open\", \"enable: tooltip-enable\"]"
+              },
+              {
+                "1": "host",
+                "2": "const {\"(mouseenter)\" : \"show(\\$event)\", \"(mouseleave)\" : \"hide(\\$event)\", \"(focusin)\" : \"show(\\$event)\", \"(focusout)\" : \"hide(\\$event)\"}"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "ElementRef",
+            "4": "element"
+          },
+          {
+            "1": "DynamicComponentLoader",
+            "4": "loader"
+          }
+        ]
+      }
+    ],
+    "6": "tooltip.dart"
+  },
+  "TooltipContainer": {
+    "kind": "type",
+    "value": {
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "n2s-tooltip-container",
+      "exportAs": null,
+      "type": {
+        "name": "TooltipContainer",
+        "moduleUrl": "asset:ng2_strap/lib/tooltip/tooltip.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {},
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [],
+      "template": {
+        "encapsulation": 2,
+        "template": "    <div class=\"tooltip\" role=\"tooltip\"\n     [ngStyle]=\"{top: top, left: left, display: display}\"\n     [ngClass]=\"classMap\" >\n      <div class=\"tooltip-arrow\"></div>\n      <div class=\"tooltip-inner\">\n        {{content}}\n      </div>\n    </div>",
+        "templateUrl": "asset:ng2_strap/lib/tooltip/tooltip.dart",
+        "styles": [],
+        "styleUrls": [],
+        "ngContentSelectors": []
+      }
+    }
+  },
+  "Tooltip": {
+    "kind": "type",
+    "value": {
+      "isComponent": false,
+      "dynamicLoadable": true,
+      "selector": "[tooltip]",
+      "exportAs": null,
+      "type": {
+        "name": "Tooltip",
+        "moduleUrl": "asset:ng2_strap/lib/tooltip/tooltip.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "content": "tooltip",
+        "placement": "tooltip-placement",
+        "appendToBody": "appendToBody",
+        "isOpen": "tooltip-is-open",
+        "enable": "tooltip-enable"
+      },
+      "outputs": {},
+      "hostListeners": {
+        "focusin": "show($event)",
+        "mouseenter": "show($event)",
+        "focusout": "hide($event)",
+        "mouseleave": "hide($event)"
+      },
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [],
+      "template": null
+    }
+  },
+  "TOOLTIP_DIRECTIVES": {
+    "kind": "alias",
+    "value": [
+      "Tooltip",
+      "TooltipContainer"
+    ]
+  }
+}

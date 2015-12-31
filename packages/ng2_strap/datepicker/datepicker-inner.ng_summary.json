@@ -1,0 +1,151 @@
+{
+  "ngDeps": {
+    "1": "",
+    "3": [
+      {
+        "1": "package:angular2/angular2.dart",
+        "5": false
+      },
+      {
+        "1": "date-formatter.dart",
+        "2": [
+          "DateFormatter"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:node_shims/js.dart",
+        "5": false
+      },
+      {
+        "1": "dart:math",
+        "5": false
+      },
+      {
+        "1": "package:intl/intl.dart",
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "DatePickerInner",
+        "4": [
+          {
+            "1": "Component",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"n2s-datepicker-inner\""
+              },
+              {
+                "1": "outputs",
+                "2": "const [\"update\"]"
+              },
+              {
+                "1": "inputs",
+                "2": "const [\"activeDate\", \"datepickerMode\", \"initDate\", \"minDate\", \"maxDate\", \"minMode\", \"maxMode\", \"showWeeks\", \"formatDay\", \"formatMonth\", \"formatYear\", \"formatDayHeader\", \"formatDayTitle\", \"formatMonthTitle\", \"startingDay\", \"yearRange\", \"shortcutPropagation\", \"customClass\", \"dateDisabled\", \"templateUrl\"]"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": true,
+            "7": true,
+            "8": false
+          },
+          {
+            "1": "View",
+            "3": [
+              {
+                "1": "template",
+                "2": "'''\n<div [hidden]=\"datepickerMode == null\" class=\"well well-sm bg-faded p-a card\" role=\"application\" ><!--&lt;!&ndash;ng-keydown=\"keydown(\\$event)\"&ndash;&gt;-->\n  <ng-content></ng-content>\n</div>\n  '''"
+              },
+              {
+                "1": "directives",
+                "2": "const [FORM_DIRECTIVES, CORE_DIRECTIVES, NgClass, NgModel]"
+              }
+            ],
+            "4": true,
+            "5": false,
+            "6": false,
+            "7": false,
+            "8": false
+          }
+        ],
+        "6": [
+          "OnInit"
+        ],
+        "8": [
+          {
+            "2": "FORM_DIRECTIVES"
+          },
+          {
+            "2": "CORE_DIRECTIVES"
+          },
+          {
+            "2": "NgClass"
+          },
+          {
+            "2": "NgModel"
+          }
+        ]
+      }
+    ],
+    "6": "datepicker-inner.dart"
+  },
+  "DatePickerInner": {
+    "kind": "type",
+    "value": {
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "n2s-datepicker-inner",
+      "exportAs": null,
+      "type": {
+        "name": "DatePickerInner",
+        "moduleUrl": "asset:ng2_strap/lib/datepicker/datepicker-inner.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "activeDate": "activeDate",
+        "datepickerMode": "datepickerMode",
+        "initDate": "initDate",
+        "minDate": "minDate",
+        "maxDate": "maxDate",
+        "minMode": "minMode",
+        "maxMode": "maxMode",
+        "showWeeks": "showWeeks",
+        "formatDay": "formatDay",
+        "formatMonth": "formatMonth",
+        "formatYear": "formatYear",
+        "formatDayHeader": "formatDayHeader",
+        "formatDayTitle": "formatDayTitle",
+        "formatMonthTitle": "formatMonthTitle",
+        "startingDay": "startingDay",
+        "yearRange": "yearRange",
+        "shortcutPropagation": "shortcutPropagation",
+        "customClass": "customClass",
+        "dateDisabled": "dateDisabled",
+        "templateUrl": "templateUrl"
+      },
+      "outputs": {
+        "update": "update"
+      },
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        0
+      ],
+      "template": {
+        "encapsulation": 2,
+        "template": "<div [hidden]=\"datepickerMode == null\" class=\"well well-sm bg-faded p-a card\" role=\"application\" ><!--&lt;!&ndash;ng-keydown=\"keydown($event)\"&ndash;&gt;-->\n  <ng-content></ng-content>\n</div>\n  ",
+        "templateUrl": "asset:ng2_strap/lib/datepicker/datepicker-inner.dart",
+        "styles": [],
+        "styleUrls": [],
+        "ngContentSelectors": [
+          "*"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "ngDeps": {
+    "1": "",
+    "3": [
+      {
+        "1": "package:angular2/angular2.dart",
+        "5": false
+      },
+      {
+        "1": "datepicker-inner.dart",
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "YearPicker",
+        "4": [
+          {
+            "1": "Component",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"n2s-yearpicker\""
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": true,
+            "7": true,
+            "8": false
+          },
+          {
+            "1": "View",
+            "3": [
+              {
+                "1": "template",
+                "2": "'''\n<table [hidden]=\"datePicker.datepickerMode!='year'\" role=\"grid\">\n  <thead>\n    <tr>\n      <th>\n        <button type=\"button\" class=\"btn btn-default btn-sm pull-left\"\n                (click)=\"datePicker.move(-1)\" tabindex=\"-1\">\n          <i class=\"glyphicon glyphicon-chevron-left\"></i>\n        </button>\n      </th>\n      <th colspan=\"3\">\n        <button [id]=\"uniqueId + \\'-title\\'\" role=\"heading\"\n                type=\"button\" class=\"btn btn-default btn-sm\"\n                (click)=\"datePicker.toggleMode()\"\n                [disabled]=\"datePicker.datepickerMode === datePicker.maxMode\"\n                [ngClass]=\"{disabled: datePicker.datepickerMode === datePicker.maxMode}\" tabindex=\"-1\" style=\"width:100%;\">\n          <strong>{{title}}</strong>\n        </button>\n      </th>\n      <th>\n        <button type=\"button\" class=\"btn btn-default btn-sm pull-right\"\n                (click)=\"datePicker.move(1)\" tabindex=\"-1\">\n          <i class=\"glyphicon glyphicon-chevron-right\"></i>\n        </button>\n      </th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr *ngFor=\"#rowz of rows\">\n      <td *ngFor=\"#dtz of rowz\" class=\"text-center\" role=\"gridcell\">\n\n        <button type=\"button\" style=\"min-width:100%;\" class=\"btn btn-default\"\n                [ngClass]=\"{\\'btn-info\\': dtz['selected'], active: datePicker.isActive(dtz), disabled: dtz['disabled']}\"\n                [disabled]=\"dtz['disabled']\"\n                (click)=\"datePicker.select(dtz['date'])\" tabindex=\"-1\">\n          <span [ngClass]=\"{\\'text-info\\': dtz['current']}\">{{dtz['label']}}</span>\n        </button>\n\n      </td>\n    </tr>\n  </tbody>\n</table>\n  '''"
+              },
+              {
+                "1": "directives",
+                "2": "const [FORM_DIRECTIVES, CORE_DIRECTIVES, NgClass]"
+              }
+            ],
+            "4": true,
+            "5": false,
+            "6": false,
+            "7": false,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "DatePickerInner",
+            "4": "datePicker"
+          }
+        ],
+        "6": [
+          "OnInit"
+        ],
+        "8": [
+          {
+            "2": "FORM_DIRECTIVES"
+          },
+          {
+            "2": "CORE_DIRECTIVES"
+          },
+          {
+            "2": "NgClass"
+          }
+        ]
+      }
+    ],
+    "6": "yearpicker.dart",
+    "10": [
+      {
+        "1": "package:angular2/angular2.ng_deps.dart",
+        "4": "i0"
+      },
+      {
+        "1": "datepicker-inner.ng_deps.dart",
+        "4": "i1"
+      }
+    ]
+  },
+  "YearPicker": {
+    "kind": "type",
+    "value": {
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "n2s-yearpicker",
+      "exportAs": null,
+      "type": {
+        "name": "YearPicker",
+        "moduleUrl": "asset:ng2_strap/lib/datepicker/yearpicker.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {},
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        0
+      ],
+      "template": {
+        "encapsulation": 2,
+        "template": "<table [hidden]=\"datePicker.datepickerMode!='year'\" role=\"grid\">\n  <thead>\n    <tr>\n      <th>\n        <button type=\"button\" class=\"btn btn-default btn-sm pull-left\"\n                (click)=\"datePicker.move(-1)\" tabindex=\"-1\">\n          <i class=\"glyphicon glyphicon-chevron-left\"></i>\n        </button>\n      </th>\n      <th colspan=\"3\">\n        <button [id]=\"uniqueId + '-title'\" role=\"heading\"\n                type=\"button\" class=\"btn btn-default btn-sm\"\n                (click)=\"datePicker.toggleMode()\"\n                [disabled]=\"datePicker.datepickerMode === datePicker.maxMode\"\n                [ngClass]=\"{disabled: datePicker.datepickerMode === datePicker.maxMode}\" tabindex=\"-1\" style=\"width:100%;\">\n          <strong>{{title}}</strong>\n        </button>\n      </th>\n      <th>\n        <button type=\"button\" class=\"btn btn-default btn-sm pull-right\"\n                (click)=\"datePicker.move(1)\" tabindex=\"-1\">\n          <i class=\"glyphicon glyphicon-chevron-right\"></i>\n        </button>\n      </th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr *ngFor=\"#rowz of rows\">\n      <td *ngFor=\"#dtz of rowz\" class=\"text-center\" role=\"gridcell\">\n\n        <button type=\"button\" style=\"min-width:100%;\" class=\"btn btn-default\"\n                [ngClass]=\"{'btn-info': dtz['selected'], active: datePicker.isActive(dtz), disabled: dtz['disabled']}\"\n                [disabled]=\"dtz['disabled']\"\n                (click)=\"datePicker.select(dtz['date'])\" tabindex=\"-1\">\n          <span [ngClass]=\"{'text-info': dtz['current']}\">{{dtz['label']}}</span>\n        </button>\n\n      </td>\n    </tr>\n  </tbody>\n</table>\n  ",
+        "templateUrl": "asset:ng2_strap/lib/datepicker/yearpicker.dart",
+        "styles": [],
+        "styleUrls": [],
+        "ngContentSelectors": []
+      }
+    }
+  }
+}

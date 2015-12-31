@@ -1,0 +1,266 @@
+{
+  "ngDeps": {
+    "1": "",
+    "3": [
+      {
+        "1": "package:angular2/angular2.dart",
+        "5": false
+      },
+      {
+        "1": "package:node_shims/js.dart",
+        "5": false
+      },
+      {
+        "1": "dart:html",
+        "5": false
+      },
+      {
+        "1": "package:ng2_strap/collapse/collapse.dart",
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "Accordion",
+        "4": [
+          {
+            "1": "Component",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"n2s-accordion\""
+              },
+              {
+                "1": "inputs",
+                "2": "const [\"templateUrl\", \"closeOthers\"]"
+              },
+              {
+                "1": "host",
+                "2": "const {\"[class.panel-group]\" : \"true\"}"
+              },
+              {
+                "1": "template",
+                "2": "'''<ng-content></ng-content>'''"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": true,
+            "7": true,
+            "8": false
+          }
+        ]
+      },
+      {
+        "1": "AccordionTransclude",
+        "4": [
+          {
+            "1": "Directive",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"accordion-transclude, [accordion-transclude]\""
+              },
+              {
+                "1": "inputs",
+                "2": "const [\"accordionTransclude\"]"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "ViewContainerRef",
+            "3": [
+              "const Inject(ViewContainerRef)"
+            ],
+            "4": "viewRef"
+          }
+        ],
+        "6": [
+          "OnInit"
+        ]
+      },
+      {
+        "1": "AccordionPanel",
+        "4": [
+          {
+            "1": "Component",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"n2s-accordion-panel\""
+              },
+              {
+                "1": "inputs",
+                "2": "const [\"heading\", \"isOpen\", \"isDisabled\", \"panelClass\"]"
+              },
+              {
+                "1": "host",
+                "2": "const {\"[class.panel-open]\" : \"isOpen\"}"
+              },
+              {
+                "1": "template",
+                "2": "'''\n  <div class=\"panel\" [ngClass]=\"panelClass\">\n    <div class=\"panel-heading\" (click)=\"toggleOpen(\\$event)\">\n      <h4 class=\"panel-title\">\n        <a href tabindex=\"0\" class=\"accordion-toggle\">\n          <span [ngClass]=\"{\\'text-muted\\': isDisabled}\">\n            {{heading}}\n            <ng-content select=\"n2s-accordion-heading\"></ng-content>\n          </span>\n        </a>\n      </h4>\n    </div>\n    <div class=\"panel-collapse collapse\" [collapse]=\"!isOpen\">\n      <div class=\"panel-body\">\n        <ng-content></ng-content>\n      </div>\n    </div>\n  </div>\n  '''"
+              },
+              {
+                "1": "directives",
+                "2": "const [Collapse, NgClass]"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": true,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "Accordion",
+            "4": "accordion"
+          }
+        ],
+        "6": [
+          "OnInit",
+          "OnDestroy"
+        ],
+        "8": [
+          {
+            "2": "Collapse"
+          },
+          {
+            "2": "NgClass"
+          }
+        ]
+      }
+    ],
+    "6": "accordion.dart",
+    "10": [
+      {
+        "1": "package:angular2/angular2.ng_deps.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:ng2_strap/collapse/collapse.ng_deps.dart",
+        "4": "i1"
+      }
+    ]
+  },
+  "Accordion": {
+    "kind": "type",
+    "value": {
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "n2s-accordion",
+      "exportAs": null,
+      "type": {
+        "name": "Accordion",
+        "moduleUrl": "asset:ng2_strap/lib/accordion/accordion.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "templateUrl": "templateUrl",
+        "closeOthers": "closeOthers"
+      },
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {
+        "class.panel-group": "true"
+      },
+      "hostAttributes": {},
+      "lifecycleHooks": [],
+      "template": {
+        "encapsulation": 2,
+        "template": "<ng-content></ng-content>",
+        "templateUrl": "asset:ng2_strap/lib/accordion/accordion.dart",
+        "styles": [],
+        "styleUrls": [],
+        "ngContentSelectors": [
+          "*"
+        ]
+      }
+    }
+  },
+  "AccordionTransclude": {
+    "kind": "type",
+    "value": {
+      "isComponent": false,
+      "dynamicLoadable": true,
+      "selector": "accordion-transclude, [accordion-transclude]",
+      "exportAs": null,
+      "type": {
+        "name": "AccordionTransclude",
+        "moduleUrl": "asset:ng2_strap/lib/accordion/accordion.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "accordionTransclude": "accordionTransclude"
+      },
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        0
+      ],
+      "template": null
+    }
+  },
+  "AccordionPanel": {
+    "kind": "type",
+    "value": {
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "n2s-accordion-panel",
+      "exportAs": null,
+      "type": {
+        "name": "AccordionPanel",
+        "moduleUrl": "asset:ng2_strap/lib/accordion/accordion.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "heading": "heading",
+        "isOpen": "isOpen",
+        "isDisabled": "isDisabled",
+        "panelClass": "panelClass"
+      },
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {
+        "class.panel-open": "isOpen"
+      },
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        0,
+        1
+      ],
+      "template": {
+        "encapsulation": 2,
+        "template": "  <div class=\"panel\" [ngClass]=\"panelClass\">\n    <div class=\"panel-heading\" (click)=\"toggleOpen($event)\">\n      <h4 class=\"panel-title\">\n        <a href tabindex=\"0\" class=\"accordion-toggle\">\n          <span [ngClass]=\"{'text-muted': isDisabled}\">\n            {{heading}}\n            <ng-content select=\"n2s-accordion-heading\"></ng-content>\n          </span>\n        </a>\n      </h4>\n    </div>\n    <div class=\"panel-collapse collapse\" [collapse]=\"!isOpen\">\n      <div class=\"panel-body\">\n        <ng-content></ng-content>\n      </div>\n    </div>\n  </div>\n  ",
+        "templateUrl": "asset:ng2_strap/lib/accordion/accordion.dart",
+        "styles": [],
+        "styleUrls": [],
+        "ngContentSelectors": [
+          "n2s-accordion-heading",
+          "*"
+        ]
+      }
+    }
+  },
+  "ACCORDION_DIRECTIVES": {
+    "kind": "alias",
+    "value": [
+      "Accordion",
+      "AccordionPanel"
+    ]
+  }
+}

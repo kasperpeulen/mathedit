@@ -1,0 +1,257 @@
+{
+  "ngDeps": {
+    "1": "",
+    "3": [
+      {
+        "1": "package:angular2/angular2.dart",
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "Progress",
+        "4": [
+          {
+            "1": "Directive",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"[n2s-progress]\""
+              },
+              {
+                "1": "inputs",
+                "2": "const [\"animate\", \"max\"]"
+              },
+              {
+                "1": "host",
+                "2": "const {\"class\" : \"progress\", \"[attr.max]\" : \"max\"}"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ],
+        "6": [
+          "OnInit"
+        ]
+      },
+      {
+        "1": "Bar",
+        "4": [
+          {
+            "1": "Component",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"n2s-bar\""
+              },
+              {
+                "1": "inputs",
+                "2": "const [\"type\", \"value\"]"
+              },
+              {
+                "1": "template",
+                "2": "'''\n  <div class=\"progress-bar\"\n    style=\"min-width: 0;\"\n    role=\"progressbar\"\n    [ngClass]=\"type\"\n    [ngStyle]=\"{'width': (percent < 100 ? percent : 100).toString() + \\'%\\', transition: transition}\"\n    aria-valuemin=\"0\"\n    [attr.aria-valuenow]=\"value\"\n    [attr.aria-valuetext]=\"percent.toStringAsFixed(0) + \\'%\\'\"\n    [attr.aria-valuemax]=\"max\"\n    ><ng-content></ng-content></div>\n'''"
+              },
+              {
+                "1": "directives",
+                "2": "const [NgStyle, NgClass]"
+              },
+              {
+                "1": "encapsulation",
+                "2": "ViewEncapsulation.None"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": true,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "Progress",
+            "3": [
+              "const Host()"
+            ],
+            "4": "progress"
+          }
+        ],
+        "6": [
+          "OnInit",
+          "OnDestroy"
+        ],
+        "8": [
+          {
+            "2": "NgStyle"
+          },
+          {
+            "2": "NgClass"
+          }
+        ]
+      },
+      {
+        "1": "Progressbar",
+        "4": [
+          {
+            "1": "Component",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"n2s-progressbar\""
+              },
+              {
+                "1": "inputs",
+                "2": "const [\"animate\", \"max\", \"type\", \"value\"]"
+              },
+              {
+                "1": "template",
+                "2": "'''\n    <div n2s-progress [animate]=\"animate\" [max]=\"max\">\n      <n2s-bar [type]=\"type\" [value]=\"value\">\n          <ng-content></ng-content>\n      </n2s-bar>\n    </div>\n  '''"
+              },
+              {
+                "1": "directives",
+                "2": "const [Progress, Bar]"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": true,
+            "7": true,
+            "8": false
+          }
+        ],
+        "8": [
+          {
+            "2": "Progress"
+          },
+          {
+            "2": "Bar"
+          }
+        ]
+      }
+    ],
+    "6": "progressbar.dart",
+    "10": [
+      {
+        "1": "package:angular2/angular2.ng_deps.dart",
+        "4": "i0"
+      }
+    ]
+  },
+  "Progress": {
+    "kind": "type",
+    "value": {
+      "isComponent": false,
+      "dynamicLoadable": true,
+      "selector": "[n2s-progress]",
+      "exportAs": null,
+      "type": {
+        "name": "Progress",
+        "moduleUrl": "asset:ng2_strap/lib/progressbar/progressbar.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "animate": "animate",
+        "max": "max"
+      },
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {
+        "attr.max": "max"
+      },
+      "hostAttributes": {
+        "class": "progress"
+      },
+      "lifecycleHooks": [
+        0
+      ],
+      "template": null
+    }
+  },
+  "Bar": {
+    "kind": "type",
+    "value": {
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "n2s-bar",
+      "exportAs": null,
+      "type": {
+        "name": "Bar",
+        "moduleUrl": "asset:ng2_strap/lib/progressbar/progressbar.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "type": "type",
+        "value": "value"
+      },
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        0,
+        1
+      ],
+      "template": {
+        "encapsulation": 2,
+        "template": "  <div class=\"progress-bar\"\n    style=\"min-width: 0;\"\n    role=\"progressbar\"\n    [ngClass]=\"type\"\n    [ngStyle]=\"{'width': (percent < 100 ? percent : 100).toString() + '%', transition: transition}\"\n    aria-valuemin=\"0\"\n    [attr.aria-valuenow]=\"value\"\n    [attr.aria-valuetext]=\"percent.toStringAsFixed(0) + '%'\"\n    [attr.aria-valuemax]=\"max\"\n    ><ng-content></ng-content></div>\n",
+        "templateUrl": "asset:ng2_strap/lib/progressbar/progressbar.dart",
+        "styles": [],
+        "styleUrls": [],
+        "ngContentSelectors": [
+          "*"
+        ]
+      }
+    }
+  },
+  "Progressbar": {
+    "kind": "type",
+    "value": {
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "n2s-progressbar",
+      "exportAs": null,
+      "type": {
+        "name": "Progressbar",
+        "moduleUrl": "asset:ng2_strap/lib/progressbar/progressbar.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "animate": "animate",
+        "max": "max",
+        "type": "type",
+        "value": "value"
+      },
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [],
+      "template": {
+        "encapsulation": 2,
+        "template": "    <div n2s-progress [animate]=\"animate\" [max]=\"max\">\n      <n2s-bar [type]=\"type\" [value]=\"value\">\n          <ng-content></ng-content>\n      </n2s-bar>\n    </div>\n  ",
+        "templateUrl": "asset:ng2_strap/lib/progressbar/progressbar.dart",
+        "styles": [],
+        "styleUrls": [],
+        "ngContentSelectors": [
+          "*"
+        ]
+      }
+    }
+  },
+  "PROGRESSBAR_DIRECTIVES": {
+    "kind": "alias",
+    "value": [
+      "Progress",
+      "Bar",
+      "Progressbar"
+    ]
+  }
+}

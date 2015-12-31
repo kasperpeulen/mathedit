@@ -13,6 +13,10 @@
       {
         "1": "dart:async",
         "5": false
+      },
+      {
+        "1": "package:angular2/router.dart",
+        "5": false
       }
     ],
     "5": [
@@ -32,6 +36,14 @@
           {
             "1": "GitHub",
             "4": "github"
+          },
+          {
+            "1": "Authentication",
+            "4": "_auth"
+          },
+          {
+            "1": "Router",
+            "4": "_router"
           }
         ]
       }

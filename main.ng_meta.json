@@ -49,6 +49,10 @@
       {
         "1": "dart:async",
         "5": false
+      },
+      {
+        "1": "package:mathedit/service/editor.service.dart",
+        "5": false
       }
     ],
     "6": "main.dart",
@@ -76,6 +80,10 @@
       {
         "1": "package:mathedit/service/gist.service.ng_deps.dart",
         "4": "i5"
+      },
+      {
+        "1": "package:mathedit/service/editor.service.ng_deps.dart",
+        "4": "i6"
       }
     ]
   }

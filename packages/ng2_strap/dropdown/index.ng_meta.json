@@ -1,0 +1,332 @@
+{
+  "ngDeps": {
+    "1": "ns_dropdown",
+    "3": [
+      {
+        "1": "package:angular2/angular2.dart",
+        "5": false
+      },
+      {
+        "1": "dropdown.interfaces.dart",
+        "5": false
+      },
+      {
+        "1": "package:node_shims/js.dart",
+        "5": false
+      },
+      {
+        "1": "dart:html",
+        "5": false
+      },
+      {
+        "1": "dart:async",
+        "5": false
+      },
+      {
+        "1": "package:ng2_strap/dropdown/dropdown.interfaces.dart",
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "Dropdown",
+        "4": [
+          {
+            "1": "Directive",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"[dropdown]\""
+              },
+              {
+                "1": "inputs",
+                "2": "const [\"isOpen\", \"autoClose\", \"keyboardNav\", \"dropdownAppendToBody\"]"
+              },
+              {
+                "1": "outputs",
+                "2": "const [\"onToggle\"]"
+              },
+              {
+                "1": "host",
+                "2": "const {\"[class.dropdown]\" : \"true\", \"[class.open]\" : \"isOpen\"}"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "ElementRef",
+            "4": "el"
+          }
+        ],
+        "6": [
+          "OnInit",
+          "OnDestroy"
+        ]
+      },
+      {
+        "1": "DropdownMenu",
+        "4": [
+          {
+            "1": "Directive",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"[dropdown-menu], .dropdown-menu\""
+              },
+              {
+                "1": "inputs",
+                "2": "const [\"templateUrl\"]"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "Dropdown",
+            "3": [
+              "const Host()"
+            ],
+            "4": "dropdown"
+          },
+          {
+            "1": "ElementRef",
+            "4": "el"
+          }
+        ],
+        "6": [
+          "DropdownMenuInterface",
+          "OnInit"
+        ]
+      },
+      {
+        "1": "DropdownToggle",
+        "4": [
+          {
+            "1": "Directive",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"[dropdown-toggle]\""
+              },
+              {
+                "1": "inputs",
+                "2": "const [\"disabled\"]"
+              },
+              {
+                "1": "host",
+                "2": "const {\"(click)\" : \"toggleDropdown(\\$event)\", \"[class.dropdown-toggle]\" : \"true\", \"[class.disabled]\" : \"disabled\", \"[attr.aria-haspopup]\" : \"true\", \"[attr.aria-expanded]\" : \"isOpen\"}"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "Dropdown",
+            "3": [
+              "const Host()"
+            ],
+            "4": "dropdown"
+          },
+          {
+            "1": "ElementRef",
+            "4": "el"
+          }
+        ],
+        "6": [
+          "DropdownToggleInterface",
+          "OnInit"
+        ]
+      },
+      {
+        "1": "KeyboardNav",
+        "4": [
+          {
+            "1": "Directive",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"[dropdown][keyboard-nav]\""
+              },
+              {
+                "1": "host",
+                "2": "const {\"(keydown)\" : \"onKeydown(\\$event)\"}"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "Dropdown",
+            "4": "dd"
+          },
+          {
+            "1": "ElementRef",
+            "4": "el"
+          }
+        ]
+      }
+    ],
+    "6": "index.dart",
+    "10": [
+      {
+        "1": "package:angular2/angular2.ng_deps.dart",
+        "4": "i0"
+      },
+      {
+        "1": "dropdown.interfaces.ng_deps.dart",
+        "4": "i1"
+      },
+      {
+        "1": "package:ng2_strap/dropdown/dropdown.interfaces.ng_deps.dart",
+        "4": "i2"
+      }
+    ]
+  },
+  "Dropdown": {
+    "kind": "type",
+    "value": {
+      "isComponent": false,
+      "dynamicLoadable": true,
+      "selector": "[dropdown]",
+      "exportAs": null,
+      "type": {
+        "name": "Dropdown",
+        "moduleUrl": "asset:ng2_strap/lib/dropdown/index.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "isOpen": "isOpen",
+        "autoClose": "autoClose",
+        "keyboardNav": "keyboardNav",
+        "dropdownAppendToBody": "dropdownAppendToBody"
+      },
+      "outputs": {
+        "onToggle": "onToggle"
+      },
+      "hostListeners": {},
+      "hostProperties": {
+        "class.open": "isOpen",
+        "class.dropdown": "true"
+      },
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        0,
+        1
+      ],
+      "template": null
+    }
+  },
+  "DropdownMenu": {
+    "kind": "type",
+    "value": {
+      "isComponent": false,
+      "dynamicLoadable": true,
+      "selector": "[dropdown-menu], .dropdown-menu",
+      "exportAs": null,
+      "type": {
+        "name": "DropdownMenu",
+        "moduleUrl": "asset:ng2_strap/lib/dropdown/index.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "templateUrl": "templateUrl"
+      },
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        0
+      ],
+      "template": null
+    }
+  },
+  "DropdownToggle": {
+    "kind": "type",
+    "value": {
+      "isComponent": false,
+      "dynamicLoadable": true,
+      "selector": "[dropdown-toggle]",
+      "exportAs": null,
+      "type": {
+        "name": "DropdownToggle",
+        "moduleUrl": "asset:ng2_strap/lib/dropdown/index.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "disabled": "disabled"
+      },
+      "outputs": {},
+      "hostListeners": {
+        "click": "toggleDropdown($event)"
+      },
+      "hostProperties": {
+        "attr.aria-expanded": "isOpen",
+        "attr.aria-haspopup": "true",
+        "class.disabled": "disabled",
+        "class.dropdown-toggle": "true"
+      },
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        0
+      ],
+      "template": null
+    }
+  },
+  "KeyboardNav": {
+    "kind": "type",
+    "value": {
+      "isComponent": false,
+      "dynamicLoadable": true,
+      "selector": "[dropdown][keyboard-nav]",
+      "exportAs": null,
+      "type": {
+        "name": "KeyboardNav",
+        "moduleUrl": "asset:ng2_strap/lib/dropdown/index.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {},
+      "outputs": {},
+      "hostListeners": {
+        "keydown": "onKeydown($event)"
+      },
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [],
+      "template": null
+    }
+  },
+  "DROPDOWN_DIRECTIVES": {
+    "kind": "alias",
+    "value": [
+      "Dropdown",
+      "DropdownMenu",
+      "DropdownToggle"
+    ]
+  }
+}

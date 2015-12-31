@@ -1,0 +1,110 @@
+{
+  "ngDeps": {
+    "1": "",
+    "3": [
+      {
+        "1": "package:angular2/angular2.dart",
+        "5": false
+      },
+      {
+        "1": "datepicker-inner.dart",
+        "5": false
+      },
+      {
+        "1": "package:intl/intl.dart",
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "DayPicker",
+        "4": [
+          {
+            "1": "Component",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"n2s-daypicker\""
+              },
+              {
+                "1": "template",
+                "2": "'''\n<table [hidden]=\"datePicker.datepickerMode != 'day'\" role=\"grid\" aria-labelledby=\"uniqueId+\\'-title\\'\" aria-activedescendant=\"activeDateId\">\n  <thead>\n    <tr>\n      <th>\n        <button type=\"button\" class=\"btn btn-default btn-secondary btn-sm pull-left\" (click)=\"datePicker.move(-1)\" tabindex=\"-1\">\n          <i class=\"glyphicon glyphicon-chevron-left\"></i>\n        </button>\n      </th>\n      <th colspan=\"5\" [hidden]=\"!datePicker.showWeeks\">\n        <button [id]=\"datePicker.uniqueId + '-title'\"\n                type=\"button\"\n                class=\"btn btn-default btn-secondary btn-sm\"\n                (click)=\"datePicker.toggleMode()\"\n                [disabled]=\"false\"\n                [ngClass]=\"{disabled: false}\" tabindex=\"-1\" style=\"width:100%;\">\n          <strong>{{monthTitle}}</strong>\n        </button>\n      </th>\n      <th colspan=\"6\" [hidden]=\"!datePicker.showWeeks\">\n        <button [id]=\"datePicker.uniqueId + '-title'\"\n                type=\"button\" class=\"btn btn-default btn-secondary btn-sm\"\n                (click)=\"datePicker.toggleMode(2)\"\n                [disabled]=\"datePicker.datepickerMode == maxMode\"\n                [ngClass]=\"{disabled: datePicker.datepickerMode == maxMode}\" tabindex=\"-1\" style=\"width:100%;\">\n          <strong>{{yearTitle}}</strong>\n        </button>\n      </th>\n      <th>\n        <button type=\"button\" class=\"btn btn-default btn-secondary btn-sm pull-right\" (click)=\"datePicker.move(1)\" tabindex=\"-1\">\n          <i class=\"glyphicon glyphicon-chevron-right\"></i>\n        </button>\n      </th>\n    </tr>\n    <tr>\n      <th [hidden]=\"!datePicker.showWeeks\" class=\"text-center\"></th>\n      <th *ngFor=\"#labelz of labels\" class=\"text-center\"><small aria-label=\"labelz['full']\"><b>{{labelz['abbr']}}</b></small></th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr *ngFor=\"#rowz of rows;#index=index\">\n      <td [hidden]=\"!datePicker.showWeeks\" class=\"text-center h6\"><em>{{ weekNumbers[index] }}</em></td>\n      <!--  [ngClass]=\"dtz['customClass']\" -->\n      <td *ngFor=\"#dtz of rowz\" class=\"text-center\" role=\"gridcell\" [id]=\"dtz['uid']\">\n        <button type=\"button\" style=\"min-width:100%;\" class=\"btn btn-default btn-sm\"\n                [ngClass]=\"{'btn-info': dtz['selected'], active: datePicker.isActive(dtz), disabled: dtz['disabled']}\"\n                [disabled]=\"dtz['disabled']\"\n                (click)=\"datePicker.select(dtz['date'])\" tabindex=\"-1\">\n          <span [ngClass]=\"{'text-muted': dtz['secondary'], 'text-info': dtz['current']}\">{{dtz['label']}}</span>\n        </button>\n      </td>\n    </tr>\n  </tbody>\n</table>\n  '''"
+              },
+              {
+                "1": "directives",
+                "2": "const [FORM_DIRECTIVES, CORE_DIRECTIVES, NgClass]"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": true,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "DatePickerInner",
+            "4": "datePicker"
+          }
+        ],
+        "6": [
+          "OnInit"
+        ],
+        "8": [
+          {
+            "2": "FORM_DIRECTIVES"
+          },
+          {
+            "2": "CORE_DIRECTIVES"
+          },
+          {
+            "2": "NgClass"
+          }
+        ]
+      }
+    ],
+    "6": "daypicker.dart",
+    "10": [
+      {
+        "1": "package:angular2/angular2.ng_deps.dart",
+        "4": "i0"
+      },
+      {
+        "1": "datepicker-inner.ng_deps.dart",
+        "4": "i1"
+      }
+    ]
+  },
+  "DayPicker": {
+    "kind": "type",
+    "value": {
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "n2s-daypicker",
+      "exportAs": null,
+      "type": {
+        "name": "DayPicker",
+        "moduleUrl": "asset:ng2_strap/lib/datepicker/daypicker.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {},
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        0
+      ],
+      "template": {
+        "encapsulation": 2,
+        "template": "<table [hidden]=\"datePicker.datepickerMode != 'day'\" role=\"grid\" aria-labelledby=\"uniqueId+'-title'\" aria-activedescendant=\"activeDateId\">\n  <thead>\n    <tr>\n      <th>\n        <button type=\"button\" class=\"btn btn-default btn-secondary btn-sm pull-left\" (click)=\"datePicker.move(-1)\" tabindex=\"-1\">\n          <i class=\"glyphicon glyphicon-chevron-left\"></i>\n        </button>\n      </th>\n      <th colspan=\"5\" [hidden]=\"!datePicker.showWeeks\">\n        <button [id]=\"datePicker.uniqueId + '-title'\"\n                type=\"button\"\n                class=\"btn btn-default btn-secondary btn-sm\"\n                (click)=\"datePicker.toggleMode()\"\n                [disabled]=\"false\"\n                [ngClass]=\"{disabled: false}\" tabindex=\"-1\" style=\"width:100%;\">\n          <strong>{{monthTitle}}</strong>\n        </button>\n      </th>\n      <th colspan=\"6\" [hidden]=\"!datePicker.showWeeks\">\n        <button [id]=\"datePicker.uniqueId + '-title'\"\n                type=\"button\" class=\"btn btn-default btn-secondary btn-sm\"\n                (click)=\"datePicker.toggleMode(2)\"\n                [disabled]=\"datePicker.datepickerMode == maxMode\"\n                [ngClass]=\"{disabled: datePicker.datepickerMode == maxMode}\" tabindex=\"-1\" style=\"width:100%;\">\n          <strong>{{yearTitle}}</strong>\n        </button>\n      </th>\n      <th>\n        <button type=\"button\" class=\"btn btn-default btn-secondary btn-sm pull-right\" (click)=\"datePicker.move(1)\" tabindex=\"-1\">\n          <i class=\"glyphicon glyphicon-chevron-right\"></i>\n        </button>\n      </th>\n    </tr>\n    <tr>\n      <th [hidden]=\"!datePicker.showWeeks\" class=\"text-center\"></th>\n      <th *ngFor=\"#labelz of labels\" class=\"text-center\"><small aria-label=\"labelz['full']\"><b>{{labelz['abbr']}}</b></small></th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr *ngFor=\"#rowz of rows;#index=index\">\n      <td [hidden]=\"!datePicker.showWeeks\" class=\"text-center h6\"><em>{{ weekNumbers[index] }}</em></td>\n      <!--  [ngClass]=\"dtz['customClass']\" -->\n      <td *ngFor=\"#dtz of rowz\" class=\"text-center\" role=\"gridcell\" [id]=\"dtz['uid']\">\n        <button type=\"button\" style=\"min-width:100%;\" class=\"btn btn-default btn-sm\"\n                [ngClass]=\"{'btn-info': dtz['selected'], active: datePicker.isActive(dtz), disabled: dtz['disabled']}\"\n                [disabled]=\"dtz['disabled']\"\n                (click)=\"datePicker.select(dtz['date'])\" tabindex=\"-1\">\n          <span [ngClass]=\"{'text-muted': dtz['secondary'], 'text-info': dtz['current']}\">{{dtz['label']}}</span>\n        </button>\n      </td>\n    </tr>\n  </tbody>\n</table>\n  ",
+        "templateUrl": "asset:ng2_strap/lib/datepicker/daypicker.dart",
+        "styles": [],
+        "styleUrls": [],
+        "ngContentSelectors": []
+      }
+    }
+  }
+}

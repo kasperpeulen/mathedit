@@ -41,6 +41,10 @@
       {
         "1": "package:firebase/firebase.dart",
         "5": false
+      },
+      {
+        "1": "package:mathedit/service/editor.service.dart",
+        "5": false
       }
     ],
     "5": [
@@ -80,10 +84,6 @@
         ],
         "5": [
           {
-            "1": "Authentication",
-            "4": "_auth"
-          },
-          {
             "1": "Router",
             "4": "router"
           },
@@ -110,6 +110,10 @@
           {
             "1": "Firebase",
             "4": "_firebase"
+          },
+          {
+            "1": "EditorService",
+            "4": "_editor"
           }
         ],
         "6": [

@@ -1,0 +1,251 @@
+{
+  "ngDeps": {
+    "1": "",
+    "3": [
+      {
+        "1": "package:angular2/angular2.dart",
+        "5": false
+      },
+      {
+        "1": "dart:html",
+        "5": false
+      },
+      {
+        "1": "dart:math",
+        "5": false
+      },
+      {
+        "1": "package:node_shims/js.dart",
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "Pagination",
+        "4": [
+          {
+            "1": "Component",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"n2s-pagination\""
+              },
+              {
+                "1": "inputs",
+                "2": "const [\"rotate\", \"disabled\", \"totalItems\", \"itemsPerPage\", \"maxSize\", \"boundaryLinks\", \"directionLinks\", \"firstText\", \"previousText\", \"nextText\", \"lastText\"]"
+              },
+              {
+                "1": "outputs",
+                "2": "const [\"numPages\"]"
+              },
+              {
+                "1": "template",
+                "2": "'''\n  <ul class=\"pagination\" [ngClass]=\"classMap\">\n    <li class=\"pagination-first\"\n        [ngClass]=\"{disabled: noPrevious()||disabled, hidden: !boundaryLinks}\"\n        [hidden]=\"!boundaryLinks\">\n      <a href (click)=\"selectPage(1, \\$event)\">{{firstText}}</a>\n    </li>\n\n    <li class=\"pagination-prev\"\n        [ngClass]=\"{disabled: noPrevious()||disabled, hidden: !directionLinks}\"\n        [hidden]=\"!directionLinks\">\n      <a href (click)=\"selectPage(page - 1, \\$event)\">{{previousText}}</a>\n      </li>\n\n    <li *ngFor=\"#page of pages\" [ngClass]=\"{active: page['active'], disabled: disabled && !page['active']}\" class=\"pagination-page\">\n      <a href (click)=\"selectPage(page['number'], \\$event)\">{{page['text']}}</a>\n    </li>\n\n    <li class=\"pagination-next\"\n        [ngClass]=\"{disabled: noNext()||disabled, hidden: !directionLinks}\"\n        [hidden]=\"!directionLinks\">\n      <a href (click)=\"selectPage(page + 1, \\$event)\">{{nextText}}</a></li>\n\n    <li class=\"pagination-last\"\n        [ngClass]=\"{disabled: noNext()||disabled, hidden: !boundaryLinks}\"\n        [hidden]=\"!boundaryLinks\">\n      <a href (click)=\"selectPage(totalPages, \\$event)\">{{lastText}}</a></li>\n  </ul>\n  '''"
+              },
+              {
+                "1": "directives",
+                "2": "const [CORE_DIRECTIVES, NgClass]"
+              },
+              {
+                "1": "encapsulation",
+                "2": "ViewEncapsulation.None"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": true,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "NgModel",
+            "4": "ngModel"
+          },
+          {
+            "1": "Renderer",
+            "4": "renderer"
+          },
+          {
+            "1": "ElementRef",
+            "4": "elementRef"
+          }
+        ],
+        "6": [
+          "OnInit"
+        ],
+        "8": [
+          {
+            "2": "CORE_DIRECTIVES"
+          },
+          {
+            "2": "NgClass"
+          }
+        ]
+      },
+      {
+        "1": "Pager",
+        "4": [
+          {
+            "1": "Component",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"pager[ngModel], [pager][ngModel]\""
+              },
+              {
+                "1": "inputs",
+                "2": "const [\"align\", \"totalItems\", \"itemsPerPage\", \"previousText\", \"nextText\"]"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": true,
+            "7": true,
+            "8": false
+          },
+          {
+            "1": "View",
+            "3": [
+              {
+                "1": "template",
+                "2": "'''\n<ul class=\"pager\">\n  <li [ngClass]=\"{disabled: noPrevious(), previous: align, \\'pull-left\\': align}\"><a href (click)=\"selectPage(page - 1, \\$event)\">{{previousText}}</a></li>\n  <li [ngClass]=\"{disabled: noNext(), next: align, \\'pull-right\\': align}\"><a href (click)=\"selectPage(page + 1, \\$event)\">{{nextText}}</a></li>\n</ul>\n'''"
+              },
+              {
+                "1": "directives",
+                "2": "const [NgClass]"
+              }
+            ],
+            "4": true,
+            "5": false,
+            "6": false,
+            "7": false,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "NgModel",
+            "3": [
+              "const Self()"
+            ],
+            "4": "ngModel"
+          },
+          {
+            "1": "Renderer",
+            "4": "renderer"
+          },
+          {
+            "1": "ElementRef",
+            "4": "elementRef"
+          }
+        ],
+        "6": [
+          "OnInit"
+        ],
+        "8": [
+          {
+            "2": "NgClass"
+          }
+        ]
+      }
+    ],
+    "6": "pagination.dart",
+    "10": [
+      {
+        "1": "package:angular2/angular2.ng_deps.dart",
+        "4": "i0"
+      }
+    ]
+  },
+  "Pagination": {
+    "kind": "type",
+    "value": {
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "n2s-pagination",
+      "exportAs": null,
+      "type": {
+        "name": "Pagination",
+        "moduleUrl": "asset:ng2_strap/lib/pagination/pagination.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "rotate": "rotate",
+        "disabled": "disabled",
+        "totalItems": "totalItems",
+        "itemsPerPage": "itemsPerPage",
+        "maxSize": "maxSize",
+        "boundaryLinks": "boundaryLinks",
+        "directionLinks": "directionLinks",
+        "firstText": "firstText",
+        "previousText": "previousText",
+        "nextText": "nextText",
+        "lastText": "lastText"
+      },
+      "outputs": {
+        "numPages": "numPages"
+      },
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        0
+      ],
+      "template": {
+        "encapsulation": 2,
+        "template": "  <ul class=\"pagination\" [ngClass]=\"classMap\">\n    <li class=\"pagination-first\"\n        [ngClass]=\"{disabled: noPrevious()||disabled, hidden: !boundaryLinks}\"\n        [hidden]=\"!boundaryLinks\">\n      <a href (click)=\"selectPage(1, $event)\">{{firstText}}</a>\n    </li>\n\n    <li class=\"pagination-prev\"\n        [ngClass]=\"{disabled: noPrevious()||disabled, hidden: !directionLinks}\"\n        [hidden]=\"!directionLinks\">\n      <a href (click)=\"selectPage(page - 1, $event)\">{{previousText}}</a>\n      </li>\n\n    <li *ngFor=\"#page of pages\" [ngClass]=\"{active: page['active'], disabled: disabled && !page['active']}\" class=\"pagination-page\">\n      <a href (click)=\"selectPage(page['number'], $event)\">{{page['text']}}</a>\n    </li>\n\n    <li class=\"pagination-next\"\n        [ngClass]=\"{disabled: noNext()||disabled, hidden: !directionLinks}\"\n        [hidden]=\"!directionLinks\">\n      <a href (click)=\"selectPage(page + 1, $event)\">{{nextText}}</a></li>\n\n    <li class=\"pagination-last\"\n        [ngClass]=\"{disabled: noNext()||disabled, hidden: !boundaryLinks}\"\n        [hidden]=\"!boundaryLinks\">\n      <a href (click)=\"selectPage(totalPages, $event)\">{{lastText}}</a></li>\n  </ul>\n  ",
+        "templateUrl": "asset:ng2_strap/lib/pagination/pagination.dart",
+        "styles": [],
+        "styleUrls": [],
+        "ngContentSelectors": []
+      }
+    }
+  },
+  "Pager": {
+    "kind": "type",
+    "value": {
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "pager[ngModel], [pager][ngModel]",
+      "exportAs": null,
+      "type": {
+        "name": "Pager",
+        "moduleUrl": "asset:ng2_strap/lib/pagination/pagination.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "align": "align",
+        "totalItems": "totalItems",
+        "itemsPerPage": "itemsPerPage",
+        "previousText": "previousText",
+        "nextText": "nextText"
+      },
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        0
+      ],
+      "template": {
+        "encapsulation": 2,
+        "template": "<ul class=\"pager\">\n  <li [ngClass]=\"{disabled: noPrevious(), previous: align, 'pull-left': align}\"><a href (click)=\"selectPage(page - 1, $event)\">{{previousText}}</a></li>\n  <li [ngClass]=\"{disabled: noNext(), next: align, 'pull-right': align}\"><a href (click)=\"selectPage(page + 1, $event)\">{{nextText}}</a></li>\n</ul>\n",
+        "templateUrl": "asset:ng2_strap/lib/pagination/pagination.dart",
+        "styles": [],
+        "styleUrls": [],
+        "ngContentSelectors": []
+      }
+    }
+  },
+  "PAGINATION_DIRECTIVES": {
+    "kind": "alias",
+    "value": [
+      "Pagination",
+      "Pager"
+    ]
+  }
+}

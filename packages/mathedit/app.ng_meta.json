@@ -23,11 +23,7 @@
         "5": false
       },
       {
-        "1": "package:mathedit/service/gist.service.dart",
-        "5": false
-      },
-      {
-        "1": "package:github/browser.dart",
+        "1": "package:mathedit/components/login.component/login.component.dart",
         "5": false
       }
     ],
@@ -48,7 +44,7 @@
               },
               {
                 "1": "directives",
-                "2": "const [ROUTER_DIRECTIVES]"
+                "2": "const [ROUTER_DIRECTIVES, LoginComponent, CORE_DIRECTIVES]"
               },
               {
                 "1": "encapsulation",
@@ -86,6 +82,12 @@
         "8": [
           {
             "2": "ROUTER_DIRECTIVES"
+          },
+          {
+            "2": "LoginComponent"
+          },
+          {
+            "2": "CORE_DIRECTIVES"
           }
         ]
       }
@@ -105,7 +107,7 @@
         "4": "i2"
       },
       {
-        "1": "package:mathedit/service/gist.service.ng_deps.dart",
+        "1": "package:mathedit/components/login.component/login.component.ng_deps.dart",
         "4": "i3"
       }
     ]
@@ -131,7 +133,7 @@
       "lifecycleHooks": [],
       "template": {
         "encapsulation": 2,
-        "template": "<router-outlet></router-outlet>",
+        "template": "<login></login>\n<router-outlet></router-outlet>",
         "templateUrl": "asset:mathedit/lib/app.html",
         "styles": [],
         "styleUrls": [

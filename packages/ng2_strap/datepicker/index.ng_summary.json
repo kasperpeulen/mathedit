@@ -1,0 +1,345 @@
+{
+  "ngDeps": {
+    "1": "ns_datepicker",
+    "3": [
+      {
+        "1": "package:angular2/angular2.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/di.dart",
+        "5": false
+      },
+      {
+        "1": "package:ng2_strap/position.dart",
+        "5": false
+      },
+      {
+        "1": "datepicker-inner.dart",
+        "5": false
+      },
+      {
+        "1": "daypicker.dart",
+        "5": false
+      },
+      {
+        "1": "monthpicker.dart",
+        "5": false
+      },
+      {
+        "1": "yearpicker.dart",
+        "5": false
+      },
+      {
+        "1": "dart:async",
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "PopupContainer",
+        "4": [
+          {
+            "1": "Component",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"popup-container\""
+              },
+              {
+                "1": "outputs",
+                "2": "const [\"update1\"]"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": true,
+            "7": true,
+            "8": false
+          },
+          {
+            "1": "View",
+            "3": [
+              {
+                "1": "template",
+                "2": "'''\n    <ul class=\"dropdown-menu\"\n        style=\"display: block\"\n        [ng-style]=\"{top: top, left: left, display: display}\"\n        [ngClass]=\"classMap\">\n        <li>\n             <datepicker (cupdate)=\"onUpdate(\\$event)\" *ngIf=\"popupComp\" [(ngModel)]=\"popupComp.cd.model\" [show-weeks]=\"true\"></datepicker>\n        </li>\n        <li *ngIf=\"showButtonBar\" style=\"padding:10px 9px 2px\">\n            <span class=\"btn-group pull-left\">\n                 <button type=\"button\" class=\"btn btn-sm btn-info\" (click)=\"select(\\'today\\')\" ng-disabled=\"isDisabled(\\'today\\')\">{{ currentText }}</button>\n                 <button type=\"button\" class=\"btn btn-sm btn-danger\" (click)=\"select(null)\">{{ clearText }}</button>\n            </span>\n            <button type=\"button\" class=\"btn btn-sm btn-success pull-right\" (click)=\"close()\">{{ closeText }}</button>\n        </li>\n    </ul>'''"
+              },
+              {
+                "1": "directives",
+                "2": "const [NgClass, NgStyle, DatePicker, FORM_DIRECTIVES, CORE_DIRECTIVES]"
+              },
+              {
+                "1": "encapsulation",
+                "2": "ViewEncapsulation.None"
+              }
+            ],
+            "4": true,
+            "5": false,
+            "6": false,
+            "7": false,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "ElementRef",
+            "4": "element"
+          },
+          {
+            "1": "PopupOptions",
+            "4": "options"
+          }
+        ],
+        "8": [
+          {
+            "2": "NgClass"
+          },
+          {
+            "2": "NgStyle"
+          },
+          {
+            "2": "DatePicker"
+          },
+          {
+            "2": "FORM_DIRECTIVES"
+          },
+          {
+            "2": "CORE_DIRECTIVES"
+          }
+        ]
+      },
+      {
+        "1": "DatePickerPopup",
+        "4": [
+          {
+            "1": "Directive",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"[datepicker-popup][ngModel]\""
+              },
+              {
+                "1": "inputs",
+                "2": "const [\"datepickerPopup\", \"isOpen\"]"
+              },
+              {
+                "1": "host",
+                "2": "const {\"(cupdate)\" : \"onUpdate1(\\$event)\"}"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "NgModel",
+            "3": [
+              "const Self()"
+            ],
+            "4": "cd"
+          },
+          {
+            "1": "ElementRef",
+            "4": "element"
+          },
+          {
+            "1": "Renderer",
+            "4": "renderer"
+          },
+          {
+            "1": "DynamicComponentLoader",
+            "4": "loader"
+          }
+        ],
+        "6": [
+          "OnInit"
+        ]
+      },
+      {
+        "1": "DatePicker",
+        "4": [
+          {
+            "1": "Component",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"n2s-datepicker\""
+              },
+              {
+                "1": "inputs",
+                "2": "const [\"datepickerMode\", \"minDate\", \"maxDate\", \"dateDisabled\", \"activeDate\", \"showWeeks\", \"startingDay\", \"initDate\", \"minMode\", \"maxMode\", \"formatDay\", \"formatMonth\", \"formatYear\", \"formatDayHeader\", \"formatDayTitle\", \"formatMonthTitle\", \"yearRange\", \"shortcutPropagation\"]"
+              },
+              {
+                "1": "template",
+                "2": "'''\n    <n2s-datepicker-inner [activeDate]=\"activeDate\"\n                      (update)=\"onUpdate(\\$event)\"\n                      [datepicker-mode]=\"datepickerMode\"\n                      [initDate]=\"initDate\"\n                      [minDate]=\"minDate\"\n                      [maxDate]=\"maxDate\"\n                      [minDode]=\"minMode\"\n                      [maxDode]=\"maxMode\"\n                      [showDeeks]=\"showWeeks\"\n                      [formatDay]=\"formatDay\"\n                      [formatMonth]=\"formatMonth\"\n                      [formatYear]=\"formatYear\"\n                      [formatDayHeader]=\"formatDayHeader\"\n                      [formatDayTitle]=\"formatDayTitle\"\n                      [formatMonthTitle]=\"formatMonthTitle\"\n                      [startingDay]=\"startingDay\"\n                      [yearRange]=\"yearRange\"\n                      [customClass]=\"customClass\"\n                      [dateDisabled]=\"dateDisabled\"\n                      [templateUrl]=\"templateUrl\"\n                      [shortcutPropagation]=\"shortcutPropagation\">\n      <n2s-daypicker tabindex=\"0\"></n2s-daypicker>\n      <n2s-monthpicker tabindex=\"0\"></n2s-monthpicker>\n      <n2s-yearpicker tabindex=\"0\"></n2s-yearpicker>\n    </n2s-datepicker-inner>\n    '''"
+              },
+              {
+                "1": "directives",
+                "2": "const [DatePickerInner, DayPicker, MonthPicker, YearPicker, FORM_DIRECTIVES, CORE_DIRECTIVES]"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": true,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "NgModel",
+            "4": "cd"
+          },
+          {
+            "1": "Renderer",
+            "4": "renderer"
+          },
+          {
+            "1": "ElementRef",
+            "4": "elementRef"
+          }
+        ],
+        "8": [
+          {
+            "2": "DatePickerInner"
+          },
+          {
+            "2": "DayPicker"
+          },
+          {
+            "2": "MonthPicker"
+          },
+          {
+            "2": "YearPicker"
+          },
+          {
+            "2": "FORM_DIRECTIVES"
+          },
+          {
+            "2": "CORE_DIRECTIVES"
+          }
+        ]
+      }
+    ],
+    "6": "index.dart"
+  },
+  "PopupContainer": {
+    "kind": "type",
+    "value": {
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "popup-container",
+      "exportAs": null,
+      "type": {
+        "name": "PopupContainer",
+        "moduleUrl": "asset:ng2_strap/lib/datepicker/index.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {},
+      "outputs": {
+        "update1": "update1"
+      },
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [],
+      "template": {
+        "encapsulation": 2,
+        "template": "    <ul class=\"dropdown-menu\"\n        style=\"display: block\"\n        [ng-style]=\"{top: top, left: left, display: display}\"\n        [ngClass]=\"classMap\">\n        <li>\n             <datepicker (cupdate)=\"onUpdate($event)\" *ngIf=\"popupComp\" [(ngModel)]=\"popupComp.cd.model\" [show-weeks]=\"true\"></datepicker>\n        </li>\n        <li *ngIf=\"showButtonBar\" style=\"padding:10px 9px 2px\">\n            <span class=\"btn-group pull-left\">\n                 <button type=\"button\" class=\"btn btn-sm btn-info\" (click)=\"select('today')\" ng-disabled=\"isDisabled('today')\">{{ currentText }}</button>\n                 <button type=\"button\" class=\"btn btn-sm btn-danger\" (click)=\"select(null)\">{{ clearText }}</button>\n            </span>\n            <button type=\"button\" class=\"btn btn-sm btn-success pull-right\" (click)=\"close()\">{{ closeText }}</button>\n        </li>\n    </ul>",
+        "templateUrl": "asset:ng2_strap/lib/datepicker/index.dart",
+        "styles": [],
+        "styleUrls": [],
+        "ngContentSelectors": []
+      }
+    }
+  },
+  "DatePickerPopup": {
+    "kind": "type",
+    "value": {
+      "isComponent": false,
+      "dynamicLoadable": true,
+      "selector": "[datepicker-popup][ngModel]",
+      "exportAs": null,
+      "type": {
+        "name": "DatePickerPopup",
+        "moduleUrl": "asset:ng2_strap/lib/datepicker/index.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "datepickerPopup": "datepickerPopup",
+        "isOpen": "isOpen"
+      },
+      "outputs": {},
+      "hostListeners": {
+        "cupdate": "onUpdate1($event)"
+      },
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        0
+      ],
+      "template": null
+    }
+  },
+  "DatePicker": {
+    "kind": "type",
+    "value": {
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "n2s-datepicker",
+      "exportAs": null,
+      "type": {
+        "name": "DatePicker",
+        "moduleUrl": "asset:ng2_strap/lib/datepicker/index.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "datepickerMode": "datepickerMode",
+        "minDate": "minDate",
+        "maxDate": "maxDate",
+        "dateDisabled": "dateDisabled",
+        "activeDate": "activeDate",
+        "showWeeks": "showWeeks",
+        "startingDay": "startingDay",
+        "initDate": "initDate",
+        "minMode": "minMode",
+        "maxMode": "maxMode",
+        "formatDay": "formatDay",
+        "formatMonth": "formatMonth",
+        "formatYear": "formatYear",
+        "formatDayHeader": "formatDayHeader",
+        "formatDayTitle": "formatDayTitle",
+        "formatMonthTitle": "formatMonthTitle",
+        "yearRange": "yearRange",
+        "shortcutPropagation": "shortcutPropagation"
+      },
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [],
+      "template": {
+        "encapsulation": 2,
+        "template": "    <n2s-datepicker-inner [activeDate]=\"activeDate\"\n                      (update)=\"onUpdate($event)\"\n                      [datepicker-mode]=\"datepickerMode\"\n                      [initDate]=\"initDate\"\n                      [minDate]=\"minDate\"\n                      [maxDate]=\"maxDate\"\n                      [minDode]=\"minMode\"\n                      [maxDode]=\"maxMode\"\n                      [showDeeks]=\"showWeeks\"\n                      [formatDay]=\"formatDay\"\n                      [formatMonth]=\"formatMonth\"\n                      [formatYear]=\"formatYear\"\n                      [formatDayHeader]=\"formatDayHeader\"\n                      [formatDayTitle]=\"formatDayTitle\"\n                      [formatMonthTitle]=\"formatMonthTitle\"\n                      [startingDay]=\"startingDay\"\n                      [yearRange]=\"yearRange\"\n                      [customClass]=\"customClass\"\n                      [dateDisabled]=\"dateDisabled\"\n                      [templateUrl]=\"templateUrl\"\n                      [shortcutPropagation]=\"shortcutPropagation\">\n      <n2s-daypicker tabindex=\"0\"></n2s-daypicker>\n      <n2s-monthpicker tabindex=\"0\"></n2s-monthpicker>\n      <n2s-yearpicker tabindex=\"0\"></n2s-yearpicker>\n    </n2s-datepicker-inner>\n    ",
+        "templateUrl": "asset:ng2_strap/lib/datepicker/index.dart",
+        "styles": [],
+        "styleUrls": [],
+        "ngContentSelectors": []
+      }
+    }
+  },
+  "DATEPICKER_DIRECTIVES": {
+    "kind": "alias",
+    "value": [
+      "DatePicker",
+      "DatePickerPopup"
+    ]
+  }
+}

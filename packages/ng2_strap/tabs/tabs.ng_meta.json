@@ -1,0 +1,272 @@
+{
+  "ngDeps": {
+    "1": "",
+    "3": [
+      {
+        "1": "package:angular2/angular2.dart",
+        "5": false
+      },
+      {
+        "1": "package:ng2_strap/common.dart",
+        "5": false
+      },
+      {
+        "1": "package:node_shims/js.dart",
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "Tabset",
+        "4": [
+          {
+            "1": "Component",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"n2s-tabset\""
+              },
+              {
+                "1": "inputs",
+                "2": "const [\"vertical\", \"justified\", \"type\"]"
+              },
+              {
+                "1": "template",
+                "2": "'''\n    <ul class=\"nav\"\n        [ngClass]=\"{\n          'nav-stacked' : vertical,\n          'nav-justified' : justified,\n          'nav-tabs' : type == 'tabs',\n          'nav-pills' : type == 'pills'\n        }\"\n        (click)=\"\\$event.preventDefault()\">\n        <li *ngFor=\"#tabz of tabs\" class=\"nav-item\" [ngClass]=\"{active: tabz.active, disabled: tabz.disabled}\">\n          <a href class=\"nav-link\" [ngClass]=\"{active: tabz.active, disabled: tabz.disabled}\" (click)=\"tabz.active = true\">\n            <span ng-transclude [ngTransclude]=\"tabz.headingRef\">{{tabz.heading}}</span>\n          </a>\n        </li>\n    </ul>\n    <div class=\"tab-content\">\n      <ng-content></ng-content>\n    </div>\n  '''"
+              },
+              {
+                "1": "directives",
+                "2": "const [CORE_DIRECTIVES, NgTransclude]"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": true,
+            "7": true,
+            "8": false
+          }
+        ],
+        "6": [
+          "OnInit"
+        ],
+        "8": [
+          {
+            "2": "CORE_DIRECTIVES"
+          },
+          {
+            "2": "NgTransclude"
+          }
+        ]
+      },
+      {
+        "1": "Tab",
+        "4": [
+          {
+            "1": "Directive",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"n2s-tab\""
+              },
+              {
+                "1": "inputs",
+                "2": "const [\"active\", \"disable\", \"disabled\", \"heading\"]"
+              },
+              {
+                "1": "outputs",
+                "2": "const [\"select\", \"deselect\"]"
+              },
+              {
+                "1": "host",
+                "2": "const {\"[class.tab-pane]\" : \"true\", \"[class.active]\" : \"active\"}"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "Tabset",
+            "4": "tabset"
+          }
+        ],
+        "6": [
+          "OnInit",
+          "OnDestroy",
+          "DoCheck"
+        ],
+        "7": [
+          {
+            "1": "disable",
+            "2": [
+              {
+                "1": "deprecated",
+                "4": false,
+                "5": false,
+                "6": false,
+                "7": false,
+                "8": true
+              },
+              {
+                "1": "deprecated",
+                "4": false,
+                "5": false,
+                "6": false,
+                "7": false,
+                "8": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "1": "TabHeading",
+        "4": [
+          {
+            "1": "Directive",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"[n2s-tab-heading]\""
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "TemplateRef",
+            "4": "templateRef"
+          },
+          {
+            "1": "Tab",
+            "4": "tab"
+          }
+        ]
+      }
+    ],
+    "6": "tabs.dart",
+    "10": [
+      {
+        "1": "package:angular2/angular2.ng_deps.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:ng2_strap/common.ng_deps.dart",
+        "4": "i1"
+      }
+    ]
+  },
+  "Tabset": {
+    "kind": "type",
+    "value": {
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "n2s-tabset",
+      "exportAs": null,
+      "type": {
+        "name": "Tabset",
+        "moduleUrl": "asset:ng2_strap/lib/tabs/tabs.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "vertical": "vertical",
+        "justified": "justified",
+        "type": "type"
+      },
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        0
+      ],
+      "template": {
+        "encapsulation": 2,
+        "template": "    <ul class=\"nav\"\n        [ngClass]=\"{\n          'nav-stacked' : vertical,\n          'nav-justified' : justified,\n          'nav-tabs' : type == 'tabs',\n          'nav-pills' : type == 'pills'\n        }\"\n        (click)=\"$event.preventDefault()\">\n        <li *ngFor=\"#tabz of tabs\" class=\"nav-item\" [ngClass]=\"{active: tabz.active, disabled: tabz.disabled}\">\n          <a href class=\"nav-link\" [ngClass]=\"{active: tabz.active, disabled: tabz.disabled}\" (click)=\"tabz.active = true\">\n            <span ng-transclude [ngTransclude]=\"tabz.headingRef\">{{tabz.heading}}</span>\n          </a>\n        </li>\n    </ul>\n    <div class=\"tab-content\">\n      <ng-content></ng-content>\n    </div>\n  ",
+        "templateUrl": "asset:ng2_strap/lib/tabs/tabs.dart",
+        "styles": [],
+        "styleUrls": [],
+        "ngContentSelectors": [
+          "*"
+        ]
+      }
+    }
+  },
+  "Tab": {
+    "kind": "type",
+    "value": {
+      "isComponent": false,
+      "dynamicLoadable": true,
+      "selector": "n2s-tab",
+      "exportAs": null,
+      "type": {
+        "name": "Tab",
+        "moduleUrl": "asset:ng2_strap/lib/tabs/tabs.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "active": "active",
+        "disable": "disable",
+        "disabled": "disabled",
+        "heading": "heading"
+      },
+      "outputs": {
+        "select": "select",
+        "deselect": "deselect"
+      },
+      "hostListeners": {},
+      "hostProperties": {
+        "class.active": "active",
+        "class.tab-pane": "true"
+      },
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        0,
+        1,
+        2
+      ],
+      "template": null
+    }
+  },
+  "TabHeading": {
+    "kind": "type",
+    "value": {
+      "isComponent": false,
+      "dynamicLoadable": true,
+      "selector": "[n2s-tab-heading]",
+      "exportAs": null,
+      "type": {
+        "name": "TabHeading",
+        "moduleUrl": "asset:ng2_strap/lib/tabs/tabs.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {},
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [],
+      "template": null
+    }
+  },
+  "TABS_DIRECTIVES": {
+    "kind": "alias",
+    "value": [
+      "Tab",
+      "TabHeading",
+      "Tabset"
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "ngDeps": {
+    "1": "",
+    "3": [
+      {
+        "1": "package:angular2/angular2.dart",
+        "5": false
+      },
+      {
+        "1": "dart:async",
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "Collapse",
+        "4": [
+          {
+            "1": "Directive",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"[collapse]\""
+              },
+              {
+                "1": "inputs",
+                "2": "const [\"collapse\"]"
+              },
+              {
+                "1": "host",
+                "2": "const {\"[class.in]\" : \"isExpanded\", \"[class.collapse]\" : \"isCollapse\", \"[class.collapsing]\" : \"isCollapsing\", \"[attr.aria-expanded]\" : \"isExpanded\", \"[attr.aria-hidden]\" : \"isCollapsed\", \"[style.height]\" : \"height\"}"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "ElementRef",
+            "4": "el"
+          }
+        ]
+      }
+    ],
+    "6": "collapse.dart",
+    "10": [
+      {
+        "1": "package:angular2/angular2.ng_deps.dart",
+        "4": "i0"
+      }
+    ]
+  },
+  "Collapse": {
+    "kind": "type",
+    "value": {
+      "isComponent": false,
+      "dynamicLoadable": true,
+      "selector": "[collapse]",
+      "exportAs": null,
+      "type": {
+        "name": "Collapse",
+        "moduleUrl": "asset:ng2_strap/lib/collapse/collapse.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "collapse": "collapse"
+      },
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {
+        "attr.aria-expanded": "isExpanded",
+        "attr.aria-hidden": "isCollapsed",
+        "class.collapse": "isCollapse",
+        "style.height": "height",
+        "class.in": "isExpanded",
+        "class.collapsing": "isCollapsing"
+      },
+      "hostAttributes": {},
+      "lifecycleHooks": [],
+      "template": null
+    }
+  }
+}
