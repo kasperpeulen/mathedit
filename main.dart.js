@@ -355,7 +355,7 @@ gev:function(a){return a.styles},
 wU:function(a,b){return a.Config(b)},
 wV:function(a){return a.Configured()},
 xm:function(a,b,c){return a.Queue(b,c)},
-xx:function(a,b){return a.Typeset(b)},
+xx:function(a){return a.Typeset()},
 $isty:1},
 U_:{
 "^":"bG;"},
@@ -23958,7 +23958,7 @@ c=[C.n5,[C.m2,u,t,s,r,q,p,o,n,m,l,k,j,g]]
 u=K.aed(C.rn)
 u.toString
 u.yD(G.Mh($.l||!1),c).Aw(C.bi)
-u={displayMath:[["$$","$$"],["\\[","\\]"]],inlineMath:[["$","$"],["\\(","\\)"]],processClass:"preview"}
+u={displayMath:[["$$","$$"],["\\[","\\]"]],inlineMath:[["$","$"],["\\(","\\)"]],processClass:"math"}
 b={TeX:{extensions:["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]},extensions:["tex2jax.js"],jax:["input/TeX","output/HTML-CSS"],messageStyle:"none",showProcessingMessages:!1,skipStartupTypeset:!0,tex2jax:u}
 u={enumerable:!0,value:{availableFonts:["TeX"],preferredFont:"TeX"}}
 self.Object.defineProperty(b,"HTML-CSS",u)
@@ -24145,7 +24145,7 @@ B7:function(a){if(J.j(a,this.e)||this.d)return
 this.d=!0
 this.e=a
 J.FB(this.b,a,C.hP)
-J.Ew(J.iq(self.MathJax),P.CI(new L.LN(this)),P.CI(this.gz8()))},
+J.Ew(J.iq(self.MathJax),P.CI(new L.LN()),P.CI(this.gz8()))},
 Fh:[function(){var z,y
 this.d=!1
 z=this.b
@@ -24162,8 +24162,8 @@ LO:{
 "^":"a:2;a,b",
 $0:[function(){return this.a.B7(this.b)},null,null,0,0,null,"call"]},
 LN:{
-"^":"a:2;a",
-$0:[function(){return J.Ex(J.iq(self.MathJax),this.a.b)},null,null,0,0,null,"call"]}}],["","",,Z,{
+"^":"a:2;",
+$0:[function(){return J.Ex(J.iq(self.MathJax))},null,null,0,0,null,"call"]}}],["","",,Z,{
 "^":"",
 a5Z:function(){if($.AL)return
 $.AL=!0}}],["","",,T,{
@@ -29999,7 +29999,7 @@ return J.K(a).W(a,b)}
 J.Eu=function(a,b){return J.k(a).wU(a,b)}
 J.Ev=function(a){return J.k(a).wV(a)}
 J.Ew=function(a,b,c){return J.k(a).xm(a,b,c)}
-J.Ex=function(a,b){return J.k(a).xx(a,b)}
+J.Ex=function(a){return J.k(a).xx(a)}
 J.r=function(a,b){if(typeof b==="number")if(a.constructor==Array||typeof a=="string"||H.DW(a,a[init.dispatchPropertyName]))if(b>>>0===b&&b<a.length)return a[b]
 return J.t(a).h(a,b)}
 J.cV=function(a,b,c){if(typeof b==="number")if((a.constructor==Array||H.DW(a,a[init.dispatchPropertyName]))&&!a.immutable$list&&b>>>0===b&&b<a.length)return a[b]=c
