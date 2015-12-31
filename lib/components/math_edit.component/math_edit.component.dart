@@ -54,7 +54,6 @@ class MathEditComponent implements OnInit {
     _eventBus.on(TextareaChangedEvent).listen((TextareaChangedEvent e) {
       onTextareaChange(e.value);
     });
-
   }
 
   @HostListener('keydown.control.k', const ['\$event'])

@@ -57,7 +57,8 @@ main() async {
 
     // analytics
     provide(Analytics,
-        useValue: new AnalyticsHtml('UA-40648110-6', 'MathEdit', '0.1.0')..optIn = true)
+        useValue: new AnalyticsHtml('UA-40648110-6', 'MathEdit', '0.1.0')
+          ..optIn = true)
   ]);
   bootstrapMathjax();
 }

@@ -14,6 +14,4 @@ import 'package:mathedit/components/login.component/login.component.dart';
       path: '/gist/:gistid', name: 'Gist', component: MathEditComponent),
   const Route(path: '', name: 'Home', component: MathEditComponent)
 ])
-class AppComponent {
-  AppComponent();
-}
+class AppComponent {}
