@@ -13,17 +13,13 @@ import 'package:mathedit/service/editor.service.dart';
     styleUrls: const ['login.component.css']
 )
 class LoginComponent {
-  bool disabled = false;
-  Map status = {"isopen": false};
-
-  Firebase firebase;
-
-  Authentication auth;
-  final Router router;
+  final Firebase _firebase;
+  final Authentication _auth;
+  final Router _router;
   final MyGistsService _gistsService;
   final EditorService _editor;
 
-  LoginComponent(this.auth, this.firebase, this.router, this._gistsService, this._editor);
+  LoginComponent(this._auth, this._firebase, this._router, this._gistsService, this._editor);
   List<String> items = [
     "The first choice!",
     "And another choice for you.",
@@ -31,33 +27,23 @@ class LoginComponent {
   ];
 
   bool get loggedIn {
-    if (auth.isAnonymous) {
+    if (_auth.isAnonymous) {
       return false;
     }
     return true;
   }
 
   void login() {
-    firebase.authWithOAuthRedirect('github', scope: 'gist');
+    _firebase.authWithOAuthRedirect('github', scope: 'gist');
   }
 
   void logout() {
-    firebase.unauth();
-    router.navigate(['Home']);
+    _firebase.unauth();
+    _router.navigate(['Home']);
     window.location.reload();
-  }
-
-  void toggled(bool open) {
-    print("Dropdown is now: $open");
   }
 
   void save() {
     _gistsService.saveGist(_editor.value);
-  }
-
-  void toggleDropdown(MouseEvent $event) {
-    $event.preventDefault();
-    $event.stopPropagation();
-    this.status['isopen'] = !this.status['isopen'];
   }
 }
