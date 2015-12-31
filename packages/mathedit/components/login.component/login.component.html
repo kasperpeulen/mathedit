@@ -1,21 +1,27 @@
 <html><head></head><body><div (click)="$event.preventDefault()">
-  <!-- Single button -->
   <div class="btn-group" dropdown="">
-    <button id="single-button" type="button" class="btn btn-primary" dropdown-toggle="">
+    <button id="menu-button" type="button" class="btn btn-primary" dropdown-toggle="">
       <span class="caret"></span>
     </button>
-    <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="single-button">
+    <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="menu-button">
       <li role="menuitem" *ngif="!loggedIn">
-        <a title="ctrl-l" class="dropdown-item" href="#" (click)="login()">Login with Github</a>
+        <a title="ctrl-l" class="dropdown-item" href="#" (click)="login()">
+          Login with Github
+        </a>
       </li>
       <li role="menuitem" *ngif="loggedIn">
-        <a class="dropdown-item" href="#" (click)="logout()">Logout from GitHub</a>
+        <a class="dropdown-item" href="#" (click)="logout()">
+          Logout from GitHub
+        </a>
       </li>
       <li role="menuitem">
-        <a title="ctrl-k" class="dropdown-item" href="#" (click)="save()">Save as Gist</a>
+        <a title="ctrl-k" class="dropdown-item" href="#" (click)="save()">
+          Save as Gist</a>
       </li>
       <li role="menuitem">
-        <a class="dropdown-item" href="#" (click)="save(false)">Save as secret Gist</a>
+        <a class="dropdown-item" href="#" (click)="save(false)">
+          Save as secret Gist
+        </a>
       </li>
     </ul>
   </div>

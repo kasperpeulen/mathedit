@@ -37,21 +37,6 @@
             "7": true,
             "8": false
           }
-        ],
-        "7": [
-          {
-            "1": "value",
-            "2": [
-              {
-                "1": "Input",
-                "4": false,
-                "5": false,
-                "6": false,
-                "7": false,
-                "8": false
-              }
-            ]
-          }
         ]
       }
     ],
@@ -76,9 +61,7 @@
         "isHost": false
       },
       "changeDetection": 5,
-      "inputs": {
-        "value": "value"
-      },
+      "inputs": {},
       "outputs": {},
       "hostListeners": {},
       "hostProperties": {},
