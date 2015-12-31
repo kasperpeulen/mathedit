@@ -24,11 +24,11 @@ class EditorComponent {
   }
 
   @HostListener('click', const [r'$event.currentTarget'])
-  onClick(Element target) {
+  void onClick(Element target) {
     target.querySelector('textarea').focus();
   }
 
-  onInput(String textareaValue) {
+  void onInput(String textareaValue) {
     _editor.value = textareaValue;
   }
 }

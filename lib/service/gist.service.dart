@@ -17,7 +17,7 @@ class MyGistsService extends GistsService {
   MyGistsService(GitHub github, this._auth, this._router, this._analytics)
       : super(github);
 
-  Future<Gist> createSimpleGist(String content, {public: true}) async {
+  Future<Gist> createSimpleGist(String content, {bool public: true}) async {
     final gist = await createGist({'mathedit.md': content},
         description: 'Math Snippet created with mathedit', public: public);
     _router.navigate([
@@ -27,15 +27,15 @@ class MyGistsService extends GistsService {
     return gist;
   }
 
-  Future<Gist> saveGist(String content, {public: true}) async {
+  Future<Gist> saveGist(String content, {bool public: true}) async {
     _analytics.sendEvent('save', gistId);
     var needsNewGist = await (() async {
       if (_auth.isAnonymous) {
         return true;
       }
       if (gistId == null) {
-          return true;
-        }
+        return true;
+      }
       Gist gist = await getGist(gistId);
       if (gist.public != public) {
         return true;
@@ -54,6 +54,4 @@ class MyGistsService extends GistsService {
       }
     }
   }
-
-
 }

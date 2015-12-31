@@ -11,6 +11,7 @@ import 'package:mathedit/service/editor.service.dart';
 import 'package:event_bus/event_bus.dart';
 import 'package:mathedit/service/user.service.dart';
 import 'package:usage/usage.dart';
+import 'dart:async';
 
 @Component(
     selector: 'math-edit',
@@ -57,19 +58,18 @@ class MathEditComponent implements OnInit {
   }
 
   @HostListener('keydown.control.k', const ['\$event'])
-  onSave(KeyboardEvent e) async {
+  void onSave(KeyboardEvent e) {
     e.preventDefault();
     _gistService.saveGist(_editor.value);
-    return;
   }
 
   @HostListener('keydown.control.l', const ['\$event'])
-  onLogin(KeyboardEvent e) async {
+  Future<Null> onLogin(KeyboardEvent e) async {
     e.preventDefault();
     await _userService.login();
   }
 
-  ngOnInit() async {
+  Future<Null> ngOnInit() async {
     final hostElement = ref.nativeElement;
     _mathjaxPreview = new MathJaxPreview(hostElement.querySelector('#preview'),
         hostElement.querySelector('#buffer'));
@@ -82,7 +82,7 @@ class MathEditComponent implements OnInit {
     loaded = true;
   }
 
-  onTextareaChange(String textareaValue) {
+  void onTextareaChange(String textareaValue) {
     final ast = _cmParser.parse(textareaValue);
     final html = _htmlWriter.write(ast);
     _mathjaxPreview.update(html);

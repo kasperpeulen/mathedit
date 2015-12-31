@@ -3,6 +3,7 @@ import 'package:angular2/angular2.dart';
 import 'package:firebase/firebase.dart';
 import 'dart:html';
 import 'package:usage/usage.dart';
+import 'dart:async';
 
 @Injectable()
 class UserService {
@@ -12,12 +13,12 @@ class UserService {
 
   UserService(this._firebase, this._router, this._analytics);
 
-  login() async {
+  Future<Null> login() async {
     await _analytics.sendEvent('user', 'login');
     _firebase.authWithOAuthRedirect('github', scope: 'gist');
   }
 
-  logout() async {
+  Future<Null> logout() async {
     await _analytics.sendEvent('user', 'logout');
     _firebase.unauth();
     _router.navigate(['Home']);

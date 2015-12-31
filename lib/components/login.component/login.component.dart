@@ -5,7 +5,6 @@ import 'package:mathedit/service/gist.service.dart';
 import 'package:mathedit/service/editor.service.dart';
 import 'package:mathedit/service/user.service.dart';
 import 'dart:async';
-import 'dart:html';
 
 @Component(
     selector: 'login',
@@ -35,9 +34,7 @@ class LoginComponent {
     await _userService.logout();
   }
 
-  void save([public = true]) {
+  void save([bool public = true]) {
     _gistsService.saveGist(_editor.value, public: public);
   }
-
-  @ViewChild(Dropdown) Dropdown dropdown;
 }

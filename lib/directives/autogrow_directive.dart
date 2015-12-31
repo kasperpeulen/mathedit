@@ -5,7 +5,7 @@ import 'dart:html';
     selector: 'textarea[autogrow]',
     host: const {'(input)': 'onInput(\$event.target)'})
 class AutogrowDirective {
-  onInput(TextAreaElement textArea) {
+  void onInput(TextAreaElement textArea) {
     // shrink the textarea when needed
     textArea.style.height = 'auto';
 

@@ -15,7 +15,7 @@ import 'package:mathedit/service/editor.service.dart';
 import 'dart:html';
 import 'package:mathedit/service/user.service.dart';
 
-main() async {
+Future<Null> main() async {
   final firebase = new Firebase('http://mathedit.firebaseio.com/');
 
   bootstrap(AppComponent, [

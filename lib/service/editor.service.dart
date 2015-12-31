@@ -4,6 +4,7 @@ import 'dart:html';
 import 'package:mathedit/service/gist.service.dart';
 import 'package:angular2/router.dart';
 import 'package:usage/usage.dart';
+import 'dart:async';
 
 @Injectable()
 class EditorService {
@@ -16,7 +17,7 @@ class EditorService {
   EditorService(this._analytics,
       this._gistsService, this._eventBus, this._storage, this._router);
 
-  loadEditor() async {
+  Future<Null> loadEditor() async {
     // only if there is no gist route, the localstorage should be used
     final gistId = _gistsService.gistId;
     if (gistId == null) {

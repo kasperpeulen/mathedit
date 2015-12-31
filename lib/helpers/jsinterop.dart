@@ -10,7 +10,7 @@ class Description {
 external String stringify(Object a);
 
 @JS('Object.defineProperty')
-external void defineProperty(o, String prop, Description description);
+external void defineProperty(dynamic o, String prop, Description description);
 
-setValue(o, String key, value) =>
+dynamic setValue(dynamic o, String key, dynamic value) =>
     defineProperty(o, key, new Description(value: value, enumerable: true));

@@ -6,7 +6,7 @@ class FocusOnInitDirective implements AfterViewInit {
   final ElementRef ref;
   FocusOnInitDirective(this.ref);
 
-  ngAfterViewInit() async {
+  Future<Null> ngAfterViewInit() async {
     Timer.run(() => ref.nativeElement.focus());
   }
 }
