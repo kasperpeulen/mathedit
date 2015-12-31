@@ -10,7 +10,9 @@ import 'package:firebase/firebase.dart';
 import 'package:usage/usage_html.dart';
 import 'package:mathedit/service/gist.service.dart';
 import 'dart:async';
+import 'package:event_bus/event_bus.dart';
 import 'package:mathedit/service/editor.service.dart';
+import 'dart:html';
 
 main() async {
   final firebase = new Firebase('http://mathedit.firebaseio.com/');
@@ -30,8 +32,13 @@ main() async {
         deps: [Authentication]),
     provide(MyGistsService, useClass: MyGistsService),
 
-    // editor
+    // storage
+    provide(Storage, useValue: window.localStorage),
 
+    // events
+    provide(EventBus, useValue: new EventBus()),
+
+    // editor
     provide(EditorService, useClass: EditorService),
 
     // common mark

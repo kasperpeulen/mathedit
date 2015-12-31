@@ -20,17 +20,9 @@ class LoginComponent {
   final EditorService _editor;
 
   LoginComponent(this._auth, this._firebase, this._router, this._gistsService, this._editor);
-  List<String> items = [
-    "The first choice!",
-    "And another choice for you.",
-    "but wait! A third!"
-  ];
 
   bool get loggedIn {
-    if (_auth.isAnonymous) {
-      return false;
-    }
-    return true;
+    return _auth.isAnonymous ? false : true;
   }
 
   void login() {

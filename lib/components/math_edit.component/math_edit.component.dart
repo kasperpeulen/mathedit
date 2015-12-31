@@ -5,11 +5,11 @@ import 'package:mathedit/components/preview.component/preview.component.dart';
 
 import 'package:md_proc/md_proc.dart';
 import 'package:mathedit/helpers/mathjax_preview.dart';
-import 'package:github/browser.dart';
 import 'dart:html';
 import 'package:mathedit/service/gist.service.dart';
 import 'package:firebase/firebase.dart';
 import 'package:mathedit/service/editor.service.dart';
+import 'package:event_bus/event_bus.dart';
 
 @Component(
     selector: 'math-edit',
@@ -18,8 +18,10 @@ import 'package:mathedit/service/editor.service.dart';
     encapsulation: ViewEncapsulation.None,
     styleUrls: const ['math_edit.component.css'])
 class MathEditComponent implements OnInit {
+  // sets textareavalue
   String gistValue;
 
+  // if the component can be displayed
   bool loaded = false;
 
   MathJaxPreview _mathjaxPreview;
@@ -29,14 +31,12 @@ class MathEditComponent implements OnInit {
   final MyGistsService _gistService;
   final Firebase _firebase;
   final EditorService _editor;
-
-  final Router router;
-  String textareaValue;
+  final EventBus _eventBus;
 
   @HostListener('keydown.control.k', const ['\$event'])
   onSave(KeyboardEvent e) async {
     e.preventDefault();
-    _gistService.saveGist(textareaValue);
+    _gistService.saveGist(_editor.value);
     return;
   }
 
@@ -46,36 +46,36 @@ class MathEditComponent implements OnInit {
     _firebase.authWithOAuthRedirect('github', scope: 'gist');
   }
 
-  MathEditComponent(this.router, this._params, ElementRef ref, this._cmParser,
-      this._htmlWriter, this._gistService, this._firebase, this._editor) {
+  MathEditComponent(
+      this._params,
+      ElementRef ref,
+      this._cmParser,
+      this._htmlWriter,
+      this._gistService,
+      this._firebase,
+      this._editor,
+      this._eventBus) {
+    _gistService.gistId = _params.get('gistid');
+
     final hostElement = ref.nativeElement;
     _mathjaxPreview = new MathJaxPreview(hostElement.querySelector('#preview'),
         hostElement.querySelector('#buffer'));
-    _gistService.gistId = _params.get('gistid');
+
+    _eventBus.on(TextareaChangedEvent).listen((TextareaChangedEvent e) {
+      onTextareaChange(e.value);
+    });
   }
 
   ngOnInit() async {
-    final gistId = _gistService.gistId;
-    if (gistId != null) {
-      try {
-        final gist = await _gistService.getGist(gistId);
-        gistValue = gist.files.first.content;
-        document.title = 'MathEdit - ${gist.description}';
-
-        onTextareaChange(gistValue);
-      } catch (e) {
-        print(e);
-        router.navigate(['Home']);
-      }
-      loaded = true;
-    } else {
-      loaded = true;
+    try {
+      await _editor.loadEditor();
+    } catch(e) {
+      print(e);
     }
+    loaded = true;
   }
 
   onTextareaChange(String textareaValue) {
-    _editor.value = textareaValue;
-    this.textareaValue = textareaValue;
     final ast = _cmParser.parse(textareaValue);
     final html = _htmlWriter.write(ast);
     _mathjaxPreview.update(html);

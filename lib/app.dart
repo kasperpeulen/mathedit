@@ -21,5 +21,4 @@ class AppComponent {
   AppComponent(this.ga) {
     ga.sendScreenView(window.location.pathname);
   }
-
 }

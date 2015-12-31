@@ -20,7 +20,6 @@ class MyGistsService extends GistsService {
   }
 
   saveGist(String content) async {
-
     if (_auth.isAnonymous || gistId == null) {
       Gist gist = await createSimpleGist(content);
       _router.navigate([
