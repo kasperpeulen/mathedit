@@ -15,14 +15,6 @@
         "5": false
       },
       {
-        "1": "package:usage/usage.dart",
-        "5": false
-      },
-      {
-        "1": "dart:html",
-        "5": false
-      },
-      {
         "1": "package:mathedit/components/login.component/login.component.dart",
         "5": false
       }
