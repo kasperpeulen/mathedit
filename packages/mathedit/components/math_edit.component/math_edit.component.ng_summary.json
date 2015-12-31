@@ -35,10 +35,6 @@
         "5": false
       },
       {
-        "1": "package:firebase/firebase.dart",
-        "5": false
-      },
-      {
         "1": "package:mathedit/service/editor.service.dart",
         "5": false
       },
@@ -48,6 +44,10 @@
       },
       {
         "1": "package:mathedit/service/user.service.dart",
+        "5": false
+      },
+      {
+        "1": "package:usage/usage.dart",
         "5": false
       }
     ],
@@ -118,6 +118,10 @@
           {
             "1": "UserService",
             "4": "_userService"
+          },
+          {
+            "1": "Analytics",
+            "4": "_analytics"
           }
         ],
         "6": [
