@@ -45,6 +45,10 @@
       {
         "1": "package:event_bus/event_bus.dart",
         "5": false
+      },
+      {
+        "1": "package:mathedit/service/user.service.dart",
+        "5": false
       }
     ],
     "5": [
@@ -104,16 +108,16 @@
             "4": "_gistService"
           },
           {
-            "1": "Firebase",
-            "4": "_firebase"
-          },
-          {
             "1": "EditorService",
             "4": "_editor"
           },
           {
             "1": "EventBus",
             "4": "_eventBus"
+          },
+          {
+            "1": "UserService",
+            "4": "_userService"
           }
         ],
         "6": [
@@ -158,6 +162,10 @@
       {
         "1": "package:mathedit/service/editor.service.ng_deps.dart",
         "4": "i6"
+      },
+      {
+        "1": "package:mathedit/service/user.service.ng_deps.dart",
+        "4": "i7"
       }
     ]
   },

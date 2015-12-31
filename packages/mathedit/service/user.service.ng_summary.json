@@ -3,29 +3,25 @@
     "1": "",
     "3": [
       {
-        "1": "package:angular2/angular2.dart",
-        "5": false
-      },
-      {
-        "1": "package:github/browser.dart",
-        "5": false
-      },
-      {
-        "1": "dart:async",
-        "5": false
-      },
-      {
         "1": "package:angular2/router.dart",
         "5": false
       },
       {
-        "1": "package:usage/usage.dart",
+        "1": "package:angular2/angular2.dart",
+        "5": false
+      },
+      {
+        "1": "package:firebase/firebase.dart",
+        "5": false
+      },
+      {
+        "1": "dart:html",
         "5": false
       }
     ],
     "5": [
       {
-        "1": "MyGistsService",
+        "1": "UserService",
         "4": [
           {
             "1": "Injectable",
@@ -38,24 +34,16 @@
         ],
         "5": [
           {
-            "1": "GitHub",
-            "4": "github"
-          },
-          {
-            "1": "Authentication",
-            "4": "_auth"
+            "1": "Firebase",
+            "4": "_firebase"
           },
           {
             "1": "Router",
             "4": "_router"
-          },
-          {
-            "1": "Analytics",
-            "4": "_analytics"
           }
         ]
       }
     ],
-    "6": "gist.service.dart"
+    "6": "user.service.dart"
   }
 }

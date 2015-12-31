@@ -33,6 +33,10 @@
       {
         "1": "package:mathedit/service/editor.service.dart",
         "5": false
+      },
+      {
+        "1": "package:mathedit/service/user.service.dart",
+        "5": false
       }
     ],
     "5": [
@@ -68,16 +72,12 @@
         ],
         "5": [
           {
+            "1": "UserService",
+            "4": "_userService"
+          },
+          {
             "1": "Authentication",
             "4": "_auth"
-          },
-          {
-            "1": "Firebase",
-            "4": "_firebase"
-          },
-          {
-            "1": "Router",
-            "4": "_router"
           },
           {
             "1": "MyGistsService",

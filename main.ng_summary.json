@@ -61,6 +61,10 @@
       {
         "1": "dart:html",
         "5": false
+      },
+      {
+        "1": "package:mathedit/service/user.service.dart",
+        "5": false
       }
     ],
     "6": "main.dart"

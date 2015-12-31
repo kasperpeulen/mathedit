@@ -61,6 +61,10 @@
       {
         "1": "dart:html",
         "5": false
+      },
+      {
+        "1": "package:mathedit/service/user.service.dart",
+        "5": false
       }
     ],
     "6": "main.dart",
@@ -92,6 +96,10 @@
       {
         "1": "package:mathedit/service/editor.service.ng_deps.dart",
         "4": "i6"
+      },
+      {
+        "1": "package:mathedit/service/user.service.ng_deps.dart",
+        "4": "i7"
       }
     ]
   }
