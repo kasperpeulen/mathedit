@@ -42,6 +42,10 @@
         ],
         "5": [
           {
+            "1": "Analytics",
+            "4": "_analytics"
+          },
+          {
             "1": "MyGistsService",
             "4": "_gistsService"
           },
