@@ -9,6 +9,8 @@ import 'package:github/browser.dart';
 import 'dart:html';
 import 'package:mathedit/service/gist.service.dart';
 import 'package:firebase/firebase.dart';
+import 'package:mathedit/service/editor.service.dart';
+
 @Component(
     selector: 'math-edit',
     templateUrl: 'math_edit.component.html',
@@ -25,8 +27,8 @@ class MathEditComponent implements OnInit {
   final HtmlWriter _htmlWriter;
   final RouteParams _params;
   final MyGistsService _gistService;
-  final Authentication _auth;
   final Firebase _firebase;
+  final EditorService _editor;
 
   final Router router;
   String textareaValue;
@@ -34,25 +36,8 @@ class MathEditComponent implements OnInit {
   @HostListener('keydown.control.k', const ['\$event'])
   onSave(KeyboardEvent e) async {
     e.preventDefault();
-    final gistId = _params.get('gistid');
-    if (_auth.isAnonymous || gistId == null) {
-      Gist gist = await _gistService.createSimpleGist(textareaValue);
-      router.navigate([
-        'Gist',
-        {'gistid': gist.id}
-      ]);
-    } else {
-      try {
-        await _gistService.editGist(gistId, files: {'mathedit.md': textareaValue});
-      } catch(e) {
-        print(e);
-        Gist gist = await _gistService.createSimpleGist(textareaValue);
-        router.navigate([
-          'Gist',
-          {'gistid': gist.id}
-        ]);
-      }
-    }
+    _gistService.saveGist(textareaValue);
+    return;
   }
 
   @HostListener('keydown.control.l', const ['\$event'])
@@ -61,24 +46,24 @@ class MathEditComponent implements OnInit {
     _firebase.authWithOAuthRedirect('github', scope: 'gist');
   }
 
-
-
-  MathEditComponent(this._auth, this.router, this._params, ElementRef ref,
-      this._cmParser, this._htmlWriter, this._gistService, this._firebase) {
+  MathEditComponent(this.router, this._params, ElementRef ref, this._cmParser,
+      this._htmlWriter, this._gistService, this._firebase, this._editor) {
     final hostElement = ref.nativeElement;
     _mathjaxPreview = new MathJaxPreview(hostElement.querySelector('#preview'),
         hostElement.querySelector('#buffer'));
+    _gistService.gistId = _params.get('gistid');
   }
 
   ngOnInit() async {
-    var gistId = _params.get('gistid');
+    final gistId = _gistService.gistId;
     if (gistId != null) {
       try {
         final gist = await _gistService.getGist(gistId);
         gistValue = gist.files.first.content;
         document.title = 'MathEdit - ${gist.description}';
+
         onTextareaChange(gistValue);
-      } catch(e) {
+      } catch (e) {
         print(e);
         router.navigate(['Home']);
       }
@@ -89,6 +74,7 @@ class MathEditComponent implements OnInit {
   }
 
   onTextareaChange(String textareaValue) {
+    _editor.value = textareaValue;
     this.textareaValue = textareaValue;
     final ast = _cmParser.parse(textareaValue);
     final html = _htmlWriter.write(ast);

@@ -10,6 +10,7 @@ import 'package:firebase/firebase.dart';
 import 'package:usage/usage_html.dart';
 import 'package:mathedit/service/gist.service.dart';
 import 'dart:async';
+import 'package:mathedit/service/editor.service.dart';
 
 main() async {
   final firebase = new Firebase('http://mathedit.firebaseio.com/');
@@ -27,9 +28,11 @@ main() async {
     provide(GitHub,
         useFactory: (Authentication auth) => createGitHubClient(auth: auth),
         deps: [Authentication]),
-    provide(MyGistsService,
-        useFactory: (GitHub gitHub) => new MyGistsService(gitHub),
-        deps: [GitHub]),
+    provide(MyGistsService, useClass: MyGistsService),
+
+    // editor
+
+    provide(EditorService, useClass: EditorService),
 
     // common mark
     provide(Options,
@@ -83,7 +86,6 @@ Future<Authentication> bootstrapAuth(firebase) {
       final auth = new Authentication.withToken(accessToken);
       completer.complete(auth);
     } else {
-      firebase.authWithOAuthRedirect('github', scope: 'gist');
       completer.complete(new Authentication.anonymous());
     }
   });

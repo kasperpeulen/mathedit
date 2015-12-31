@@ -3,13 +3,11 @@ import 'package:angular2/angular2.dart';
 import 'package:mathedit/components/math_edit.component/math_edit.component.dart';
 import 'package:usage/usage.dart';
 import 'dart:html';
-import 'package:mathedit/service/gist.service.dart';
-import 'package:github/browser.dart';
-
+import 'package:mathedit/components/login.component/login.component.dart';
 @Component(
     selector: 'app',
     templateUrl: 'app.html',
-    directives: const [ROUTER_DIRECTIVES],
+    directives: const [ROUTER_DIRECTIVES, LoginComponent, CORE_DIRECTIVES],
     encapsulation: ViewEncapsulation.None,
     styleUrls: const ['app.css'])
 @RouteConfig(const [
@@ -23,4 +21,5 @@ class AppComponent {
   AppComponent(this.ga) {
     ga.sendScreenView(window.location.pathname);
   }
+
 }

@@ -5,6 +5,7 @@ import 'dart:html';
 import 'package:mathedit/helpers/local_storage.dart';
 import 'package:mathedit/directives/focus_on_init.directive.dart';
 import 'package:firebase/firebase.dart';
+import 'package:mathedit/service/editor.service.dart';
 @Component(
     selector: 'editor',
     directives: const [AutogrowDirective, FocusOnInitDirective],
@@ -21,8 +22,9 @@ class EditorComponent implements OnInit {
   final Element _hostElement;
   final RouteParams params;
   final Firebase firebase;
+  final EditorService editor;
 
-  EditorComponent(this.firebase, this.params, ElementRef ref)
+  EditorComponent(this.firebase, this.params, ElementRef ref, this.editor)
       : _hostElement = ref.nativeElement;
 
   @HostListener('click', const [r'$event.currentTarget'])
@@ -36,6 +38,7 @@ class EditorComponent implements OnInit {
     if (gistId == null) {
       if (store['mathedit.textarea'] != null) {
         textareaValue = store['mathedit.textarea'];
+        editor.value = textareaValue;
         value.add(textareaValue);
       }
     }
@@ -43,6 +46,7 @@ class EditorComponent implements OnInit {
 
   onInput(String textareaValue) {
     store['mathedit.textarea'] = textareaValue;
+    editor.value = textareaValue;
     value.add(textareaValue);
   }
 }
