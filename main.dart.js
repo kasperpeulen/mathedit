@@ -22366,7 +22366,7 @@ dQ:{
 "^":"K3;b,c,l8:d@,e,a",
 er:function(a){var z=0,y=new P.cb(),x=1,w,v=[],u=this,t,s,r,q,p,o,n,m
 var $async$er=P.ch(function(b,c){if(b===1){w=c
-z=x}while(true)switch(z){case 0:u.e.la("save",u.d)
+z=x}while(true)switch(z){case 0:u.e.w2("save",u.d)
 z=u.b.gti()||u.d==null?2:4
 break
 case 2:o=u.c
@@ -23943,12 +23943,12 @@ adI:{
 $0:function(){R.a5c()}},
 a1N:{
 "^":"a:168;a",
-$1:[function(a){var z=0,y=new P.cb(),x=1,w,v=this,u,t
+$1:[function(a){var z=0,y=new P.cb(),x=1,w,v=this,u
 var $async$$1=P.ch(function(b,c){if(b===1){w=c
-z=x}while(true)switch(z){case 0:u=a!=null&&J.j(J.r(a,"provider"),"github")
-t=v.a
-if(u)t.cB(0,new T.cZ(J.r(J.r(a,"github"),"accessToken"),null,null))
-else t.cB(0,new T.cZ(null,null,null))
+z=x}while(true)switch(z){case 0:u=v.a
+if(u.a.a!==0)window.location.reload()
+else ;if(a!=null&&J.j(J.r(a,"provider"),"github"))u.cB(0,new T.cZ(J.r(J.r(a,"github"),"accessToken"),null,null))
+else u.cB(0,new T.cZ(null,null,null))
 return P.a3(null,0,y,null)
 case 1:return P.a3(w,1,y)}})
 return P.a3(null,$async$$1,y,null)},null,null,2,0,null,212,"call"]}},1],["","",,R,{
@@ -29735,12 +29735,14 @@ return!0}}},
 FO:{
 "^":"dI;iF:c<",
 lb:function(a){return this.qB("screenview",P.D(["cd",a]))},
-w2:function(a,b,c,d){var z,y
+la:function(a,b,c,d){var z,y
 if(!J.j(J.r(this.c.b,"optIn"),!0)){z=H.e(new P.a7(0,$.H,null),[null])
 z.aM(null)
 return z}y=P.D(["ec",a,"ea",b])
+if(c!=null)y.k(0,"el",c)
+if(d!=null)y.k(0,"ev",d)
 return this.qB("event",y)},
-la:function(a,b){return this.w2(a,b,null,null)},
+w2:function(a,b){return this.la(a,b,null,null)},
 ht:function(a,b){this.f.k(0,a,b)},
 qB:function(a,b){var z,y
 if(this.e.E1()){z=this.c
@@ -29792,9 +29794,9 @@ var $async$co=P.ch(function(a,b){if(a===1){w=b
 z=x}while(true)switch(z){case 0:P.bY("send login to analytics")
 u=v.c
 z=2
-return P.a3(u.lb("login"),$async$co,y)
+return P.a3(u.la("login","true","b",1),$async$co,y)
 case 2:z=3
-return P.a3(u.la("login","true"),$async$co,y)
+return P.a3(u.lb("login"),$async$co,y)
 case 3:v.a.Ak("github","gist")
 return P.a3(null,0,y,null)
 case 1:return P.a3(w,1,y)}})
@@ -29806,7 +29808,7 @@ u=v.c
 z=2
 return P.a3(u.lb("logout"),$async$d0,y)
 case 2:z=3
-return P.a3(u.la("logout","true"),$async$d0,y)
+return P.a3(u.la("logout","true","b",1),$async$d0,y)
 case 3:v.a.ED()
 v.b.kl(["Home"])
 window.location.reload()
