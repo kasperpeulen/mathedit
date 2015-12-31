@@ -29,6 +29,10 @@
       {
         "1": "dart:async",
         "5": false
+      },
+      {
+        "1": "dart:html",
+        "5": false
       }
     ],
     "5": [
@@ -48,7 +52,7 @@
               },
               {
                 "1": "directives",
-                "2": "const [CORE_DIRECTIVES, DROPDOWN_DIRECTIVES]"
+                "2": "const [CORE_DIRECTIVES, FORM_DIRECTIVES, DROPDOWN_DIRECTIVES]"
               },
               {
                 "1": "styleUrls",
@@ -80,9 +84,30 @@
             "4": "_editor"
           }
         ],
+        "7": [
+          {
+            "1": "dropdown",
+            "2": [
+              {
+                "1": "ViewChild",
+                "2": [
+                  "Dropdown"
+                ],
+                "4": false,
+                "5": false,
+                "6": false,
+                "7": false,
+                "8": false
+              }
+            ]
+          }
+        ],
         "8": [
           {
             "2": "CORE_DIRECTIVES"
+          },
+          {
+            "2": "FORM_DIRECTIVES"
           },
           {
             "2": "DROPDOWN_DIRECTIVES"
@@ -91,6 +116,9 @@
       }
     ],
     "6": "login.component.dart",
+    "8": [
+      "dropdown"
+    ],
     "10": [
       {
         "1": "package:angular2/angular2.ng_deps.dart",
@@ -135,7 +163,7 @@
       "lifecycleHooks": [],
       "template": {
         "encapsulation": 0,
-        "template": "<div (click)=\"$event.preventDefault()\">\n  <!-- Single button -->\n  <div class=\"btn-group\" dropdown>\n    <button id=\"single-button\" type=\"button\" class=\"btn btn-primary\"\n            dropdown-toggle>\n      <span class=\"caret\"></span>\n    </button>\n    <ul class=\"dropdown-menu pull-right\" role=\"menu\"\n        aria-labelledby=\"single-button\">\n      <li role=\"menuitem\" *ngIf=\"!loggedIn\">\n        <a title=\"ctrl-l\" class=\"dropdown-item\" href=\"#\" (click)=\"login()\">Login with Github</a>\n      </li>\n      <li role=\"menuitem\" *ngIf=\"loggedIn\">\n        <a class=\"dropdown-item\" href=\"#\" (click)=\"logout()\">Logout from Github</a>\n      </li>\n      <li role=\"menuitem\">\n        <a title=\"ctrl-k\" class=\"dropdown-item\" href=\"#\" (click)=\"save()\">Save as Gist</a>\n      </li>\n    </ul>\n  </div>\n</div>",
+        "template": "<div>\n  <!-- Single button -->\n  <div class=\"btn-group\" dropdown>\n    <button id=\"single-button\" type=\"button\" class=\"btn btn-primary\"\n            dropdown-toggle>\n      <span class=\"caret\"></span>\n    </button>\n    <ul class=\"dropdown-menu pull-right\" role=\"menu\"\n        aria-labelledby=\"single-button\">\n      <li role=\"menuitem\" *ngIf=\"!loggedIn\">\n        <a title=\"ctrl-l\" class=\"dropdown-item\" href=\"#\" (click)=\"login()\">Login with Github</a>\n      </li>\n      <li role=\"menuitem\" *ngIf=\"loggedIn\">\n        <a class=\"dropdown-item\" href=\"#\" (click)=\"logout()\">Logout from GitHub</a>\n      </li>\n      <li role=\"menuitem\">\n        <a title=\"ctrl-k\" class=\"dropdown-item\" href=\"#\" (click)=\"save()\">Save as Gist</a>\n      </li>\n      <li role=\"menuitem\">\n        <a class=\"dropdown-item\" href=\"#\" (click)=\"save(false)\">Save as secret Gist</a>\n      </li>\n    </ul>\n  </div>\n</div>",
         "templateUrl": "asset:mathedit/lib/components/login.component/login.component.html",
         "styles": [],
         "styleUrls": [
