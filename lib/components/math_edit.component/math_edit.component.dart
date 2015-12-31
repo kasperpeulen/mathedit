@@ -77,7 +77,7 @@ class MathEditComponent implements OnInit {
     try {
       await _editor.loadEditor();
     } catch (e) {
-      print(e);
+      _analytics.sendException('Failed loading editor');
     }
     loaded = true;
   }

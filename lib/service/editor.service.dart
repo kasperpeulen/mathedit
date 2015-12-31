@@ -3,6 +3,7 @@ import 'package:event_bus/event_bus.dart';
 import 'dart:html';
 import 'package:mathedit/service/gist.service.dart';
 import 'package:angular2/router.dart';
+import 'package:usage/usage.dart';
 
 @Injectable()
 class EditorService {
@@ -10,6 +11,7 @@ class EditorService {
   final Storage _storage;
   final MyGistsService _gistsService;
   final Router _router;
+  final Analytics _analytics;
 
   EditorService(
       this._gistsService, this._eventBus, this._storage, this._router);
@@ -28,7 +30,7 @@ class EditorService {
         document.title = 'MathEdit - ${gist.description}';
         value = gistValue;
       } catch (e) {
-        print(e);
+        _analytics.sendException('Failed getting gist');
         _router.navigate(['Home']);
       }
     }

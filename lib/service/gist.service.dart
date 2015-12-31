@@ -34,7 +34,7 @@ class MyGistsService extends GistsService {
       try {
         await editGist(gistId, files: {'mathedit.md': content});
       } catch (e) {
-        print(e);
+        _analytics.sendException(e.toString());
         Gist gist = await createSimpleGist(content);
         _router.navigate([
           'Gist',
