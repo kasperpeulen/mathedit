@@ -4,6 +4,7 @@ import 'package:github/browser.dart';
 import 'package:mathedit/service/gist.service.dart';
 import 'package:mathedit/service/editor.service.dart';
 import 'package:mathedit/service/user.service.dart';
+import 'dart:async';
 
 @Component(
     selector: 'login',
@@ -23,12 +24,12 @@ class LoginComponent {
     return _auth.isAnonymous ? false : true;
   }
 
-  void login() {
-    _userService.login();
+  Future login() async {
+    await _userService.login();
   }
 
-  void logout() {
-    _userService.logout();
+  Future logout() async {
+    await _userService.logout();
   }
 
   void save() {

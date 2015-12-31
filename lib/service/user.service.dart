@@ -12,13 +12,13 @@ class UserService {
 
   UserService(this._firebase, this._router, this._analytics);
 
-  void login() {
-    _analytics.sendEvent('login', 'true');
+  login() async {
+    await _analytics.sendEvent('user', 'login');
     _firebase.authWithOAuthRedirect('github', scope: 'gist');
   }
 
-  void logout() {
-    _analytics.sendEvent('logout', 'true');
+  logout() async {
+    await _analytics.sendEvent('user', 'logout');
     _firebase.unauth();
     _router.navigate(['Home']);
     window.location.reload();

@@ -35,9 +35,11 @@ class MathEditComponent implements OnInit {
   final UserService _userService;
   final Analytics _analytics;
 
+  final ElementRef ref;
+
   MathEditComponent(
       this._params,
-      ElementRef ref,
+      this.ref,
       this._cmParser,
       this._htmlWriter,
       this._gistService,
@@ -65,7 +67,7 @@ class MathEditComponent implements OnInit {
   @HostListener('keydown.control.l', const ['\$event'])
   onLogin(KeyboardEvent e) async {
     e.preventDefault();
-    _userService.login();
+    await _userService.login();
   }
 
   ngOnInit() async {
