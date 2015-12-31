@@ -6,6 +6,7 @@ import 'package:github/browser.dart';
 import 'package:firebase/firebase.dart';
 import 'package:mathedit/service/gist.service.dart';
 import 'package:mathedit/service/editor.service.dart';
+import 'package:mathedit/service/user.service.dart';
 @Component(
     selector: 'login',
     templateUrl: 'login.component.html',
@@ -13,26 +14,23 @@ import 'package:mathedit/service/editor.service.dart';
     styleUrls: const ['login.component.css']
 )
 class LoginComponent {
-  final Firebase _firebase;
   final Authentication _auth;
-  final Router _router;
   final MyGistsService _gistsService;
   final EditorService _editor;
+  final UserService _userService;
 
-  LoginComponent(this._auth, this._firebase, this._router, this._gistsService, this._editor);
+  LoginComponent(this._userService, this._auth, this._gistsService, this._editor);
 
   bool get loggedIn {
     return _auth.isAnonymous ? false : true;
   }
 
   void login() {
-    _firebase.authWithOAuthRedirect('github', scope: 'gist');
+    _userService.login();
   }
 
   void logout() {
-    _firebase.unauth();
-    _router.navigate(['Home']);
-    window.location.reload();
+    _userService.logout();
   }
 
   void save() {

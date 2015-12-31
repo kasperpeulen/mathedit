@@ -2,6 +2,7 @@ import 'package:angular2/angular2.dart';
 import 'package:github/browser.dart';
 import 'dart:async';
 import 'package:angular2/router.dart';
+import 'package:usage/usage.dart';
 
 @Injectable()
 class MyGistsService extends GistsService {
@@ -11,7 +12,9 @@ class MyGistsService extends GistsService {
   /// This is set when there is a gist id in the router.
   String gistId;
 
-  MyGistsService(GitHub github,this._auth, this._router)
+  final Analytics _analytics;
+
+  MyGistsService(GitHub github,this._auth, this._router, this._analytics)
       : super(github);
 
   Future<Gist> createSimpleGist(String content) {
@@ -20,6 +23,7 @@ class MyGistsService extends GistsService {
   }
 
   saveGist(String content) async {
+    _analytics.sendEvent('save', gistId);
     if (_auth.isAnonymous || gistId == null) {
       Gist gist = await createSimpleGist(content);
       _router.navigate([

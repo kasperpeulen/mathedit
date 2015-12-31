@@ -13,6 +13,7 @@ import 'dart:async';
 import 'package:event_bus/event_bus.dart';
 import 'package:mathedit/service/editor.service.dart';
 import 'dart:html';
+import 'package:mathedit/service/user.service.dart';
 
 main() async {
   final firebase = new Firebase('http://mathedit.firebaseio.com/');
@@ -34,6 +35,9 @@ main() async {
 
     // storage
     provide(Storage, useValue: window.localStorage),
+
+    // users
+    provide(UserService, useClass: UserService),
 
     // events
     provide(EventBus, useValue: new EventBus()),

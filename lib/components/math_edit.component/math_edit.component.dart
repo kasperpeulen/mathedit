@@ -10,6 +10,7 @@ import 'package:mathedit/service/gist.service.dart';
 import 'package:firebase/firebase.dart';
 import 'package:mathedit/service/editor.service.dart';
 import 'package:event_bus/event_bus.dart';
+import 'package:mathedit/service/user.service.dart';
 
 @Component(
     selector: 'math-edit',
@@ -29,9 +30,9 @@ class MathEditComponent implements OnInit {
   final HtmlWriter _htmlWriter;
   final RouteParams _params;
   final MyGistsService _gistService;
-  final Firebase _firebase;
   final EditorService _editor;
   final EventBus _eventBus;
+  final UserService _userService;
 
   @HostListener('keydown.control.k', const ['\$event'])
   onSave(KeyboardEvent e) async {
@@ -43,7 +44,7 @@ class MathEditComponent implements OnInit {
   @HostListener('keydown.control.l', const ['\$event'])
   onLogin(KeyboardEvent e) async {
     e.preventDefault();
-    _firebase.authWithOAuthRedirect('github', scope: 'gist');
+    _userService.login();
   }
 
   MathEditComponent(
@@ -52,9 +53,9 @@ class MathEditComponent implements OnInit {
       this._cmParser,
       this._htmlWriter,
       this._gistService,
-      this._firebase,
       this._editor,
-      this._eventBus) {
+      this._eventBus,
+      this._userService) {
     _gistService.gistId = _params.get('gistid');
 
     final hostElement = ref.nativeElement;
@@ -69,7 +70,7 @@ class MathEditComponent implements OnInit {
   ngOnInit() async {
     try {
       await _editor.loadEditor();
-    } catch(e) {
+    } catch (e) {
       print(e);
     }
     loaded = true;
