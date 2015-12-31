@@ -23943,12 +23943,12 @@ adI:{
 $0:function(){R.a5c()}},
 a1N:{
 "^":"a:168;a",
-$1:[function(a){var z=0,y=new P.cb(),x=1,w,v=this,u
+$1:[function(a){var z=0,y=new P.cb(),x=1,w,v=this,u,t
 var $async$$1=P.ch(function(b,c){if(b===1){w=c
-z=x}while(true)switch(z){case 0:u=v.a
-if(u.a.a!==0)window.location.reload()
-else ;if(a!=null&&J.j(J.r(a,"provider"),"github"))u.cB(0,new T.cZ(J.r(J.r(a,"github"),"accessToken"),null,null))
-else u.cB(0,new T.cZ(null,null,null))
+z=x}while(true)switch(z){case 0:u=a!=null&&J.j(J.r(a,"provider"),"github")
+t=v.a
+if(u)t.cB(0,new T.cZ(J.r(J.r(a,"github"),"accessToken"),null,null))
+else t.cB(0,new T.cZ(null,null,null))
 return P.a3(null,0,y,null)
 case 1:return P.a3(w,1,y)}})
 return P.a3(null,$async$$1,y,null)},null,null,2,0,null,212,"call"]}},1],["","",,R,{
