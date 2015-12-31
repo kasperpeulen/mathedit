@@ -332,232 +332,6 @@
       "template": null
     }
   },
-  "PopupContainer": {
-    "kind": "type",
-    "value": {
-      "isComponent": true,
-      "dynamicLoadable": true,
-      "selector": "popup-container",
-      "exportAs": null,
-      "type": {
-        "name": "PopupContainer",
-        "moduleUrl": "asset:ng2_strap/lib/datepicker/index.dart",
-        "isHost": false
-      },
-      "changeDetection": 5,
-      "inputs": {},
-      "outputs": {
-        "update1": "update1"
-      },
-      "hostListeners": {},
-      "hostProperties": {},
-      "hostAttributes": {},
-      "lifecycleHooks": [],
-      "template": {
-        "encapsulation": 2,
-        "template": "    <ul class=\"dropdown-menu\"\n        style=\"display: block\"\n        [ng-style]=\"{top: top, left: left, display: display}\"\n        [ngClass]=\"classMap\">\n        <li>\n             <datepicker (cupdate)=\"onUpdate($event)\" *ngIf=\"popupComp\" [(ngModel)]=\"popupComp.cd.model\" [show-weeks]=\"true\"></datepicker>\n        </li>\n        <li *ngIf=\"showButtonBar\" style=\"padding:10px 9px 2px\">\n            <span class=\"btn-group pull-left\">\n                 <button type=\"button\" class=\"btn btn-sm btn-info\" (click)=\"select('today')\" ng-disabled=\"isDisabled('today')\">{{ currentText }}</button>\n                 <button type=\"button\" class=\"btn btn-sm btn-danger\" (click)=\"select(null)\">{{ clearText }}</button>\n            </span>\n            <button type=\"button\" class=\"btn btn-sm btn-success pull-right\" (click)=\"close()\">{{ closeText }}</button>\n        </li>\n    </ul>",
-        "templateUrl": "asset:ng2_strap/lib/datepicker/index.dart",
-        "styles": [],
-        "styleUrls": [],
-        "ngContentSelectors": []
-      }
-    }
-  },
-  "DatePickerPopup": {
-    "kind": "type",
-    "value": {
-      "isComponent": false,
-      "dynamicLoadable": true,
-      "selector": "[datepicker-popup][ngModel]",
-      "exportAs": null,
-      "type": {
-        "name": "DatePickerPopup",
-        "moduleUrl": "asset:ng2_strap/lib/datepicker/index.dart",
-        "isHost": false
-      },
-      "changeDetection": 5,
-      "inputs": {
-        "datepickerPopup": "datepickerPopup",
-        "isOpen": "isOpen"
-      },
-      "outputs": {},
-      "hostListeners": {
-        "cupdate": "onUpdate1($event)"
-      },
-      "hostProperties": {},
-      "hostAttributes": {},
-      "lifecycleHooks": [
-        0
-      ],
-      "template": null
-    }
-  },
-  "DatePicker": {
-    "kind": "type",
-    "value": {
-      "isComponent": true,
-      "dynamicLoadable": true,
-      "selector": "n2s-datepicker",
-      "exportAs": null,
-      "type": {
-        "name": "DatePicker",
-        "moduleUrl": "asset:ng2_strap/lib/datepicker/index.dart",
-        "isHost": false
-      },
-      "changeDetection": 5,
-      "inputs": {
-        "datepickerMode": "datepickerMode",
-        "minDate": "minDate",
-        "maxDate": "maxDate",
-        "dateDisabled": "dateDisabled",
-        "activeDate": "activeDate",
-        "showWeeks": "showWeeks",
-        "startingDay": "startingDay",
-        "initDate": "initDate",
-        "minMode": "minMode",
-        "maxMode": "maxMode",
-        "formatDay": "formatDay",
-        "formatMonth": "formatMonth",
-        "formatYear": "formatYear",
-        "formatDayHeader": "formatDayHeader",
-        "formatDayTitle": "formatDayTitle",
-        "formatMonthTitle": "formatMonthTitle",
-        "yearRange": "yearRange",
-        "shortcutPropagation": "shortcutPropagation"
-      },
-      "outputs": {},
-      "hostListeners": {},
-      "hostProperties": {},
-      "hostAttributes": {},
-      "lifecycleHooks": [],
-      "template": {
-        "encapsulation": 2,
-        "template": "    <n2s-datepicker-inner [activeDate]=\"activeDate\"\n                      (update)=\"onUpdate($event)\"\n                      [datepicker-mode]=\"datepickerMode\"\n                      [initDate]=\"initDate\"\n                      [minDate]=\"minDate\"\n                      [maxDate]=\"maxDate\"\n                      [minDode]=\"minMode\"\n                      [maxDode]=\"maxMode\"\n                      [showDeeks]=\"showWeeks\"\n                      [formatDay]=\"formatDay\"\n                      [formatMonth]=\"formatMonth\"\n                      [formatYear]=\"formatYear\"\n                      [formatDayHeader]=\"formatDayHeader\"\n                      [formatDayTitle]=\"formatDayTitle\"\n                      [formatMonthTitle]=\"formatMonthTitle\"\n                      [startingDay]=\"startingDay\"\n                      [yearRange]=\"yearRange\"\n                      [customClass]=\"customClass\"\n                      [dateDisabled]=\"dateDisabled\"\n                      [templateUrl]=\"templateUrl\"\n                      [shortcutPropagation]=\"shortcutPropagation\">\n      <n2s-daypicker tabindex=\"0\"></n2s-daypicker>\n      <n2s-monthpicker tabindex=\"0\"></n2s-monthpicker>\n      <n2s-yearpicker tabindex=\"0\"></n2s-yearpicker>\n    </n2s-datepicker-inner>\n    ",
-        "templateUrl": "asset:ng2_strap/lib/datepicker/index.dart",
-        "styles": [],
-        "styleUrls": [],
-        "ngContentSelectors": []
-      }
-    }
-  },
-  "Dropdown": {
-    "kind": "type",
-    "value": {
-      "isComponent": false,
-      "dynamicLoadable": true,
-      "selector": "[dropdown]",
-      "exportAs": null,
-      "type": {
-        "name": "Dropdown",
-        "moduleUrl": "asset:ng2_strap/lib/dropdown/index.dart",
-        "isHost": false
-      },
-      "changeDetection": 5,
-      "inputs": {
-        "isOpen": "isOpen",
-        "autoClose": "autoClose",
-        "keyboardNav": "keyboardNav",
-        "dropdownAppendToBody": "dropdownAppendToBody"
-      },
-      "outputs": {
-        "onToggle": "onToggle"
-      },
-      "hostListeners": {},
-      "hostProperties": {
-        "class.open": "isOpen",
-        "class.dropdown": "true"
-      },
-      "hostAttributes": {},
-      "lifecycleHooks": [
-        0,
-        1
-      ],
-      "template": null
-    }
-  },
-  "DropdownMenu": {
-    "kind": "type",
-    "value": {
-      "isComponent": false,
-      "dynamicLoadable": true,
-      "selector": "[dropdown-menu], .dropdown-menu",
-      "exportAs": null,
-      "type": {
-        "name": "DropdownMenu",
-        "moduleUrl": "asset:ng2_strap/lib/dropdown/index.dart",
-        "isHost": false
-      },
-      "changeDetection": 5,
-      "inputs": {
-        "templateUrl": "templateUrl"
-      },
-      "outputs": {},
-      "hostListeners": {},
-      "hostProperties": {},
-      "hostAttributes": {},
-      "lifecycleHooks": [
-        0
-      ],
-      "template": null
-    }
-  },
-  "DropdownToggle": {
-    "kind": "type",
-    "value": {
-      "isComponent": false,
-      "dynamicLoadable": true,
-      "selector": "[dropdown-toggle]",
-      "exportAs": null,
-      "type": {
-        "name": "DropdownToggle",
-        "moduleUrl": "asset:ng2_strap/lib/dropdown/index.dart",
-        "isHost": false
-      },
-      "changeDetection": 5,
-      "inputs": {
-        "disabled": "disabled"
-      },
-      "outputs": {},
-      "hostListeners": {
-        "click": "toggleDropdown($event)"
-      },
-      "hostProperties": {
-        "attr.aria-expanded": "isOpen",
-        "attr.aria-haspopup": "true",
-        "class.disabled": "disabled",
-        "class.dropdown-toggle": "true"
-      },
-      "hostAttributes": {},
-      "lifecycleHooks": [
-        0
-      ],
-      "template": null
-    }
-  },
-  "KeyboardNav": {
-    "kind": "type",
-    "value": {
-      "isComponent": false,
-      "dynamicLoadable": true,
-      "selector": "[dropdown][keyboard-nav]",
-      "exportAs": null,
-      "type": {
-        "name": "KeyboardNav",
-        "moduleUrl": "asset:ng2_strap/lib/dropdown/index.dart",
-        "isHost": false
-      },
-      "changeDetection": 5,
-      "inputs": {},
-      "outputs": {},
-      "hostListeners": {
-        "keydown": "onKeydown($event)"
-      },
-      "hostProperties": {},
-      "hostAttributes": {},
-      "lifecycleHooks": [],
-      "template": null
-    }
-  },
   "Carousel": {
     "kind": "type",
     "value": {
@@ -1205,26 +979,237 @@
       "template": null
     }
   },
+  "PopupContainer": {
+    "kind": "type",
+    "value": {
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "popup-container",
+      "exportAs": null,
+      "type": {
+        "name": "PopupContainer",
+        "moduleUrl": "asset:ng2_strap/lib/datepicker/index.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {},
+      "outputs": {
+        "update1": "update1"
+      },
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [],
+      "template": {
+        "encapsulation": 2,
+        "template": "    <ul class=\"dropdown-menu\"\n        style=\"display: block\"\n        [ng-style]=\"{top: top, left: left, display: display}\"\n        [ngClass]=\"classMap\">\n        <li>\n             <datepicker (cupdate)=\"onUpdate($event)\" *ngIf=\"popupComp\" [(ngModel)]=\"popupComp.cd.model\" [show-weeks]=\"true\"></datepicker>\n        </li>\n        <li *ngIf=\"showButtonBar\" style=\"padding:10px 9px 2px\">\n            <span class=\"btn-group pull-left\">\n                 <button type=\"button\" class=\"btn btn-sm btn-info\" (click)=\"select('today')\" ng-disabled=\"isDisabled('today')\">{{ currentText }}</button>\n                 <button type=\"button\" class=\"btn btn-sm btn-danger\" (click)=\"select(null)\">{{ clearText }}</button>\n            </span>\n            <button type=\"button\" class=\"btn btn-sm btn-success pull-right\" (click)=\"close()\">{{ closeText }}</button>\n        </li>\n    </ul>",
+        "templateUrl": "asset:ng2_strap/lib/datepicker/index.dart",
+        "styles": [],
+        "styleUrls": [],
+        "ngContentSelectors": []
+      }
+    }
+  },
+  "DatePickerPopup": {
+    "kind": "type",
+    "value": {
+      "isComponent": false,
+      "dynamicLoadable": true,
+      "selector": "[datepicker-popup][ngModel]",
+      "exportAs": null,
+      "type": {
+        "name": "DatePickerPopup",
+        "moduleUrl": "asset:ng2_strap/lib/datepicker/index.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "datepickerPopup": "datepickerPopup",
+        "isOpen": "isOpen"
+      },
+      "outputs": {},
+      "hostListeners": {
+        "cupdate": "onUpdate1($event)"
+      },
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        0
+      ],
+      "template": null
+    }
+  },
+  "DatePicker": {
+    "kind": "type",
+    "value": {
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "n2s-datepicker",
+      "exportAs": null,
+      "type": {
+        "name": "DatePicker",
+        "moduleUrl": "asset:ng2_strap/lib/datepicker/index.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "datepickerMode": "datepickerMode",
+        "minDate": "minDate",
+        "maxDate": "maxDate",
+        "dateDisabled": "dateDisabled",
+        "activeDate": "activeDate",
+        "showWeeks": "showWeeks",
+        "startingDay": "startingDay",
+        "initDate": "initDate",
+        "minMode": "minMode",
+        "maxMode": "maxMode",
+        "formatDay": "formatDay",
+        "formatMonth": "formatMonth",
+        "formatYear": "formatYear",
+        "formatDayHeader": "formatDayHeader",
+        "formatDayTitle": "formatDayTitle",
+        "formatMonthTitle": "formatMonthTitle",
+        "yearRange": "yearRange",
+        "shortcutPropagation": "shortcutPropagation"
+      },
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [],
+      "template": {
+        "encapsulation": 2,
+        "template": "    <n2s-datepicker-inner [activeDate]=\"activeDate\"\n                      (update)=\"onUpdate($event)\"\n                      [datepicker-mode]=\"datepickerMode\"\n                      [initDate]=\"initDate\"\n                      [minDate]=\"minDate\"\n                      [maxDate]=\"maxDate\"\n                      [minDode]=\"minMode\"\n                      [maxDode]=\"maxMode\"\n                      [showDeeks]=\"showWeeks\"\n                      [formatDay]=\"formatDay\"\n                      [formatMonth]=\"formatMonth\"\n                      [formatYear]=\"formatYear\"\n                      [formatDayHeader]=\"formatDayHeader\"\n                      [formatDayTitle]=\"formatDayTitle\"\n                      [formatMonthTitle]=\"formatMonthTitle\"\n                      [startingDay]=\"startingDay\"\n                      [yearRange]=\"yearRange\"\n                      [customClass]=\"customClass\"\n                      [dateDisabled]=\"dateDisabled\"\n                      [templateUrl]=\"templateUrl\"\n                      [shortcutPropagation]=\"shortcutPropagation\">\n      <n2s-daypicker tabindex=\"0\"></n2s-daypicker>\n      <n2s-monthpicker tabindex=\"0\"></n2s-monthpicker>\n      <n2s-yearpicker tabindex=\"0\"></n2s-yearpicker>\n    </n2s-datepicker-inner>\n    ",
+        "templateUrl": "asset:ng2_strap/lib/datepicker/index.dart",
+        "styles": [],
+        "styleUrls": [],
+        "ngContentSelectors": []
+      }
+    }
+  },
+  "Dropdown": {
+    "kind": "type",
+    "value": {
+      "isComponent": false,
+      "dynamicLoadable": true,
+      "selector": "[dropdown]",
+      "exportAs": null,
+      "type": {
+        "name": "Dropdown",
+        "moduleUrl": "asset:ng2_strap/lib/dropdown/index.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "isOpen": "isOpen",
+        "autoClose": "autoClose",
+        "keyboardNav": "keyboardNav",
+        "dropdownAppendToBody": "dropdownAppendToBody"
+      },
+      "outputs": {
+        "onToggle": "onToggle"
+      },
+      "hostListeners": {},
+      "hostProperties": {
+        "class.open": "isOpen",
+        "class.dropdown": "true"
+      },
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        0,
+        1
+      ],
+      "template": null
+    }
+  },
+  "DropdownMenu": {
+    "kind": "type",
+    "value": {
+      "isComponent": false,
+      "dynamicLoadable": true,
+      "selector": "[dropdown-menu], .dropdown-menu",
+      "exportAs": null,
+      "type": {
+        "name": "DropdownMenu",
+        "moduleUrl": "asset:ng2_strap/lib/dropdown/index.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "templateUrl": "templateUrl"
+      },
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        0
+      ],
+      "template": null
+    }
+  },
+  "DropdownToggle": {
+    "kind": "type",
+    "value": {
+      "isComponent": false,
+      "dynamicLoadable": true,
+      "selector": "[dropdown-toggle]",
+      "exportAs": null,
+      "type": {
+        "name": "DropdownToggle",
+        "moduleUrl": "asset:ng2_strap/lib/dropdown/index.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "disabled": "disabled"
+      },
+      "outputs": {},
+      "hostListeners": {
+        "click": "toggleDropdown($event)"
+      },
+      "hostProperties": {
+        "attr.aria-expanded": "isOpen",
+        "attr.aria-haspopup": "true",
+        "class.disabled": "disabled",
+        "class.dropdown-toggle": "true"
+      },
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        0
+      ],
+      "template": null
+    }
+  },
+  "KeyboardNav": {
+    "kind": "type",
+    "value": {
+      "isComponent": false,
+      "dynamicLoadable": true,
+      "selector": "[dropdown][keyboard-nav]",
+      "exportAs": null,
+      "type": {
+        "name": "KeyboardNav",
+        "moduleUrl": "asset:ng2_strap/lib/dropdown/index.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {},
+      "outputs": {},
+      "hostListeners": {
+        "keydown": "onKeydown($event)"
+      },
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [],
+      "template": null
+    }
+  },
   "ACCORDION_DIRECTIVES": {
     "kind": "alias",
     "value": [
       "Accordion",
       "AccordionPanel"
-    ]
-  },
-  "DATEPICKER_DIRECTIVES": {
-    "kind": "alias",
-    "value": [
-      "DatePicker",
-      "DatePickerPopup"
-    ]
-  },
-  "DROPDOWN_DIRECTIVES": {
-    "kind": "alias",
-    "value": [
-      "Dropdown",
-      "DropdownMenu",
-      "DropdownToggle"
     ]
   },
   "CAROUSEL_DIRECTIVES": {
@@ -1262,6 +1247,21 @@
     "value": [
       "Tooltip",
       "TooltipContainer"
+    ]
+  },
+  "DATEPICKER_DIRECTIVES": {
+    "kind": "alias",
+    "value": [
+      "DatePicker",
+      "DatePickerPopup"
+    ]
+  },
+  "DROPDOWN_DIRECTIVES": {
+    "kind": "alias",
+    "value": [
+      "Dropdown",
+      "DropdownMenu",
+      "DropdownToggle"
     ]
   }
 }
