@@ -5,11 +5,12 @@ import 'package:mathedit/service/gist.service.dart';
 import 'package:mathedit/service/editor.service.dart';
 import 'package:mathedit/service/user.service.dart';
 import 'dart:async';
+import 'dart:html';
 
 @Component(
     selector: 'login',
     templateUrl: 'login.component.html',
-    directives: const [CORE_DIRECTIVES, DROPDOWN_DIRECTIVES],
+    directives: const [CORE_DIRECTIVES, FORM_DIRECTIVES, DROPDOWN_DIRECTIVES],
     styleUrls: const ['login.component.css'])
 class LoginComponent {
   final Authentication _auth;
@@ -24,7 +25,10 @@ class LoginComponent {
     return _auth.isAnonymous ? false : true;
   }
 
-  Future login() async {
+  bool secretGist;
+
+  Future login(e) async {
+    e.preventDefault();
     await _userService.login();
   }
 
@@ -32,7 +36,9 @@ class LoginComponent {
     await _userService.logout();
   }
 
-  void save() {
-    _gistsService.saveGist(_editor.value);
+  void save([public = true]) {
+    _gistsService.saveGist(_editor.value, public: public);
   }
+
+  @ViewChild(Dropdown) Dropdown dropdown;
 }

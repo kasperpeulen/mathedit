@@ -11,10 +11,13 @@
         <a title="ctrl-l" class="dropdown-item" href="#" (click)="login()">Login with Github</a>
       </li>
       <li role="menuitem" *ngIf="loggedIn">
-        <a class="dropdown-item" href="#" (click)="logout()">Logout from Github</a>
+        <a class="dropdown-item" href="#" (click)="logout()">Logout from GitHub</a>
       </li>
       <li role="menuitem">
         <a title="ctrl-k" class="dropdown-item" href="#" (click)="save()">Save as Gist</a>
+      </li>
+      <li role="menuitem">
+        <a class="dropdown-item" href="#" (click)="save(false)">Save as secret Gist</a>
       </li>
     </ul>
   </div>

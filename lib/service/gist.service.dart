@@ -17,30 +17,43 @@ class MyGistsService extends GistsService {
   MyGistsService(GitHub github, this._auth, this._router, this._analytics)
       : super(github);
 
-  Future<Gist> createSimpleGist(String content) {
-    return createGist({'mathedit.md': content},
-        description: 'Math Snippet created with mathedit', public: true);
+  Future<Gist> createSimpleGist(String content, {public: true}) async {
+    final gist = await createGist({'mathedit.md': content},
+        description: 'Math Snippet created with mathedit', public: public);
+    _router.navigate([
+      'Gist',
+      {'gistid': gist.id}
+    ]);
+    return gist;
   }
 
-  saveGist(String content) async {
+  Future<Gist> saveGist(String content, {public: true}) async {
     _analytics.sendEvent('save', gistId);
-    if (_auth.isAnonymous || gistId == null) {
-      Gist gist = await createSimpleGist(content);
-      _router.navigate([
-        'Gist',
-        {'gistid': gist.id}
-      ]);
+    var needsNewGist = await (() async {
+      if (_auth.isAnonymous) {
+        return true;
+      }
+      if (gistId == null) {
+          return true;
+        }
+      Gist gist = await getGist(gistId);
+      if (gist.public != public) {
+        return true;
+      }
+      return false;
+    }());
+
+    if (needsNewGist) {
+      return createSimpleGist(content, public: public);
     } else {
       try {
-        await editGist(gistId, files: {'mathedit.md': content});
+        return await editGist(gistId, files: {'mathedit.md': content});
       } catch (e) {
         _analytics.sendException(e.toString());
-        Gist gist = await createSimpleGist(content);
-        _router.navigate([
-          'Gist',
-          {'gistid': gist.id}
-        ]);
+        return await createSimpleGist(content);
       }
     }
   }
+
+
 }
