@@ -7,7 +7,19 @@
         "5": false
       },
       {
-        "1": "package:md_proc/md_proc.dart",
+        "1": "package:event_bus/event_bus.dart",
+        "5": false
+      },
+      {
+        "1": "dart:html",
+        "5": false
+      },
+      {
+        "1": "package:mathedit/service/gist.service.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/router.dart",
         "5": false
       }
     ],
@@ -26,12 +38,20 @@
         ],
         "5": [
           {
-            "1": "CommonMarkParser",
-            "4": "_cmParser"
+            "1": "MyGistsService",
+            "4": "_gistsService"
           },
           {
-            "1": "HtmlWriter",
-            "4": "_htmlWriter"
+            "1": "EventBus",
+            "4": "_eventBus"
+          },
+          {
+            "1": "Storage",
+            "4": "_storage"
+          },
+          {
+            "1": "Router",
+            "4": "_router"
           }
         ]
       }
@@ -41,6 +61,14 @@
       {
         "1": "package:angular2/angular2.ng_deps.dart",
         "4": "i0"
+      },
+      {
+        "1": "package:mathedit/service/gist.service.ng_deps.dart",
+        "4": "i1"
+      },
+      {
+        "1": "package:angular2/router.ng_deps.dart",
+        "4": "i2"
       }
     ]
   }

@@ -3,10 +3,6 @@
     "1": "",
     "3": [
       {
-        "1": "package:angular2/router.dart",
-        "5": false
-      },
-      {
         "1": "package:angular2/angular2.dart",
         "5": false
       },
@@ -19,19 +15,15 @@
         "5": false
       },
       {
-        "1": "package:mathedit/helpers/local_storage.dart",
-        "5": false
-      },
-      {
         "1": "package:mathedit/directives/focus_on_init.directive.dart",
         "5": false
       },
       {
-        "1": "package:firebase/firebase.dart",
+        "1": "package:mathedit/service/editor.service.dart",
         "5": false
       },
       {
-        "1": "package:mathedit/service/editor.service.dart",
+        "1": "package:event_bus/event_bus.dart",
         "5": false
       }
     ],
@@ -72,39 +64,19 @@
         ],
         "5": [
           {
-            "1": "Firebase",
-            "4": "firebase"
-          },
-          {
-            "1": "RouteParams",
-            "4": "params"
-          },
-          {
             "1": "ElementRef",
             "4": "ref"
           },
           {
             "1": "EditorService",
-            "4": "editor"
+            "4": "_editor"
+          },
+          {
+            "1": "EventBus",
+            "4": "_eventBus"
           }
         ],
-        "6": [
-          "OnInit"
-        ],
         "7": [
-          {
-            "1": "value",
-            "2": [
-              {
-                "1": "Output",
-                "4": false,
-                "5": false,
-                "6": false,
-                "7": false,
-                "8": false
-              }
-            ]
-          },
           {
             "1": "textareaValue",
             "2": [
@@ -132,24 +104,20 @@
     "6": "editor.component.dart",
     "10": [
       {
-        "1": "package:angular2/router.ng_deps.dart",
+        "1": "package:angular2/angular2.ng_deps.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/angular2.ng_deps.dart",
+        "1": "package:mathedit/directives/autogrow_directive.ng_deps.dart",
         "4": "i1"
       },
       {
-        "1": "package:mathedit/directives/autogrow_directive.ng_deps.dart",
+        "1": "package:mathedit/directives/focus_on_init.directive.ng_deps.dart",
         "4": "i2"
       },
       {
-        "1": "package:mathedit/directives/focus_on_init.directive.ng_deps.dart",
-        "4": "i3"
-      },
-      {
         "1": "package:mathedit/service/editor.service.ng_deps.dart",
-        "4": "i4"
+        "4": "i3"
       }
     ]
   },
@@ -169,17 +137,13 @@
       "inputs": {
         "textareaValue": "textareaValue"
       },
-      "outputs": {
-        "value": "value"
-      },
+      "outputs": {},
       "hostListeners": {
         "click": "onClick($event.currentTarget)"
       },
       "hostProperties": {},
       "hostAttributes": {},
-      "lifecycleHooks": [
-        0
-      ],
+      "lifecycleHooks": [],
       "template": {
         "encapsulation": 2,
         "template": "<textarea #textarea\n          [focusOnInit]\n          [value]=\"textareaValue\"\n          [autogrow]\n          (input)=\"onInput($event.target.value)\"\n          spellcheck=false\n          placeholder=\"Type some LaTeX or markdown here.\"></textarea>",

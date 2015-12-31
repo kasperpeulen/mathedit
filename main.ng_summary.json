@@ -51,7 +51,15 @@
         "5": false
       },
       {
+        "1": "package:event_bus/event_bus.dart",
+        "5": false
+      },
+      {
         "1": "package:mathedit/service/editor.service.dart",
+        "5": false
+      },
+      {
+        "1": "dart:html",
         "5": false
       }
     ],

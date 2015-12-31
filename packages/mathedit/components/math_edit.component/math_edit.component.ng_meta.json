@@ -27,10 +27,6 @@
         "5": false
       },
       {
-        "1": "package:github/browser.dart",
-        "5": false
-      },
-      {
         "1": "dart:html",
         "5": false
       },
@@ -44,6 +40,10 @@
       },
       {
         "1": "package:mathedit/service/editor.service.dart",
+        "5": false
+      },
+      {
+        "1": "package:event_bus/event_bus.dart",
         "5": false
       }
     ],
@@ -84,10 +84,6 @@
         ],
         "5": [
           {
-            "1": "Router",
-            "4": "router"
-          },
-          {
             "1": "RouteParams",
             "4": "_params"
           },
@@ -114,6 +110,10 @@
           {
             "1": "EditorService",
             "4": "_editor"
+          },
+          {
+            "1": "EventBus",
+            "4": "_eventBus"
           }
         ],
         "6": [
@@ -187,7 +187,7 @@
       ],
       "template": {
         "encapsulation": 2,
-        "template": "<editor [hidden]=\"!loaded\" [textareaValue]=\"gistValue\" (value)=\"onTextareaChange($event)\" style=\"flex: 1;\"></editor>\n\n<preview style=\"flex: 1;\"></preview>\n\n<div #editor></div>",
+        "template": "<editor [hidden]=\"!loaded\" [textareaValue]=\"gistValue\" style=\"flex: 1;\"></editor>\n\n<preview style=\"flex: 1;\"></preview>\n\n<div #editor></div>",
         "templateUrl": "asset:mathedit/lib/components/math_edit.component/math_edit.component.html",
         "styles": [],
         "styleUrls": [
