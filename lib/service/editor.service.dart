@@ -11,7 +11,8 @@ class EditorService {
   final MyGistsService _gistsService;
   final Router _router;
 
-  EditorService(this._gistsService, this._eventBus, this._storage, this._router);
+  EditorService(
+      this._gistsService, this._eventBus, this._storage, this._router);
 
   loadEditor() async {
     // only if there is no gist route, the localstorage should be used
@@ -32,6 +33,7 @@ class EditorService {
       }
     }
   }
+
   /// The textarea value
   String _value;
 

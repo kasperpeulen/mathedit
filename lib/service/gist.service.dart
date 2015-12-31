@@ -14,7 +14,7 @@ class MyGistsService extends GistsService {
 
   final Analytics _analytics;
 
-  MyGistsService(GitHub github,this._auth, this._router, this._analytics)
+  MyGistsService(GitHub github, this._auth, this._router, this._analytics)
       : super(github);
 
   Future<Gist> createSimpleGist(String content) {
