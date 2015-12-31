@@ -21,6 +21,10 @@
       {
         "1": "package:angular2/router.dart",
         "5": false
+      },
+      {
+        "1": "package:usage/usage.dart",
+        "5": false
       }
     ],
     "5": [
