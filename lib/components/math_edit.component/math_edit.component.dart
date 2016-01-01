@@ -46,7 +46,9 @@ class MathEditComponent implements OnInit {
       this._editor,
       this._eventBus,
       this._userService,
-      this._analytics) {
+      this._analytics);
+
+  Future<Null> ngOnInit() async {
     _gistService.gistId = _params.get('gistid');
 
     _analytics.sendScreenView(_gistService.gistId ?? '/');
@@ -54,15 +56,13 @@ class MathEditComponent implements OnInit {
     _eventBus.on(TextareaChangedEvent).listen((TextareaChangedEvent e) {
       onTextareaChange(e.value);
     });
-  }
 
-  Future<Null> ngOnInit() async {
     final hostElement = _ref.nativeElement;
     _mathjaxPreview = new MathJaxPreview(hostElement.querySelector('#preview'),
         hostElement.querySelector('#buffer'));
 
     try {
-      await _editor.loadEditor();
+      _editor.value = await _editor.getInitialTextValue();
     } catch (e) {
       _analytics.sendException('Failed loading editor');
     }

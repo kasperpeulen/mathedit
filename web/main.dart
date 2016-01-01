@@ -14,6 +14,7 @@ import 'package:event_bus/event_bus.dart';
 import 'package:mathedit/service/editor.service.dart';
 import 'dart:html';
 import 'package:mathedit/service/user.service.dart';
+import 'dart:convert';
 
 Future<Null> main() async {
   final firebase = new Firebase('http://mathedit.firebaseio.com/');
@@ -37,7 +38,7 @@ Future<Null> main() async {
     provide(Storage, useValue: window.localStorage),
 
     // users
-    provide(UserService, useClass: UserService),
+    provide(UserService),
 
     // events
     provide(EventBus, useValue: new EventBus()),
@@ -105,3 +106,21 @@ Future<Authentication> bootstrapAuth(Firebase firebase) {
   });
   return completer.future;
 }
+
+//@Injectable()
+//class LocalStorage extends Storage {
+//  factory LocalStorage() => window.localStorage;
+//
+//  Map<String, String> get files {
+//    if (this['files'] != null) {
+//      return JSON.decode(this['files']);
+//    } else {
+//      this['files'] = JSON.encode({'mathedit.md': ''});
+//      return files;
+//    }
+//  }
+//
+//  void set files(Map<String, String> value) {
+//    this['files'] = JSON.encode(value);
+//  }
+//}

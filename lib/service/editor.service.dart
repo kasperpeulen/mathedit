@@ -30,17 +30,21 @@ class EditorService {
     _eventBus.fire(new TextareaChangedEvent(value));
   }
 
-  Future<Null> loadEditor() async {
+  Future<String> getInitialTextValue() async {
     // only if there is no gist route, the localstorage should be used
-    final gistId = _gistsService.gistId;
-    if (gistId == null && _storage['mathedit.textarea'] != null) {
-      value = _storage['mathedit.textarea'];
+    final storedTextareaValue = _storage['mathedit.textarea'];
+    if (_gistsService.gistId == null) {
+      if (storedTextareaValue != null)
+        return storedTextareaValue;
+      else {
+        return '';
+      }
     } else {
       try {
-        final gist = await _gistsService.getGist(gistId);
-        var gistValue = gist.files.first.content;
+        final gist = await _gistsService.getGist(_gistsService.gistId);
+        final gistValue = gist.files.first.content;
         document.title = 'MathEdit - ${gist.description}';
-        value = gistValue;
+        return gistValue;
       } catch (e) {
         _analytics.sendException('Failed getting gist');
         _router.navigate(['Home']);
@@ -51,5 +55,6 @@ class EditorService {
 
 class TextareaChangedEvent {
   final String value;
+
   TextareaChangedEvent(this.value);
 }
