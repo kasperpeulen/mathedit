@@ -25,12 +25,14 @@
         -webkit-animation: load8 1.1s infinite linear;
         animation: load8 1.1s infinite linear;
       }
+
       .loader,
       .loader:after {
         border-radius: 50%;
         width: 4em;
         height: 4em;
       }
+
       @-webkit-keyframes load8 {
         0% {
           -webkit-transform: rotate(0deg);
@@ -41,6 +43,7 @@
           transform: rotate(360deg);
         }
       }
+
       @keyframes load8 {
         0% {
           -webkit-transform: rotate(0deg);
@@ -61,5 +64,17 @@
         <div class="loader">Loading...</div>
       </div>
     </app>
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+            .then(function (registration) {
+              console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            }).catch(function (err) {
+          console.log('ServiceWorker registration failed: ', err);
+        });
+      }
+    </script>
+
   
 </body></html>
