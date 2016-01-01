@@ -1,11 +1,11 @@
 (function(global) {
     'use strict';
 
-    importScripts('sw-toolbox.js');
+    importScripts('sw_toolbox.js');
 
     toolbox.router.get('/mathedit/', toolbox.networkFirst);
     toolbox.router.get('/mathedit/#/gist/:gist', toolbox.networkFirst);
-    toolbox.router.get('/mathedit/font/(.*)', toolbox.networkFirst);
+    toolbox.router.get('/mathedit/fonts/(.*)', toolbox.networkFirst);
     toolbox.router.get('/mathedit/main.dart.js', toolbox.networkFirst);
 
     global.toolbox.router.default = global.toolbox.networkFirst;
