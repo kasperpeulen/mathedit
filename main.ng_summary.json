@@ -69,6 +69,10 @@
       {
         "1": "dart:convert",
         "5": false
+      },
+      {
+        "1": "package:mathedit/service/connection.service.dart",
+        "5": false
       }
     ],
     "6": "main.dart"

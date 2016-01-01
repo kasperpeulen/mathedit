@@ -29,6 +29,10 @@
       {
         "1": "package:usage/usage.dart",
         "5": false
+      },
+      {
+        "1": "connection.service.dart",
+        "5": false
       }
     ],
     "5": [
@@ -60,6 +64,10 @@
           {
             "1": "Analytics",
             "4": "_analytics"
+          },
+          {
+            "1": "ConnectionService",
+            "4": "_connectionService"
           }
         ]
       }
@@ -73,6 +81,10 @@
       {
         "1": "package:angular2/router.ng_deps.dart",
         "4": "i1"
+      },
+      {
+        "1": "connection.service.ng_deps.dart",
+        "4": "i2"
       }
     ]
   }
