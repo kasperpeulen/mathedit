@@ -8,7 +8,7 @@
     toolbox.router.get('/mathedit/fonts/(.*)', toolbox.cacheFirst);
     toolbox.router.get('/mathedit/main.dart.js', toolbox.cacheFirst);
 
-    global.toolbox.router.default = global.toolbox.networkFirst;
+    toolbox.router.default = global.toolbox.networkFirst;
 
     global.addEventListener('install', function(event) {
         event.waitUntil(global.skipWaiting())
