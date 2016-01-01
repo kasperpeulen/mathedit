@@ -24267,8 +24267,8 @@ $4:[function(a,b,c,d){return new T.fe(b,c,d,a)},null,null,8,0,null,102,132,133,9
 p7:[function(){var z=0,y=new P.bV(),x=1,w,v,u,t,s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0
 var $async$p7=P.bR(function(a1,a2){if(a1===1){w=a2
 z=x}while(true)switch(z){case 0:if(!J.b7(window.location.pathname,"localhost"))Q.a5G()
-else ;if(!J.b7(window.location.pathname,"localhost")&&window.location.protocol!=="https:")window.location.protocol="https"
-else ;v=new V.cL(null,null,P.js(J.r($.$get$cB(),"Firebase"),["http://mathedit.firebaseio.com/"]),null,null,null,null,null)
+else ;if(!J.b7(window.location.pathname,"localhost")&&window.location.protocol!=="https:"){window.location.protocol="https"
+window.location.reload()}else ;v=new V.cL(null,null,P.js(J.r($.$get$cB(),"Firebase"),["http://mathedit.firebaseio.com/"]),null,null,null,null,null)
 u=S.b_(C.bF,null,null,C.ek,null,null,null)
 t=S.b_(C.ee,null,null,null,null,null,v)
 a=S
