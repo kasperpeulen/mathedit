@@ -15,8 +15,9 @@ import 'package:mathedit/service/editor.service.dart';
 import 'dart:html';
 import 'package:mathedit/service/user.service.dart';
 import 'dart:convert';
+import 'package:mathedit/service/connection.service.dart';
 
-bool get devMode => window.location.pathname.contains('localhost');
+bool get devMode => window.location.host.contains('localhost');
 
 Future<Null> main() async {
   if (!devMode) {
@@ -45,6 +46,9 @@ Future<Null> main() async {
         useFactory: (Authentication auth) => createGitHubClient(auth: auth),
         deps: [Authentication]),
     provide(MyGistsService, useClass: MyGistsService),
+
+    // connection
+    provide(ConnectionService, useClass: ConnectionService),
 
     // storage
     provide(Storage, useValue: window.localStorage),

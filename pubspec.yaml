@@ -12,7 +12,8 @@ dependencies:
   github: '^2.3.1'
   usage: '^1.0.1'
   firebase: '^0.6.5'
-  ng2_strap: '^0.0.2'
+  ng2_strap:
+      path: ../../packages/ng2_strap
   event_bus: '^0.4.1'
   polymer_elements: ^1.0.0-rc.2
 dev_dependencies:
@@ -34,3 +35,5 @@ dependency_overrides:
     path: ../../packages/mathjax.dart
   dart_to_js_script_rewriter:
     path: ../../AngularProjects/dart_to_js_script_rewriter
+  ng2_strap:
+    path: ../../packages/ng2_strap

@@ -6,6 +6,7 @@ import 'package:angular2/router.dart';
 import 'package:firebase/firebase.dart';
 import 'package:github/browser.dart';
 import 'package:usage/usage.dart';
+import 'connection.service.dart';
 
 @Injectable()
 class UserService {
@@ -13,13 +14,15 @@ class UserService {
   final Router _router;
   final Analytics _analytics;
   final GitHub _gitHub;
+  final ConnectionService _connectionService;
 
   CurrentUser _user;
 
   /// May be null.
   CurrentUser get user => _user;
 
-  UserService(this._gitHub, this._firebase, this._router, this._analytics) {
+  UserService(this._gitHub, this._firebase, this._router, this._analytics,
+      this._connectionService) {
     if (_gitHub.auth.isToken) {
       _gitHub.users.getCurrentUser().then((c) => _user = c);
     }

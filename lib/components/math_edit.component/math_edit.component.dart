@@ -12,6 +12,7 @@ import 'package:mathedit/service/gist.service.dart';
 import 'package:mathedit/service/user.service.dart';
 import 'package:md_proc/md_proc.dart';
 import 'package:usage/usage.dart';
+import 'package:mathedit/service/connection.service.dart';
 
 @Component(
     selector: 'math-edit',
@@ -36,6 +37,7 @@ class MathEditComponent implements OnInit {
   final UserService _userService;
   final Analytics _analytics;
   final ElementRef _ref;
+  final ConnectionService _connectionService;
 
   MathEditComponent(
       this._params,
@@ -46,7 +48,8 @@ class MathEditComponent implements OnInit {
       this._editor,
       this._eventBus,
       this._userService,
-      this._analytics);
+      this._analytics,
+      this._connectionService);
 
   Future<Null> ngOnInit() async {
     _gistService.gistId = _params.get('gistid');
@@ -72,13 +75,22 @@ class MathEditComponent implements OnInit {
   @HostListener('keydown.control.l', const ['\$event'])
   Future<Null> onLogin(KeyboardEvent e) async {
     e.preventDefault();
-    await _userService.login();
+    if (_connectionService.isOnLine) {
+      await _userService.login();
+    } else {
+      // TODO toast with connection not available
+    }
   }
 
   @HostListener('keydown.control.k', const ['\$event'])
   void onSave(KeyboardEvent e) {
     e.preventDefault();
-    _gistService.saveGist(_editor.value);
+    if (_connectionService.isOnLine) {
+      _gistService.saveGist(_editor.value);
+      // TODO toast with says that gist is saved
+    } else {
+      // TODO toast with connection not available
+    }
   }
 
   void onTextareaChange(String textareaValue) {
