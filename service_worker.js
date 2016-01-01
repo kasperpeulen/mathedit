@@ -3,10 +3,10 @@
 
     importScripts('sw_toolbox.js');
 
-    toolbox.router.get('/mathedit/', toolbox.networkFirst);
+    toolbox.router.get('/mathedit/', toolbox.cacheFirst);
     toolbox.router.get('/mathedit/#/gist/:gist', toolbox.networkFirst);
-    toolbox.router.get('/mathedit/fonts/(.*)', toolbox.networkFirst);
-    toolbox.router.get('/mathedit/main.dart.js', toolbox.networkFirst);
+    toolbox.router.get('/mathedit/fonts/(.*)', toolbox.cacheFirst);
+    toolbox.router.get('/mathedit/main.dart.js', toolbox.cacheFirst);
 
     global.toolbox.router.default = global.toolbox.networkFirst;
 
