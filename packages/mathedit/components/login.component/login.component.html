@@ -1,6 +1,6 @@
 <html><head></head><body><div (click)="$event.preventDefault()">
-  <div class="btn-group" dropdown="">
-    <button id="menu-button" type="button" class="btn btn-primary" dropdown-toggle="" [tooltip]="'Disabled offline'" [tooltip-enable]="offline" tooltip-placement="left" [disabled]="offline">
+  <div class="btn-group" dropdown="" [tooltip]="'Disabled offline'" [tooltip-enable]="offline" tooltip-placement="left">
+    <button id="menu-button" type="button" class="btn btn-primary" dropdown-toggle="" [disabled]="offline">
 
       <span class="caret"></span>
     </button>

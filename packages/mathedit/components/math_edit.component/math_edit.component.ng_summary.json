@@ -53,6 +53,10 @@
       {
         "1": "package:usage/usage.dart",
         "5": false
+      },
+      {
+        "1": "package:mathedit/service/connection.service.dart",
+        "5": false
       }
     ],
     "5": [
@@ -126,6 +130,10 @@
           {
             "1": "Analytics",
             "4": "_analytics"
+          },
+          {
+            "1": "ConnectionService",
+            "4": "_connectionService"
           }
         ],
         "6": [
