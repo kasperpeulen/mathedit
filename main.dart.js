@@ -24271,7 +24271,7 @@ else ;v=window.location.host
 u=window.location.protocol
 P.cn(v)
 P.cn(u)
-if("kasperpeulen.github.io/mathedit"===v&&u!=="https:"){window.location.protocol="https"
+if("kasperpeulen.github.io"===v&&u!=="https:"){window.location.protocol="https"
 P.cn("chacing protocol")}else ;P.cn("protocol correct")
 t=new V.cM(null,null,P.js(J.r($.$get$cC(),"Firebase"),["http://mathedit.firebaseio.com/"]),null,null,null,null,null)
 s=S.b_(C.bF,null,null,C.ek,null,null,null)
