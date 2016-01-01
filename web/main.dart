@@ -16,7 +16,19 @@ import 'dart:html';
 import 'package:mathedit/service/user.service.dart';
 import 'dart:convert';
 
+bool get devMode => window.location.pathname.contains('localhost');
+
 Future<Null> main() async {
+  if (!devMode) {
+    enableProdMode();
+  }
+
+  // ensure https in production
+  if ((!devMode) && (window.location.protocol != "https:")) {
+    window.location.protocol = "https";
+    return;
+  }
+
   final firebase = new Firebase('http://mathedit.firebaseio.com/');
 
   bootstrap(AppComponent, [
@@ -38,7 +50,7 @@ Future<Null> main() async {
     provide(Storage, useValue: window.localStorage),
 
     // users
-    provide(UserService),
+    provide(UserService, useClass: UserService),
 
     // events
     provide(EventBus, useValue: new EventBus()),
