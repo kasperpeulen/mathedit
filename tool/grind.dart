@@ -54,10 +54,10 @@ void travis() {}
 
 @Task()
 void deleteGists() {
-  final result = Process.runSync('git', ['credential-osxkeychain', 'get']);
+  final result = Process
+      .runSync('git-credential-osxkeychain', ['get', 'https://github.com']);
   final list = result.stdout.split('\n');
-  final cred =
-      list.sublist(0, 2).map((String s) => s.substring(s.indexOf('=') + 1));
+  final cred = list.sublist(0, 2).map((s) => s.substring(s.indexOf('=') + 1));
   final authentication = new Authentication.basic(cred.last, cred.first);
   final github = createGitHubClient(auth: authentication);
   github.gists.listCurrentUserGists().listen((g) {
