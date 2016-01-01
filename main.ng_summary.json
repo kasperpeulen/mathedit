@@ -65,6 +65,25 @@
       {
         "1": "package:mathedit/service/user.service.dart",
         "5": false
+      },
+      {
+        "1": "dart:convert",
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "LocalStorage",
+        "4": [
+          {
+            "1": "Injectable",
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ]
       }
     ],
     "6": "main.dart"

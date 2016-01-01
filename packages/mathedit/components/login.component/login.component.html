@@ -16,9 +16,9 @@
       </li>
       <li role="menuitem">
         <a title="ctrl-k" class="dropdown-item" href="#" (click)="save()">
-          Save as Gist</a>
+          {{saveAsGist}}</a>
       </li>
-      <li role="menuitem">
+      <li role="menuitem" *ngif="loggedIn">
         <a class="dropdown-item" href="#" (click)="save(false)">
           Save as secret Gist
         </a>
