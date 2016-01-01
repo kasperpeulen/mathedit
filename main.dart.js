@@ -24268,7 +24268,6 @@ p7:[function(){var z=0,y=new P.bV(),x,w=2,v,u,t,s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,
 var $async$p7=P.bR(function(a2,a3){if(a2===1){v=a3
 z=w}while(true)switch(z){case 0:if(!J.b7(window.location.pathname,"localhost"))Q.a5G()
 else ;if(!J.b7(window.location.pathname,"localhost")&&window.location.protocol!=="https:"){window.location.protocol="https"
-window.location.reload()
 z=1
 break}else ;u=new V.cL(null,null,P.js(J.r($.$get$cB(),"Firebase"),["http://mathedit.firebaseio.com/"]),null,null,null,null,null)
 t=S.b_(C.bF,null,null,C.ek,null,null,null)
