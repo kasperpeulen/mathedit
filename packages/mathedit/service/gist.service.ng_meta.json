@@ -21,6 +21,10 @@
       {
         "1": "package:usage/usage.dart",
         "5": false
+      },
+      {
+        "1": "package:mathedit/service/user.service.dart",
+        "5": false
       }
     ],
     "5": [
@@ -52,6 +56,10 @@
           {
             "1": "Analytics",
             "4": "_analytics"
+          },
+          {
+            "1": "UserService",
+            "4": "_userService"
           }
         ]
       }
@@ -65,6 +73,10 @@
       {
         "1": "package:angular2/router.ng_deps.dart",
         "4": "i1"
+      },
+      {
+        "1": "package:mathedit/service/user.service.ng_deps.dart",
+        "4": "i2"
       }
     ]
   }

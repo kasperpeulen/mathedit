@@ -23,6 +23,10 @@
         "5": false
       },
       {
+        "1": "package:github/browser.dart",
+        "5": false
+      },
+      {
         "1": "package:usage/usage.dart",
         "5": false
       }
@@ -41,6 +45,10 @@
           }
         ],
         "5": [
+          {
+            "1": "GitHub",
+            "4": "_gitHub"
+          },
           {
             "1": "Firebase",
             "4": "_firebase"
