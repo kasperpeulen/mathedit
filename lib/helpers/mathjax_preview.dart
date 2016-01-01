@@ -36,8 +36,8 @@ class MathJaxPreview {
     _mjRunning = true;
     _oldText = newText;
     bufferDiv.setInnerHtml(newText, treeSanitizer: NodeTreeSanitizer.trusted);
-    MathJax.Hub.Queue(allowInterop(() => MathJax.Hub.Typeset()),
-        allowInterop(_previewDone));
+    MathJax.Hub.Queue(
+        allowInterop(() => MathJax.Hub.Typeset()), allowInterop(_previewDone));
   }
 
   /// This gets called when a key is pressed in the textarea.
