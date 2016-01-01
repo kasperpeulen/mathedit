@@ -17,6 +17,8 @@ features to organise your math snippets.
 * Markdown not to conflict with LaTeX math code. :white_check_mark:
 
 ### 0.2.0
-* Saving multiple math notes/snippets
-* Enable export to gist and import from gist using github login
-* Allow sharing math notes
+* Enable export to gist and import from gist using github login :white_check_mark:
+* Allow sharing math notes :white_check_mark:
+* Allow editor to be used offline :white_check_mark:
+* Organising multiple math notes/snippets
+* Organising projects
