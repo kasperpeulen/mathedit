@@ -24,6 +24,8 @@ class LoginComponent {
 
   bool get loggedIn => _auth.isAnonymous ? false : true;
 
+  String get saveAsGist => _auth.isAnonymous ? 'Save as anonymous Gist' : 'Save as Gist';
+
   Future login() async {
     await _userService.login();
   }

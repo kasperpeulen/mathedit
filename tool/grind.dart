@@ -1,6 +1,8 @@
 import 'package:git/git.dart';
 import 'package:grinder/grinder.dart';
 import 'package:grinder/src/utils.dart';
+import 'package:github/server.dart';
+import 'dart:io';
 
 void main(List<String> args) {
   grind(args);
@@ -49,3 +51,19 @@ void testdartfmt() {
 @Task()
 @Depends(analyze, testdartfmt, test)
 void travis() {}
+
+@Task()
+void deleteGists() {
+  final result = Process.runSync('git', ['credential-osxkeychain', 'get']);
+  final list = result.stdout.split('\n');
+  final cred =
+      list.sublist(0, 2).map((String s) => s.substring(s.indexOf('=') + 1));
+  final authentication = new Authentication.basic(cred.last, cred.first);
+  final github = createGitHubClient(auth: authentication);
+  github.gists.listCurrentUserGists().listen((g) {
+    if (g.files.first.name == 'mathedit.md') {
+      print(g.files.map((g) => g.name));
+      github.gists.deleteGist(g.id);
+    }
+  });
+}
