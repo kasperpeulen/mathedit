@@ -25,6 +25,14 @@
       {
         "1": "package:mathedit/service/editor.service.dart",
         "5": false
+      },
+      {
+        "1": "dart:async",
+        "5": false
+      },
+      {
+        "1": "package:mathedit/components/math_edit.component/math_edit.component.dart",
+        "5": false
       }
     ],
     "5": [
@@ -89,6 +97,38 @@
                 "8": false
               }
             ]
+          },
+          {
+            "1": "textareaRef",
+            "2": [
+              {
+                "1": "ViewChild",
+                "2": [
+                  "'textarea'"
+                ],
+                "4": false,
+                "5": false,
+                "6": false,
+                "7": false,
+                "8": false
+              }
+            ]
+          },
+          {
+            "1": "autogrow",
+            "2": [
+              {
+                "1": "ViewChild",
+                "2": [
+                  "AutogrowDirective"
+                ],
+                "4": false,
+                "5": false,
+                "6": false,
+                "7": false,
+                "8": false
+              }
+            ]
           }
         ],
         "8": [
@@ -102,6 +142,10 @@
       }
     ],
     "6": "editor.component.dart",
+    "8": [
+      "textareaRef",
+      "autogrow"
+    ],
     "10": [
       {
         "1": "package:angular2/angular2.ng_deps.dart",
@@ -118,6 +162,10 @@
       {
         "1": "package:mathedit/service/editor.service.ng_deps.dart",
         "4": "i3"
+      },
+      {
+        "1": "package:mathedit/components/math_edit.component/math_edit.component.ng_deps.dart",
+        "4": "i4"
       }
     ]
   },
