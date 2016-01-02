@@ -3,7 +3,7 @@
 
     importScripts('sw_toolbox.js');
 
-    global.toolbox.router.get('/mathedit', toolbox.cacheFirst);
+    global.toolbox.router.get('/mathedit', toolbox);
     global.toolbox.router.get('/mathedit/', toolbox.cacheFirst);
     global.toolbox.router.get('/mathedit/#/gist/:gist', toolbox.networkFirst);
     global.toolbox.router.get('/mathedit/fonts/(.*)', toolbox.cacheFirst);
